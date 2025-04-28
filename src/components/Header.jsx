@@ -61,7 +61,7 @@ export default function Header() {
             </a>
 
 
-            <a href="tel:+79178899457" className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg font-medium text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#11B4EC] focus:ring-opacity-50 shadow-md hover:shadow-lg">
+            <a href="tel:+79178899457" className="hidden lg:block items-center gap-2 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg font-medium text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#11B4EC] focus:ring-opacity-50 shadow-md hover:shadow-lg">
               +7 (917) 889-94-57
             </a>
 
