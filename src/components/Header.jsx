@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ZinterLogo from "../assets/ZinterLogo.png";
-import Whatsapp from "../assets/whatsapp.png";
+import Whatsapp from "../assets/Whatsapp.png";
 // Fix for vercel
 
 export default function Header() {
