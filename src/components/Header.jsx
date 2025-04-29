@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ZinterLogo from "../assets/ZinterLogo.png";
-import Telegram from "../assets/Telegram/telegram.png";
 import Whatsapp from "../assets/whatsapp.png";
 
 export default function Header() {
