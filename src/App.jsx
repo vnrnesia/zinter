@@ -1,39 +1,43 @@
 import Header from "./components/Header";
-import Main from "./components/Main"
+import Main from "./components/Main";
 import Brands from "./components/Brands";
 import Cards from "./components/Cards";
 import CtaCard from "./components/CtaCard";
-import CtaCardInside from "./components/CtaCardInside.jsx";
-import StepSection from "./components/StepSection.jsx"
-import Delivery from "./components/Delivery.jsx";
-import CtaContact from "./components/CtaContact.jsx";
-
+import CtaCardInside from "./components/CtaCardInside";
+import StepSection from "./components/StepSection";
+import Delivery from "./components/Delivery";
+import CtaContact from "./components/CtaContact";
+import ImportExport from "./components/ImportExport";
+import WhoWeAre from "./components/WhoWeAre";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Main />
-      <Brands />
-      <Cards />
-      <section className="w-full flex flex-col items-center justify-center gap-8 py-12">
-        <div className="w-full flex justify-center">
-          <CtaCard />
-        </div>
-        <div className="w-full flex justify-center">
-          <CtaCardInside />
-        </div>
-      </section>
-      <StepSection />
-      <Delivery />
-      <CtaContact />
+      <div className="w-full">
+        <Header />
+        <Main />
+        <Brands />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8">
+        <Cards />
+        <section className="flex flex-col items-center justify-center gap-8 py-12">
+          <div className="w-full flex justify-center">
+            <CtaCard />
+          </div>
+          <div className="w-full flex justify-center">
+            <CtaCardInside />
+          </div>
+        </section>
+        <StepSection />
+        <Delivery />
+        <CtaContact />
+        <ImportExport />
+        <WhoWeAre />
+        <Footer />
+      </div>
     </div>
-
-  )
-
-  
+  );
 }
 
-
 export default App;
-
