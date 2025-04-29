@@ -1,5 +1,6 @@
-import miniworldicon from "../assets/miniworldicon.png"
+import miniworldicon from "../assets/miniworldicon.png";
 import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function CtaContact() {
   const [open, setOpen] = useState(false);
@@ -9,6 +10,8 @@ export default function CtaContact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const dropdownRef = useRef(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
 
   const countryCodes = {
     RU: { code: "+7", placeholder: "(917) 889-9457" },
@@ -33,13 +36,8 @@ export default function CtaContact() {
         `https://api.telegram.org/bot${botToken}/sendMessage`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-          }),
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text: message }),
         }
       );
 
@@ -63,10 +61,10 @@ export default function CtaContact() {
   };
 
   const handleOptionToggle = (option) => {
-    setSelectedOptions((prevOptions) =>
-      prevOptions.includes(option)
-        ? prevOptions.filter((item) => item !== option)
-        : [...prevOptions, option]
+    setSelectedOptions((prev) =>
+      prev.includes(option)
+        ? prev.filter((item) => item !== option)
+        : [...prev, option]
     );
   };
 
@@ -78,16 +76,22 @@ export default function CtaContact() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <section className="relative py-20 text-center bg-white">
-      <h2 className="text-4xl sm:text-5xl font-semibold text-[#343434] mb-22 sm:mb-20">
+    <section
+      ref={sectionRef}
+      className="relative py-20 text-center bg-white overflow-hidden"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="text-4xl sm:text-5xl font-semibold text-[#343434] mb-22 sm:mb-20"
+      >
         Свяжитесь с нами!
-      </h2>
+      </motion.h2>
 
       <div
         className="bg-cover bg-center bg-no-repeat"
@@ -95,11 +99,19 @@ export default function CtaContact() {
       >
         <div className="w-full h-full">
           <div className="max-w-screen-xl mx-auto px-4 py-20 sm:py-28 relative z-10">
-            <form
+            <motion.form
               onSubmit={handleSubmit}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full bg-white bg-opacity-95 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8 sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8 border-[#FFC23E]"
             >
-              <div className="flex items-center space-x-4">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex items-center space-x-4"
+              >
                 <img
                   src={miniworldicon}
                   alt="icon"
@@ -108,7 +120,7 @@ export default function CtaContact() {
                 <h3 className="text-lg sm:text-xl font-semibold">
                   Выберите вашу категорию
                 </h3>
-              </div>
+              </motion.div>
 
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="relative w-full sm:w-1/2" ref={dropdownRef}>
@@ -225,7 +237,7 @@ export default function CtaContact() {
                   </button>
                 </div>
               </div>
-            </form>
+            </motion.form>
           </div>
         </div>
       </div>

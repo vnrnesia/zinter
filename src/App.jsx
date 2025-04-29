@@ -32,17 +32,23 @@ function App() {
         </section>
       </div>
 
-      {/* Tam genişlikli StepSection */}
       <div className="w-full">
         <StepSection />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8">
         <Delivery />
+      </div>
+
+      <div className="w-full">
         <CtaContact />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8">
         <ImportExport />
         <WhoWeAre />
       </div>
+
       <Footer />
     </div>
   );
