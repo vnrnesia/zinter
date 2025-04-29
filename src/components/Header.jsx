@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ZinterLogo from "../assets/ZinterLogo.png";
 import Whatsapp from "../assets/whatsapp.png";
+// Fix for vercel
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
