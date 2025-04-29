@@ -19,6 +19,7 @@ function App() {
         <Main />
         <Brands />
       </div>
+
       <div className="container mx-auto px-4 lg:px-8">
         <Cards />
         <section className="flex flex-col items-center justify-center gap-8 py-12">
@@ -29,13 +30,20 @@ function App() {
             <CtaCardInside />
           </div>
         </section>
+      </div>
+
+      {/* Tam genişlikli StepSection */}
+      <div className="w-full">
         <StepSection />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8">
         <Delivery />
         <CtaContact />
         <ImportExport />
         <WhoWeAre />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

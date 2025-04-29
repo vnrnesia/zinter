@@ -1,3 +1,4 @@
+import miniworldicon from "../assets/miniworldicon.png"
 import { useState, useEffect, useRef } from "react";
 
 export default function CtaContact() {
@@ -100,7 +101,7 @@ export default function CtaContact() {
             >
               <div className="flex items-center space-x-4">
                 <img
-                  src="/assets/img/Group 1171280370.png"
+                  src={miniworldicon}
                   alt="icon"
                   className="w-7 h-7 sm:w-8 sm:h-8"
                 />
