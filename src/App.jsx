@@ -5,6 +5,8 @@ import Cards from "./components/Cards";
 import CtaCard from "./components/CtaCard";
 import CtaCardInside from "./components/CtaCardInside.jsx";
 import StepSection from "./components/StepSection.jsx"
+import Delivery from "./components/Delivery.jsx";
+import CtaContact from "./components/CtaContact.jsx";
 
 
 function App() {
@@ -23,7 +25,10 @@ function App() {
         </div>
       </section>
       <StepSection />
+      <Delivery />
+      <CtaContact />
     </div>
+
   )
 
   
