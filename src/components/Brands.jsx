@@ -25,7 +25,7 @@ const Brands = () => {
     <div className="overflow-hidden bg-white rounded-xl shadow-sm py-6 md:py-8">
       <div className="whitespace-nowrap animate-scroll flex items-center gap-16">
         {duplicatedBrands.map((src, index) => (
-          <div key={index} className="inline-block grayscale hover:grayscale-0 transition-all duration-150">
+          <div key={index} className="inline-block grayscale hover:grayscale-0 transition-all duration-300">
             <img src={src} alt={`Brand ${index + 1}`} className="h-12 w-auto" />
           </div>
         ))}
