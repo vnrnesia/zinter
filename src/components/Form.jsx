@@ -29,26 +29,41 @@ export default function Form() {
     const phone = phoneInputRef.current?.value;
     const service = document.getElementById("service").value;
 
+    const TELEGRAM_BOT_TOKEN = "8114179100:AAF6ZXhJRfDbBa1RE-Lb04fR25kwoRpzQX8";
+    const TELEGRAM_CHAT_ID = "1270065195";
+
+    const message = `
+📩 Новая заявка
+👤 ФИО: ${name}
+📧 Email: ${email}
+📞 Телефон: ${phone}
+🛠 Услуга: ${service}
+`;
+
     try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          service,
-        }),
-      });
+      const telegramResponse = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+          }),
+        }
+      );
 
-      if (!response.ok) throw new Error("Sunucu hatası");
+      if (!telegramResponse.ok) {
+        throw new Error("Ошибка при отправке в Telegram");
+      }
 
-      alert("Başarıyla gönderildi!");
+      alert("Заявка успешно отправлена!");
+      document.getElementById("contactForm").reset();
     } catch (err) {
-      console.error("Error:", err);
-      alert("Gönderim sırasında hata oluştu.");
+      console.error("Telegram Hatası:", err);
+      alert("Ошибка при отправке. Попробуйте еще раз.");
     }
   };
 
