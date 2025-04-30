@@ -30,7 +30,7 @@ const Brands = () => {
         transition={{
           repeat: Infinity,
           repeatType: 'loop',
-          duration: 30,
+          duration: 45,
           ease: 'linear',
         }}
         style={{ width: 'max-content' }}
