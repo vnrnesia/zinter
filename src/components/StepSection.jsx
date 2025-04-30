@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function StepsSection() {
   const steps = [
@@ -27,15 +27,18 @@ export default function StepsSection() {
 
   const [currentStep, setCurrentStep] = useState(-1);
 
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { once: true, margin: "0px 0px -20% 0px" });
+
   useEffect(() => {
-    if (currentStep < steps.length - 1) {
+    if (inView && currentStep < steps.length - 1) {
       const timer = setTimeout(() => setCurrentStep((prev) => prev + 1), 500);
       return () => clearTimeout(timer);
     }
-  }, [currentStep]);
+  }, [inView, currentStep]);
 
   return (
-    <section className="py-16 md:py-24">
+    <section ref={sectionRef} className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -47,6 +50,7 @@ export default function StepsSection() {
         </div>
 
         <div className="relative">
+          {/* Masaüstü çizgisi */}
           <div className="hidden md:flex absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-0">
             <div className="flex-1 flex items-center px-10">
               {[...Array(steps.length - 1)].map((_, i) => (
@@ -85,7 +89,10 @@ export default function StepsSection() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: currentStep >= index ? 1 : 0.3, y: 0 }}
+                animate={{
+                  opacity: currentStep >= index ? 1 : 0.3,
+                  y: currentStep >= index ? 0 : 30,
+                }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
                 <div className="flex flex-col items-center">
