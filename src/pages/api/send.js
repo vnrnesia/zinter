@@ -39,3 +39,6 @@ export default async function handler(req, res) {
     }
   }
   
+console.log("BODY:", req.body);
+console.log("BOT TOKEN:", TELEGRAM_BOT_TOKEN);
+console.log("CHAT ID:", TELEGRAM_CHAT_ID);
