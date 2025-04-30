@@ -32,11 +32,14 @@ const Brands = () => {
         loop={true}
         speed={10000} 
         autoplay={{
-          delay: 0,
+          delay: 1, 
           disableOnInteraction: false,
+          pauseOnMouseEnter: false,
         }}
+        allowTouchMove={false} 
         freeMode={true}
-        grabCursor={true}
+        freeModeMomentum={false}
+        grabCursor={false}
       >
         {brands.concat(brands).map((brand, index) => (
           <SwiperSlide key={index} style={{ width: 'auto' }}>
