@@ -1,4 +1,57 @@
+import { useEffect, useRef } from "react";
+
 export default function Form() {
+  const phoneInputRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.intlTelInput && phoneInputRef.current) {
+      window.intlTelInput(phoneInputRef.current, {
+        initialCountry: "auto",
+        geoIpLookup: function (callback) {
+          fetch("https://ipapi.co/json")
+            .then((res) => res.json())
+            .then((data) => callback(data.country_code))
+            .catch(() => callback("ru"));
+        },
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        preferredCountries: ["ru", "tr", "de", "cn"],
+        separateDialCode: true,
+      });
+    }
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = phoneInputRef.current?.value;
+    const service = document.getElementById("service").value;
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          service,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Sunucu hatası");
+
+      alert("Başarıyla gönderildi!");
+    } catch (err) {
+      console.error("Error:", err);
+      alert("Gönderim sırasında hata oluştu.");
+    }
+  };
+
   return (
     <div
       className="relative bg-white p-6 md:p-8 rounded-xl shadow-2xl mx-auto"
@@ -13,12 +66,9 @@ export default function Form() {
         Получите <span className="text-[#FFC23E]">бесплатную</span> консультацию
       </h2>
 
-      <form className="space-y-4" id="contactForm">
+      <form className="space-y-4" id="contactForm" onSubmit={handleSubmit}>
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-500 mb-1"
-          >
+          <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-1">
             ФИО
           </label>
           <input
@@ -30,10 +80,7 @@ export default function Form() {
         </div>
 
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-500 mb-1"
-          >
+          <label htmlFor="email" className="block text-sm font-medium text-gray-500 mb-1">
             Електронная Почта
           </label>
           <input
@@ -44,16 +91,14 @@ export default function Form() {
           />
         </div>
 
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-gray-500 mb-1"
-          >
+        <div className="relative w-full">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-500 mb-1 w-full">
             Номер Телефона
           </label>
           <input
             type="tel"
             id="phone"
+            ref={phoneInputRef}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
             required
           />
@@ -63,10 +108,7 @@ export default function Form() {
         </div>
 
         <div>
-          <label
-            htmlFor="service"
-            className="block text-sm font-medium text-gray-500 mb-1"
-          >
+          <label htmlFor="service" className="block text-sm font-medium text-gray-500 mb-1">
             Услуг
           </label>
           <select
@@ -93,10 +135,7 @@ export default function Form() {
             />
           </div>
           <div className="flex-1">
-            <label
-              htmlFor="consent"
-              className="text-xs text-[#8C8C8C] leading-tight block"
-            >
+            <label htmlFor="consent" className="text-xs text-[#8C8C8C] leading-tight block">
               Вы соглашаетесь на обработку файлов cookie и ваших персональных
               данных при использовании нашего сайта.
             </label>
