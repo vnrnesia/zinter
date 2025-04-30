@@ -2,28 +2,43 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Form() {
   const phoneInputRef = useRef(null);
-  const [itiInstance, setItiInstance] = useState(null);
-  const [countryName, setCountryName] = useState("");
+  const [countryName, setCountryName] = useState("Неизвестно");
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.intlTelInput && phoneInputRef.current) {
-      const iti = window.intlTelInput(phoneInputRef.current, {
-        initialCountry: "auto",
-        geoIpLookup: function (callback) {
-          fetch("https://ipapi.co/json")
-            .then((res) => res.json())
-            .then((data) => {
-              callback(data.country_code);
-              setCountryName(data.country_name);
-            })
-            .catch(() => callback("RU"));
-        },
-        utilsScript:
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        preferredCountries: ["ru", "tr", "de", "cn"],
-        separateDialCode: true,
-      });
-      setItiInstance(iti);
+    if (typeof window !== "undefined" && phoneInputRef.current) {
+      const loadScript = async () => {
+        await new Promise((resolve) => {
+          const script = document.createElement("script");
+          script.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js";
+          script.onload = resolve;
+          document.body.appendChild(script);
+        });
+
+        const iti = window.intlTelInput(phoneInputRef.current, {
+          initialCountry: "auto",
+          geoIpLookup: function (callback) {
+            fetch("https://ipapi.co/json")
+              .then((res) => res.json())
+              .then((data) => {
+                callback(data.country_code);
+                setCountryName(data.country_name);
+              })
+              .catch(() => {
+                callback("RU");
+                setCountryName("Россия");
+              });
+          },
+          utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+          preferredCountries: ["ru", "tr", "de", "cn"],
+          separateDialCode: true,
+        });
+
+        phoneInputRef.current.iti = iti;
+      };
+
+      loadScript();
     }
   }, []);
 
@@ -33,7 +48,9 @@ export default function Form() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const service = document.getElementById("service").value;
-    const fullPhone = itiInstance ? itiInstance.getNumber() : phoneInputRef.current?.value;
+
+    const iti = phoneInputRef.current?.iti;
+    const fullPhone = iti ? iti.getNumber() : phoneInputRef.current?.value;
 
     const now = new Date();
     const dateTime = now.toLocaleString("ru-RU", {
