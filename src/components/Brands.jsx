@@ -20,7 +20,7 @@ const brands = [
 ];
 
 const Brands = () => {
-  const duplicatedBrands = [...brands, ...brands]; // sonsuz scroll için tekrar
+  const duplicatedBrands = [...brands, ...brands]; 
 
   return (
     <div className="overflow-hidden bg-white rounded-xl shadow-sm py-6 md:py-8">
@@ -30,7 +30,7 @@ const Brands = () => {
         transition={{
           repeat: Infinity,
           repeatType: 'loop',
-          duration: 20,
+          duration: 30,
           ease: 'linear',
         }}
         style={{ width: 'max-content' }}
