@@ -1,7 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
-
 import brand1 from '../assets/brand1.png';
 import brand2 from '../assets/brand2.png';
 import brand3 from '../assets/brand3.png';
@@ -12,43 +8,28 @@ import brand7 from '../assets/brand7.png';
 import brand8 from '../assets/brand8.png';
 
 const brands = [
-  { src: brand1, alt: "Brand 1" },
-  { src: brand2, alt: "Brand 2" },
-  { src: brand3, alt: "Brand 3" },
-  { src: brand4, alt: "Brand 4" },
-  { src: brand5, alt: "Brand 5" },
-  { src: brand6, alt: "Brand 6" },
-  { src: brand7, alt: "Brand 7" },
-  { src: brand8, alt: "Brand 8" },
+  brand1,
+  brand2,
+  brand3,
+  brand4,
+  brand5,
+  brand6,
+  brand7,
+  brand8,
 ];
 
 const Brands = () => {
+  const duplicatedBrands = [...brands, ...brands]; 
+
   return (
-    <div className="bg-white rounded-xl shadow-sm p-6 md:p-8 overflow-hidden">
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView="auto"
-        spaceBetween={30}
-        loop={true}
-        speed={10000} 
-        autoplay={{
-          delay: 1, 
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-        }}
-        allowTouchMove={false} 
-        freeMode={true}
-        freeModeMomentum={false}
-        grabCursor={false}
-      >
-        {brands.concat(brands).map((brand, index) => (
-          <SwiperSlide key={index} style={{ width: 'auto' }}>
-            <div className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
-              <img src={brand.src} alt={brand.alt} className="h-12 object-contain" />
-            </div>
-          </SwiperSlide>
+    <div className="overflow-hidden bg-white rounded-xl shadow-sm py-6 md:py-8">
+      <div className="whitespace-nowrap animate-scroll flex items-center gap-16">
+        {duplicatedBrands.map((src, index) => (
+          <div key={index} className="inline-block grayscale hover:grayscale-0 transition-all duration-300">
+            <img src={src} alt={`Brand ${index + 1}`} className="h-12 w-auto" />
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };
