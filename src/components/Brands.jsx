@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import brand1 from '../assets/brand1.png';
 import brand2 from '../assets/brand2.png';
 import brand3 from '../assets/brand3.png';
@@ -19,17 +20,30 @@ const brands = [
 ];
 
 const Brands = () => {
-  const duplicatedBrands = [...brands, ...brands]; 
+  const duplicatedBrands = [...brands, ...brands]; // sonsuz scroll için tekrar
 
   return (
     <div className="overflow-hidden bg-white rounded-xl shadow-sm py-6 md:py-8">
-      <div className="whitespace-nowrap animate-scroll flex items-center gap-16">
+      <motion.div
+        className="flex gap-16"
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{
+          repeat: Infinity,
+          repeatType: 'loop',
+          duration: 20,
+          ease: 'linear',
+        }}
+        style={{ width: 'max-content' }}
+      >
         {duplicatedBrands.map((src, index) => (
-          <div key={index} className="inline-block grayscale hover:grayscale-0 transition-all duration-300">
+          <div
+            key={index}
+            className="grayscale hover:grayscale-0 transition-all duration-300"
+          >
             <img src={src} alt={`Brand ${index + 1}`} className="h-12 w-auto" />
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
