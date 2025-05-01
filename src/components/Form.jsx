@@ -71,6 +71,7 @@ export default function Form() {
 
     const TELEGRAM_BOT_TOKEN = "8114179100:AAF6ZXhJRfDbBa1RE-Lb04fR25kwoRpzQX8";
     const TELEGRAM_CHAT_ID = "1270065195";
+    const THREAD_ID = "7";
 
     try {
       const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
@@ -80,6 +81,7 @@ export default function Form() {
         },
         body: JSON.stringify({
           chat_id: TELEGRAM_CHAT_ID,
+          thread_id: THREAD_ID,
           text: message,
         }),
       });
