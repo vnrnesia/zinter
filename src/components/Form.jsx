@@ -81,7 +81,7 @@ export default function Form() {
         },
         body: JSON.stringify({
           chat_id: TELEGRAM_CHAT_ID,
-          thread_id: THREAD_ID,
+          message_thread_id: THREAD_ID,
           text: message,
         }),
       });
