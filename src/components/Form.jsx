@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import worldicon from "../../worldicon.png";
 
 export default function Form() {
   const phoneInputRef = useRef(null);
   const itiRef = useRef(null);
   const [countryName, setCountryName] = useState("Неизвестно");
+  const [status, setStatus] = useState(null);
 
   useEffect(() => {
     if (typeof window !== "undefined" && phoneInputRef.current) {
@@ -83,17 +85,21 @@ export default function Form() {
       });
 
       if (!response.ok) throw new Error("Sunucu hatası");
-      alert("Başarıyla gönderildi!");
+
+      setStatus("success");
+      setTimeout(() => setStatus(null), 4000);
+      e.target.reset();
     } catch (err) {
       console.error("Hata:", err);
-      alert("Gönderim sırasında hata oluştu.");
+      setStatus("error");
+      setTimeout(() => setStatus(null), 4000);
     }
   };
 
   return (
     <div className="relative bg-white p-6 md:p-8 rounded-xl shadow-2xl mx-auto" style={{ maxWidth: "480px" }}>
       <img
-        src="/assets/img/whyus/Group 1171281079.png"
+        src={worldicon}
         alt=""
         className="hidden md:block md:absolute md:top-[-50px] md:right-[-60px]"
       />
@@ -182,6 +188,30 @@ export default function Form() {
         >
           Подайте Заявку
         </button>
+        {status === "success" && (
+          <div className="flex justify-center mt-4">
+            <div className="flex items-center justify-center w-10 h-10 bg-green-500 rounded-full animate-scale-in">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
+
+        {status === "error" && (
+          <p className="mt-4 text-red-600 text-sm text-center">
+           Произошла ошибка при отправке. Пожалуйста, попробуйте снова.
+          </p>
+        )}
       </form>
     </div>
   );

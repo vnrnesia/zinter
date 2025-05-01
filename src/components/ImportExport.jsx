@@ -8,21 +8,18 @@ import siemens from "../assets/ImportExportImg/siemens.png";
 export default function ImportExport() {
   const imageList = [cater, electric, intel, mori, siemens];
 
-  const firstCategoryRow = [
+  const allCategories = [
     "Стройматериалы",
     "Оборудование",
     "Спецтехника",
     "Бытовая техника",
     "Электроника",
-  ];
-
-  const secondCategoryRow = [
     "Мебель",
     "Сантехника",
     "Удобрения",
     "Текстиль",
     "Товары для дома",
-    "химия",
+    "Химия",
     "Автозапчасти",
   ];
 
@@ -55,7 +52,6 @@ export default function ImportExport() {
             Мы импортируем
           </h2>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -79,18 +75,11 @@ export default function ImportExport() {
           </ul>
         </motion.div>
       </div>
-
       <div className="w-full py-2">
         <div className="container px-4 lg:px-8 mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 w-full">
-            {firstCategoryRow.map((label, index) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
+            {allCategories.map((label, index) => (
               <CategoryBox key={index} label={label} index={index} />
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-7 gap-3 sm:gap-4 w-full mt-3 sm:mt-4">
-            {secondCategoryRow.map((label, index) => (
-              <CategoryBox key={index} label={label} index={index + firstCategoryRow.length} />
             ))}
           </div>
         </div>
