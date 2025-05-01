@@ -28,6 +28,9 @@ export default async function handler(req, res) {
         : "Не выбрано";
   
       message = `📥 CTA Заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n📦 Категория: ${selectedText}\n📞 Телефон: ${countryCode} ${phone}`;
+    } else if (formType === "ctacard") {
+      thread_id = "32"; 
+      message = `📞 Контакт из карточки CTA:\n\n📱 Телефон: ${phone}`;
     } else {
       thread_id = "7";
       message = `📩 Новая заявка\n👤 ФИО: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n🌍 Страна: ${countryName}\n📅 Дата и Время: ${dateTime}\n🛠 Услуга: ${service}`;

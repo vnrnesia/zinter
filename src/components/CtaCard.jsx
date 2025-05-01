@@ -1,10 +1,39 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import World1 from "../assets/world1.png";
 
 export default function CtaCard() {
+  const [phone, setPhone] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!phone.trim()) return;
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "ctacard",
+          phone,
+        }),
+      });
+
+      if (res.ok) {
+        setSent(true);
+        setPhone("");
+        setTimeout(() => setSent(false), 4000);
+      } else {
+        alert("Ошибка при отправке. Повторите позже.");
+      }
+    } catch (error) {
+      console.error("Ошибка:", error);
+      alert("Ошибка соединения. Повторите позже.");
+    }
+  };
+
   return (
-    <>
-     <section className="flex justify-center items-center py-16 px-4">
+    <section className="flex justify-center items-center py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -51,32 +80,37 @@ export default function CtaCard() {
               <input
                 type="text"
                 placeholder="+7 917 889 94 57"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className="px-4 py-2 outline-none text-gray-700"
               />
-              <button className="bg-yellow-400 hover:bg-yellow-500 p-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+              <button
+                onClick={handleSubmit}
+                className="bg-yellow-400 hover:bg-yellow-500 p-3 flex items-center justify-center"
+              >
+                {sent ? (
+                  <span role="img" aria-label="success" className="text-white text-xl">✅</span>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                )}
               </button>
             </motion.div>
           </motion.div>
         </div>
       </motion.div>
     </section>
-    
-  
-    </>
   );
-  
 }
