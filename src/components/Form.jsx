@@ -70,7 +70,7 @@ export default function Form() {
     `;
 
     const TELEGRAM_BOT_TOKEN = "8114179100:AAF6ZXhJRfDbBa1RE-Lb04fR25kwoRpzQX8";
-    const TELEGRAM_CHAT_ID = "1270065195";
+    const TELEGRAM_CHAT_ID = "-1002522227760";
     const THREAD_ID = "7";
 
     try {
