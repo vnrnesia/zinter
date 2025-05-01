@@ -9,6 +9,7 @@ export default function CtaContact() {
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
   const dropdownRef = useRef(null);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true });
@@ -20,6 +21,18 @@ export default function CtaContact() {
     KZ: { code: "+7", placeholder: "701 123 45 67" },
     AZ: { code: "+994", placeholder: "51 123 45 67" },
   };
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json")
+      .then((res) => res.json())
+      .then((data) => {
+        const country = data.country_code;
+        if (countryCodes[country]) {
+          setCountryCode(country);
+        }
+      })
+      .catch((err) => console.error("Geo-IP error:", err));
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,8 +52,9 @@ export default function CtaContact() {
       });
 
       if (response.ok) {
-        alert("Ваша заявка успешно отправлена!");
+        setSuccess(true);
         resetForm();
+        setTimeout(() => setSuccess(false), 3000);
       } else {
         alert("Ошибка при отправке заявки. Пожалуйста, попробуйте позже.");
       }
@@ -148,12 +162,7 @@ export default function CtaContact() {
 
                   {open && (
                     <div className="absolute left-0 mt-2 w-full bg-white shadow-md rounded-xl border border-gray-200 z-10 p-4 space-y-3">
-                      {[
-                        "Доставка из Китая",
-                        "Доставка из Европы",
-                        "Экспресс-доставка",
-                        "Стандартная доставка",
-                      ].map((option) => (
+                      {["Доставка из Китая", "Доставка из Европы", "Экспресс-доставка", "Стандартная доставка"].map((option) => (
                         <div key={option} className="flex items-center">
                           <input
                             type="checkbox"
@@ -228,9 +237,26 @@ export default function CtaContact() {
                 <div className="sm:col-span-3">
                   <button
                     type="submit"
-                    className="w-full bg-[#088EE3] text-white text-sm sm:text-base font-medium px-6 py-3 rounded-full hover:bg-[#066bb8] transition"
+                    className="w-full bg-[#088EE3] text-white text-sm sm:text-base font-medium px-6 py-3 rounded-full hover:bg-[#066bb8] transition flex items-center justify-center space-x-2"
                   >
-                    Отправить
+                    {success ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    ) : (
+                      "Отправить"
+                    )}
                   </button>
                 </div>
               </div>
