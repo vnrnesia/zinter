@@ -4,31 +4,48 @@ export default async function handler(req, res) {
     }
   
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const TELEGRAM_CHAT_ID = "-1002522227760";
-    const THREAD_ID = "7";
+    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
   
-    const { name, email, phone, countryName, service, dateTime } = req.body;
+    const {
+      formType,
+      name,
+      email,
+      phone,
+      countryName,
+      service,
+      dateTime,
+      selectedOptions,
+      countryCode,
+    } = req.body;
   
-    const message = `
-  📩 Новая заявка
-  👤 ФИО: ${name}
-  📧 Email: ${email}
-  📞 Телефон: ${phone}
-  🌍 Страна: ${countryName}
-  📅 Дата и Время: ${dateTime}
-  🛠 Услуга: ${service}
-    `;
+    let message = "";
+    let thread_id = "";
+  
+    if (formType === "cta") {
+      thread_id = "9";
+      const selectedText = selectedOptions?.length
+        ? selectedOptions.join(", ")
+        : "Не выбрано";
+  
+      message = `📥 CTA Заявка:\n\n👤 Имя: ${name}\n📧 Email: ${email}\n📦 Категория: ${selectedText}\n📞 Телефон: ${countryCode} ${phone}`;
+    } else {
+      thread_id = "7";
+      message = `📩 Новая заявка\n👤 ФИО: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n🌍 Страна: ${countryName}\n📅 Дата и Время: ${dateTime}\n🛠 Услуга: ${service}`;
+    }
   
     try {
-      const telegramRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          message_thread_id: THREAD_ID,
-          text: message,
-        }),
-      });
+      const telegramRes = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            message_thread_id: thread_id,
+            text: message,
+          }),
+        }
+      );
   
       if (!telegramRes.ok) throw new Error("Telegram API error");
   
@@ -37,3 +54,4 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Telegram API failed" });
     }
   }
+  

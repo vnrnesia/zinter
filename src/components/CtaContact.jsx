@@ -24,22 +24,19 @@ export default function CtaContact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const botToken = "7472336450:AAHDWIc7HSrq_bUasOcsggvztKqmqJIgysM";
-    const chatId = "856679592";
-
-    const message = `CTA Заявка:\n\nИмя: ${name}\nEmail: ${email}\nКатегория: ${
-      selectedOptions.length > 0 ? selectedOptions.join(", ") : "Не выбрано"
-    }\nТелефон: ${countryCodes[countryCode].code} ${phone}`;
-
     try {
-      const response = await fetch(
-        `https://api.telegram.org/bot${botToken}/sendMessage`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: chatId, text: message }),
-        }
-      );
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "cta",
+          name,
+          email,
+          phone,
+          selectedOptions,
+          countryCode: countryCodes[countryCode].code,
+        }),
+      });
 
       if (response.ok) {
         alert("Ваша заявка успешно отправлена!");
