@@ -59,30 +59,19 @@ export default function Form() {
       timeStyle: "short",
     });
 
-    const message = `
-📩 Новая заявка
-👤 ФИО: ${name}
-📧 Email: ${email}
-📞 Телефон: ${phone}
-🌍 Страна: ${countryName}
-📅 Дата и Время: ${dateTime}
-🛠 Услуга: ${service}
-    `;
-
-    const TELEGRAM_BOT_TOKEN = "8114179100:AAF6ZXhJRfDbBa1RE-Lb04fR25kwoRpzQX8";
-    const TELEGRAM_CHAT_ID = "-1002522227760";
-    const THREAD_ID = "7";
-
     try {
-      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          message_thread_id: THREAD_ID,
-          text: message,
+          name,
+          email,
+          phone,
+          countryName,
+          service,
+          dateTime,
         }),
       });
 
@@ -190,6 +179,7 @@ export default function Form() {
         >
           Подайте Заявку
         </button>
+
         {status === "success" && (
           <div className="flex justify-center mt-4">
             <div className="flex items-center justify-center w-10 h-10 bg-green-500 rounded-full animate-scale-in">
@@ -211,7 +201,7 @@ export default function Form() {
 
         {status === "error" && (
           <p className="mt-4 text-red-600 text-sm text-center">
-           Произошла ошибка при отправке. Пожалуйста, попробуйте снова.
+            Произошла ошибка при отправке. Пожалуйста, попробуйте снова.
           </p>
         )}
       </form>
