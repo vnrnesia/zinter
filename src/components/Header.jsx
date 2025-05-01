@@ -52,13 +52,13 @@ export default function Header() {
           <div className="flex items-center gap-1 md:gap-4">
             <a href="https://wa.me/79178899457" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-100 rounded-lg transition-colors">
               <span className="sr-only">WhatsApp ile iletişim</span>
-              <img src={Whatsapp} alt="WhatsApp" className="w-14 h-12  md:w-8 md:h-8" />
+              <img src={Whatsapp} alt="WhatsApp" className="w-17 h-10 md:w-8 md:h-8" />
             </a>
 
 
             <a href="https://t.me/zinterlogistics" target="_blank" rel="noopener noreferrer" className="hover:bg-gray-100 rounded-lg transition-colors">
               <span className="sr-only">Telegram ile iletişim</span>
-              <img src={Telegram} alt="Telegram" className="w-14 h-12 md:w-8 md:h-8" />
+              <img src={Telegram} alt="Telegram" className="w-17 h-10 md:w-8 md:h-8" />
             </a>
 
 
