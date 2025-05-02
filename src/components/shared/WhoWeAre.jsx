@@ -1,8 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import bigzworld from "../assets/bigzworld.png";
+import bigzworld from "@/assets/bigzworld.png";
 
-// Sayaç bileşeni
 const Counter = ({ targetNumber, duration = 1500, start }) => {
   const [count, setCount] = useState(0);
 

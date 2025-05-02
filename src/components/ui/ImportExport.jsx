@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import cater from "../assets/ImportExportImg/cater.png";
-import electric from "../assets/ImportExportImg/electric.png";
-import intel from "../assets/ImportExportImg/intel.png";
-import mori from "../assets/ImportExportImg/mori.png";
-import siemens from "../assets/ImportExportImg/siemens.png";
+import cater from "@/assets/ImportExportImg/cater.png";
+import electric from "@/assets/ImportExportImg/electric.png";
+import intel from "@/assets/ImportExportImg/intel.png";
+import mori from "@/assets/ImportExportImg/mori.png";
+import siemens from "@/assets/ImportExportImg/siemens.png";
 
 export default function ImportExport() {
   const imageList = [cater, electric, intel, mori, siemens];

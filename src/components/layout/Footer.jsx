@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
-import ZinterLogo from "../assets/ZinterLogo.png";
+import ZinterLogo from "@/assets/ZinterLogo.png";
 
 const footerLinks = [
   {

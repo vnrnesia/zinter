@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import worldicon from "../../worldicon.png";
+import worldicon from "@/worldicon.png";
 
 export default function Form() {
   const phoneInputRef = useRef(null);

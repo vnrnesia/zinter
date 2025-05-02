@@ -1,15 +1,15 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Brands from "./components/Brands";
-import Cards from "./components/Cards";
-import CtaCard from "./components/CtaCard";
-import CtaCardInside from "./components/CtaCardInside";
-import StepSection from "./components/StepSection";
-import Delivery from "./components/Delivery";
-import CtaContact from "./components/CtaContact";
-import ImportExport from "./components/ImportExport";
-import WhoWeAre from "./components/WhoWeAre";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Main from "./components/home/Main";
+import Brands from "./components/shared/Brands";
+import Cards from "./components/ui/Cards";
+import CtaCard from "./components/shared/CtaCard";
+import CtaCardInside from "./components/ui/CtaCardInside";
+import StepSection from "./components/ui/StepSection";
+import Delivery from "./components/ui/Delivery";
+import CtaContact from "./components/shared/CtaContact";
+import ImportExport from "./components/ui/ImportExport";
+import WhoWeAre from "./components/shared/WhoWeAre";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (

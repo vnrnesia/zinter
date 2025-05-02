@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import international from "../assets/international.png";
+import international from "@/assets/international.png";
 
 export default function CtaCardInside() {
   return (

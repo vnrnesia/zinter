@@ -1,4 +1,4 @@
-import miniworldicon from "../assets/miniworldicon.png";
+import miniworldicon from "@/assets/miniworldicon.png";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 

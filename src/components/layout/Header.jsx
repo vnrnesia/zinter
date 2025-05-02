@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ZinterLogo from "../assets/ZinterLogo.png";
-import Whatsapp from "../assets/Whatsapp.png";
-import Telegram from "../assets/Telegram.png"
+import ZinterLogo from "@/assets/ZinterLogo.png";
+import Whatsapp from "@/assets/Whatsapp.png";
+import Telegram from "@/assets/Telegram.png"
 // Fix for vercel
 
 export default function Header() {

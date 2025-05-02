@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import World1 from "../assets/world1.png";
+import World1 from "@/assets/world1.png";
 
 export default function CtaCard() {
   const [phone, setPhone] = useState("");

@@ -1,8 +1,8 @@
 import DeliveryCard from "./DeliveryCard";
-import bus from "../assets/DeliveryImg/bus.png";
-import plane from "../assets/DeliveryImg/plane.png";
-import ship from "../assets/DeliveryImg/ship.png";
-import train from "../assets/DeliveryImg/train.png";
+import bus from "@/assets/DeliveryImg/bus.png";
+import plane from "@/assets/DeliveryImg/plane.png";
+import ship from "@/assets/DeliveryImg/ship.png";
+import train from "@/assets/DeliveryImg/train.png";
 
 export default function Delivery() {
   const deliveryOptions = [
