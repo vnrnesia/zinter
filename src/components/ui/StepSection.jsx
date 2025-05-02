@@ -29,7 +29,6 @@ export default function StepsSection() {
   const controls = useAnimation();
   const mobileLineRef = useRef(null);
 
-  // Mobil çizgi yüksekliğini arttıran animasyon
   useEffect(() => {
     if (visibleCount > 0 && mobileLineRef.current) {
       controls.start({
@@ -52,7 +51,6 @@ export default function StepsSection() {
         </div>
 
         <div className="relative">
-          {/* Masaüstü çizgisi */}
           <div className="hidden md:flex absolute top-1/2 left-0 right-0 transform -translate-y-1/2 z-0">
             <div className="flex-1 flex items-center px-10">
               {[...Array(steps.length - 1)].map((_, i) => (
@@ -65,8 +63,6 @@ export default function StepsSection() {
               ))}
             </div>
           </div>
-
-          {/* Mobil çizgi */}
           <div className="md:hidden absolute left-1/2 top-0 bottom-0 transform -translate-x-1/2 z-0 w-2">
             <div className="h-full bg-gray-200 mx-auto w-[2px] relative overflow-hidden">
               <motion.div
@@ -77,8 +73,6 @@ export default function StepsSection() {
               />
             </div>
           </div>
-
-          {/* Adımlar */}
           <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10">
             {steps.map((step, index) => (
               <motion.div

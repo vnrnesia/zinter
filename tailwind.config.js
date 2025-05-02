@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       keyframes: {
         scaleIn: {
           '0%': { transform: 'scale(0)', opacity: '0' },

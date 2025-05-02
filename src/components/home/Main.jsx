@@ -1,6 +1,5 @@
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import Form from "@/components/ui/Form";
-// Fix for vercel
 
 export default function Main() {
   return (
