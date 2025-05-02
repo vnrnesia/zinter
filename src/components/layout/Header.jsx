@@ -104,20 +104,20 @@ export default function Header() {
             </button>
             {subMenuOpen && (
               <ul className="pl-4">
-                <li><a href="#" className="block py-2 text-gray-600">Доставка из Китая</a></li>
-                <li><a href="#" className="block py-2 text-gray-600">Доставка из Европы</a></li>
+                <li><Link to="/china-delivery" className="block py-2 text-gray-600">Доставка из Китая</Link></li>
+                <li><Link to="/europe-delivery" className="block py-2 text-gray-600">Доставка из Европы</Link></li>
               </ul>
             )}
           </li>
 
           <li>
-            <a href="#" className="block py-4 text-gray-700 border-b border-gray-200">Оформление</a>
+            <Link to="/features" className="block py-4 text-gray-700 border-b border-gray-200">Оформление</Link>
           </li>
           <li>
-            <a href="#" className="block py-4 text-gray-700 border-b border-gray-200">Склад</a>
+            <Link to="/warehouse" className="block py-4 text-gray-700 border-b border-gray-200">Склад</Link>
           </li>
           <li>
-            <a href="#" className="block py-4 text-gray-700 border-b border-gray-200">Контакт</a>
+            <Link to="/contact" className="block py-4 text-gray-700 border-b border-gray-200">Контакт</Link>
           </li>
           <li>
             <a href="tel:+79178899457" className="block py-4 text-gray-700 border-gray-200">

@@ -5,16 +5,28 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
+import { Link } from "react-router-dom"; // ✅ React Router'dan Link eklendi
+
 import ZinterLogo from "@/assets/ZinterLogo.png";
 
 const footerLinks = [
   {
     title: "Компания",
-    items: ["О нас", "Hakkımızda", "Контакт", "Партнёрство"],
+    items: [
+      { name: "О нас", path: "/about" },
+      { name: "Hakkımızda", path: "/hakkimizda" },
+      { name: "Контакт", path: "/contact" },
+      { name: "Партнёрство", path: "/partnership" },
+    ],
   },
   {
     title: "Услуги",
-    items: ["Оплата", "Доставка", "Оформление", "Склад"],
+    items: [
+      { name: "Оплата", path: "/payment" },
+      { name: "Доставка", path: "/delivery" },
+      { name: "Оформление", path: "/features" },
+      { name: "Склад", path: "/warehouse" },
+    ],
   },
 ];
 
@@ -63,12 +75,12 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.items.map((item, i) => (
                   <li key={i}>
-                    <a
-                      href="#"
+                    <Link
+                      to={item.path}
                       className="footer-link text-gray-600 hover:text-gray-900 transition"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -84,6 +96,8 @@ export default function Footer() {
                   href={social.href}
                   className={`text-gray-600 ${social.hoverColor} text-2xl`}
                   aria-label="Social Media"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon icon={social.icon} />
                 </a>
@@ -118,5 +132,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-//test
