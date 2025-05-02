@@ -11,10 +11,10 @@ import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 export default function Features() {
   return (
     <>
-      <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
+      <section className="py-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-80">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
-            <div className="flex flex-col items-center lg:hidden gap-2">
+            <div className="flex flex-col items-center lg:hidden gap-10">
               <span className="uppercase text-2xl font-medium">
                 Мультимодальные перевозки
               </span>
@@ -68,7 +68,7 @@ export default function Features() {
             <img
               src={features}
               alt="Container"
-              className="w-[60%] h-auto object-contain"
+              className="w-[80%] h-auto object-contain"
             />
           </div>
         </div>

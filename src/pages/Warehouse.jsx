@@ -11,7 +11,7 @@ import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 export default function Warehouse() {
   return (
     <>
-      <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+      <section className="py-28 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="flex flex-col items-center lg:hidden gap-2">
