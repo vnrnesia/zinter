@@ -93,7 +93,7 @@ export default function CtaContact() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 text-center bg-white overflow-hidden"
+      className="relative pt-20 text-center bg-white overflow-hidden"
     >
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

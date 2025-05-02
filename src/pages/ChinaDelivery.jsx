@@ -16,39 +16,62 @@ export default function ChinaDelivery() {
   return (
     <>
       <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="w-[70%] max-w-full px-4 mx-auto flex flex-col lg:flex-row items-center gap-10">
-          <div className="lg:w-1/2 space-y-6 text-white text-center lg:text-left">
-            <div className="flex items-start gap-3">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
+          <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
+
+            <div className="flex flex-col items-center lg:hidden gap-2">
+              <span className="uppercase text-2xl font-medium">
+                Мультимодальные перевозки
+              </span>
               <img
                 src={plane2}
                 alt="Plane"
-                className="w-auto h-12 object-contain"
+                className="h-10 w-auto object-contain"
               />
-              <p className="text-2xl font-medium uppercase leading-tight">
-                Мультимодальные перевозки <br />
-                <span className="text-[#FFC23E]">по всему миру</span>
-              </p>
+              <span className="uppercase text-[#FFC23E] text-xl font-medium">
+                по всему миру
+              </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+
+
+            <div className="hidden lg:flex items-center gap-4">
+              <img
+                src={plane2}
+                alt="Plane"
+                className="h-10 w-auto object-contain"
+              />
+              <div className="flex flex-col gap-1">
+                <span className="uppercase text-2xl font-medium">
+                  Мультимодальные перевозки
+                </span>
+                <span className="uppercase text-[#FFC23E] text-xl font-medium">
+                  по всему миру
+                </span>
+              </div>
+            </div>
+
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Доставка из <span className="text-[#FFC23E]">Китая</span>
             </h1>
+
             <p className="text-lg md:text-xl opacity-90">
               Надежные мультимодальные перевозки, оптимизация сроков и затрат,
               полный контроль на каждом этапе доставки.
             </p>
-            <div className="pt-2">
+
+            <div className="pt-2 flex justify-center lg:justify-start">
               <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-6 pr-10 py-3 rounded-lg font-medium transition-colors shadow-md">
                 Связаться с менеджером
                 <img
                   src={PhoneIcon}
                   alt="Phone Icon"
-                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
                 />
               </button>
             </div>
           </div>
 
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <img
               src={containercn}
               alt="Container"
@@ -69,43 +92,44 @@ export default function ChinaDelivery() {
           <Services />
         </div>
       </section>
-      <section className="py-16 ">
+
+      <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <CtaCard />
         </div>
       </section>
 
-      <section className="py-16 ">
+      <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <HowWorks />
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50 ">
+      <section className="py-16 bg-gray-50">
         <div className="w-full max-w-full px-4 mx-auto">
           <ServiceGrid />
         </div>
       </section>
 
-      <section className="py-16 ">
+      <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <Delivery />
         </div>
       </section>
 
-      <section className="py-16 ">
+      <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <CtaContact />
         </div>
       </section>
 
-      <section className="py-16 ">
+      <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <DeliveryBox />
         </div>
       </section>
 
-      <section className="container mx-auto px-4 lg:px-8 ">
+      <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
           <ImportExport />
         </div>
