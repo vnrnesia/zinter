@@ -6,6 +6,11 @@ import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import containercn from "@/assets/containercn.png";
 import Services from "@/components/ui/Services.jsx";
+import Delivery from "@/components/ui/Delivery.jsx";
+import CtaContact from "@/components/shared/CtaContact.jsx";
+import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
+import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
+import ImportExport from "@/components/ui/ImportExport.jsx";
 
 export default function ChinaDelivery() {
   return (
@@ -14,7 +19,11 @@ export default function ChinaDelivery() {
         <div className="w-[70%] max-w-full px-4 mx-auto flex flex-col lg:flex-row items-center gap-10">
           <div className="lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="flex items-start gap-3">
-              <img src={plane2} alt="Plane" className="w-auto h-12 object-contain" />
+              <img
+                src={plane2}
+                alt="Plane"
+                className="w-auto h-12 object-contain"
+              />
               <p className="text-2xl font-medium uppercase leading-tight">
                 Мультимодальные перевозки <br />
                 <span className="text-[#FFC23E]">по всему миру</span>
@@ -24,7 +33,8 @@ export default function ChinaDelivery() {
               Доставка из <span className="text-[#FFC23E]">Китая</span>
             </h1>
             <p className="text-lg md:text-xl opacity-90">
-              Надежные мультимодальные перевозки, оптимизация сроков и затрат, полный контроль на каждом этапе доставки.
+              Надежные мультимодальные перевозки, оптимизация сроков и затрат,
+              полный контроль на каждом этапе доставки.
             </p>
             <div className="pt-2">
               <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-6 pr-10 py-3 rounded-lg font-medium transition-colors shadow-md">
@@ -39,7 +49,11 @@ export default function ChinaDelivery() {
           </div>
 
           <div className="lg:w-1/2">
-            <img src={containercn} alt="Container" className="w-full h-auto object-contain" />
+            <img
+              src={containercn}
+              alt="Container"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </section>
@@ -55,16 +69,50 @@ export default function ChinaDelivery() {
           <Services />
         </div>
       </section>
+      <section className="py-16 ">
+        <div className="w-full max-w-full px-4 mx-auto">
+          <CtaCard />
+        </div>
+      </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 ">
         <div className="w-full max-w-full px-4 mx-auto">
           <HowWorks />
         </div>
       </section>
 
+      <section className="py-16 bg-gray-50 ">
+        <div className="w-full max-w-full px-4 mx-auto">
+          <ServiceGrid />
+        </div>
+      </section>
+
+      <section className="py-16 ">
+        <div className="w-full max-w-full px-4 mx-auto">
+          <Delivery />
+        </div>
+      </section>
+
+      <section className="py-16 ">
+        <div className="w-full max-w-full px-4 mx-auto">
+          <CtaContact />
+        </div>
+      </section>
+
+      <section className="py-16 ">
+        <div className="w-full max-w-full px-4 mx-auto">
+          <DeliveryBox />
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 lg:px-8 ">
+        <div className="max-w-full px-4 mx-auto">
+          <ImportExport />
+        </div>
+      </section>
+
       <section className="py-16 bg-white">
         <div className="w-full max-w-full px-4 mx-auto space-y-12">
-          <CtaCard />
           <WhoWeAre />
         </div>
       </section>

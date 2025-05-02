@@ -1,0 +1,8 @@
+[master d62182b] ChinaDelivery and component's added, edited.
+ 9 files changed, 352 insertions(+), 14 deletions(-)
+ create mode 100644 src/assets/serviceicon1.png
+ create mode 100644 src/assets/serviceicon2.png
+ create mode 100644 src/assets/tick.png
+ create mode 100644 src/components/ScrollToTop.jsx
+ create mode 100644 src/components/ui/HowWorksDelivery.jsx
+ create mode 100644 src/components/ui/Services.jsx
