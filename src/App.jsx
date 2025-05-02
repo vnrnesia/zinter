@@ -8,10 +8,12 @@ import Payment from "@/pages/Payment";
 import Warehouse from "@/pages/Warehouse";
 import Contact from "@/pages/Contact";
 import Features from "@/pages/Features";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,8 +23,6 @@ function App() {
         <Route path="/warehouse" element={<Warehouse />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/features" element={<Features />} />
-
-
       </Routes>
       <Footer />
     </Router>

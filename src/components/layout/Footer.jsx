@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
-import { Link } from "react-router-dom"; // ✅ React Router'dan Link eklendi
+import { Link } from "react-router-dom";
 
 import ZinterLogo from "@/assets/ZinterLogo.png";
 
@@ -54,7 +54,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           <div className="footer-section flex flex-col items-center md:items-start space-y-4">
-            <img src={ZinterLogo} alt="Zinter Logistics Logo" />
+            <Link to="/"><img src={ZinterLogo} alt="Zinter Logistics Logo" /></Link>
             <p className="text-gray-600 text-sm">
               Больше 15 лет занимаемся перевозками грузов из Китая и других
               азиатских стран.
