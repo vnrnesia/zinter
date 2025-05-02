@@ -1,15 +1,14 @@
 import Brands from "@/components/shared/Brands.jsx";
 import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
 import CtaCard from "@/components/shared/CtaCard.jsx";
-import HowWorks from "@/components/ui/HowWorks.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import warehouse from "@/assets/warehouse.png";
 import CtaContact from "@/components/shared/CtaContact.jsx";
-import FeaturesService from "@/components/ui/FeaturesService.jsx";
-import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
+import WarehouseService from "@/components/ui/WarehouseService.jsx";
+import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 
-export default function ChinaDelivery() {
+export default function Warehouse() {
   return (
     <>
       <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
@@ -84,7 +83,7 @@ export default function ChinaDelivery() {
 
       <section className="bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
-          <FeaturesService />
+          <WarehouseService />
         </div>
       </section>
 
@@ -98,7 +97,7 @@ export default function ChinaDelivery() {
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
-          <FeaturesHowWorks />
+          <WarehouseHowWorks />
         </div>
       </section>
 
