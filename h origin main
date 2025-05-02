@@ -1,0 +1,281 @@
+[33mcommit c9c9cf7666dc386b28cf2e6c7d37ed63ac937ee5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;32mfeature/pages[m[33m)[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Fri May 2 11:12:04 2025 +0300
+
+    Routes added to links and component structere edited.
+
+[33mcommit 1a7ad5a15c97f7c7d83685c6303ba5efe5e71852[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Fri May 2 10:20:28 2025 +0300
+
+    Redesigned component structure for multiple pages.
+
+[33mcommit c9675f298cb95a6341ca7a1d49102bbbfc1ab972[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 10:32:08 2025 +0300
+
+    Icon size fix.
+
+[33mcommit 0982787d056eeb62045bb00b816d6b24bf8c37ee[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 10:30:59 2025 +0300
+
+    Icon size fix.
+
+[33mcommit 195170aa9a6ff163dc43c7630438d2225b3ac449[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 10:27:58 2025 +0300
+
+    Icon size fix.
+
+[33mcommit 1793a3edad0472a22792dd6c275f03178199b435[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 10:08:18 2025 +0300
+
+    Phone Info connected with Telegram Bot
+
+[33mcommit d50942005cd5d4d08f7ffdae18550e5c6835609c[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 09:35:27 2025 +0300
+
+    Fix for CtaContact and icon.
+
+[33mcommit acc1576fb1af619e6d1f677cf1fdb2f28b75add4[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 09:26:40 2025 +0300
+
+    Fix for Form.jsx 0.3
+
+[33mcommit 7ef25da20a343416daaff545f48996ee20e51974[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 09:12:48 2025 +0300
+
+    Fix for Form.jsx
+
+[33mcommit 0cc32230e9d0b8f75c9aa96c4aba4c9839c69687[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 09:04:27 2025 +0300
+
+    Form.jsx edited for Telegram Bot.
+
+[33mcommit 051f399e735a2beb023de9c81af294ef2484dd1a[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 08:59:20 2025 +0300
+
+    Form.jsx edited for Telegram Bot.
+
+[33mcommit 7363b25e155f14d4974c9c436bb0c0c23207a6b0[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 08:55:58 2025 +0300
+
+    Form.jsx edited for Telegram Bot.
+
+[33mcommit 0dc02be4bc596151b0611ad4225dd9b558a15e47[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 08:24:10 2025 +0300
+
+    Edited some animations and little className fixes.
+
+[33mcommit c5c3da1bbebddb2f1d559ac60843adb4e0b3b477[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 00:16:09 2025 +0300
+
+    Prefix for animation.
+
+[33mcommit 551200cfb1b902fdc193c8838fc15670b81564ae[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 00:14:41 2025 +0300
+
+    Prefix for animation.
+
+[33mcommit d5b89c4591b7dcea1ccae68f8af936bfcd499efd[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 00:13:27 2025 +0300
+
+    Prefix for animation.
+
+[33mcommit 73765bec6eeaf714e2f54ef606a0cff114af23f7[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 00:11:44 2025 +0300
+
+    Prefix for animation.
+
+[33mcommit 8f0427973b9d9128d237ed9111be5415aaaacb72[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Thu May 1 00:10:00 2025 +0300
+
+    Prefix for animation.
+
+[33mcommit f531ebc0dd9b95545a30c8f226ea1b63c8972886[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 23:50:16 2025 +0300
+
+    Animation fix for brands.
+
+[33mcommit d1e7b5c39b38aed2393e5575cc191cb71756a0cb[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 23:45:55 2025 +0300
+
+    Animation fix for brands.
+
+[33mcommit 6d73e6c1e6d7d2da239f22ff0807570edcc87ce8[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 23:42:58 2025 +0300
+
+    some className fixes and animations.
+
+[33mcommit b81750baffc3a9588ea49d19fb47ff7807dac7c2[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 22:17:36 2025 +0300
+
+    Fix API Route 0.6
+
+[33mcommit 0594bf806e330279295a9fe7cadefae9e01d6467[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 22:12:09 2025 +0300
+
+    Fix API Route 0.5
+
+[33mcommit 577b25dc874f99bff532a05c8424e634e4583cb1[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 22:08:44 2025 +0300
+
+    Fix API Route 0.4
+
+[33mcommit c5edac822b04298230bfed117aa91bfe2dbefeb5[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:59:36 2025 +0300
+
+    Fix API Route 0.3
+
+[33mcommit a69e7374f66ea8c5c88558f45551acf6f64fc801[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:52:42 2025 +0300
+
+    Fix API Route 0.2
+
+[33mcommit c55924a1327ca1bf0151d45457c8afdc99b56a6f[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:50:04 2025 +0300
+
+    Fix API Route 0.1
+
+[33mcommit b56e66e809a159d6d9af5acd628f45a352becc55[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:36:29 2025 +0300
+
+    Fix for Telegram bot backend 0.2
+
+[33mcommit b6750a90cc79798d2e2f93c05c3bc1b19369e344[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:27:51 2025 +0300
+
+    Chechking logs for Telegram bot backend.
+
+[33mcommit 3bbd3d2cb20ead97d3e66ba5eb7bde8da1b11d5a[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 21:09:18 2025 +0300
+
+    Header.jsx icons fixed for mobile size and Telegram bot backend initiliazed with help from ChatGPT
+
+[33mcommit d49923581022ed1c6c2bc40024d71d1cbe52ebe3[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Wed Apr 30 20:13:33 2025 +0300
+
+    Fixed positioning issue at mobile size and fixed StepSection.jsx animation.
+
+[33mcommit f87effa0eb12112660814e7a13fe1b4ade0921f6[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:34:27 2025 +0300
+
+    Fix for vercel_7
+
+[33mcommit fc81ef9869bd3a039148e521ce861fdedecf2e07[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:24:15 2025 +0300
+
+    Fix for vercel_7
+
+[33mcommit 6a01cfba069ef136bd636ddfe40b312aa9adaf0c[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:17:36 2025 +0300
+
+    Fix for vercel_6
+
+[33mcommit 4736286eee6433ac81a45c98cce15108993817a2[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:14:58 2025 +0300
+
+    Fix for vercel_5
+
+[33mcommit d34e8350f2f0adb3022a5411703bb9b6df355916[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:03:07 2025 +0300
+
+    Fix for vercel_4
+
+[33mcommit 91f18570ec9544cc3fc677b938f3e16ee585efa9[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 21:01:41 2025 +0300
+
+    Fix for vercel_3
+
+[33mcommit 0819b9db4691cf1af0dc33ba29463d60396e44b1[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 20:52:15 2025 +0300
+
+    Fix for Vercel
+
+[33mcommit 456dd1fcc77be49f53b53417af152a1ee61e0540[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 20:48:30 2025 +0300
+
+    Fix for Vercel
+
+[33mcommit ef9885dec6ad13ca3ef880443d1f42a86fc6abb2[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 17:05:39 2025 +0300
+
+    Added some animations to CtaContact ImportExport WhoWeAre
+
+[33mcommit e92dafe2b79ddd4ec99850a218d093fbedd6bfd0[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 16:36:21 2025 +0300
+
+    CtaContact, Footer handled some prefixes.
+
+[33mcommit f0ea483d6bf58da69b83eb60cf47e47086ae96f9[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 16:09:12 2025 +0300
+
+    ImportExport, WhoWeAre, Footer components added, some bugs will be fixed and will add animations.
+
+[33mcommit eb099603465f98ca45fa06685555cf93eb763ed1[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Tue Apr 29 15:24:28 2025 +0300
+
+    CtaContact, initiliazed. Few bugs to fix. Delivery.jsx added.
+
+[33mcommit 16207cea8386f52b588c25ef940bf722853bcd7d[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Mon Apr 28 19:48:19 2025 +0300
+
+    CtaCard, CtaCardInside, StepSection components added.
+
+[33mcommit cb90114c7e2ff4da8a4686472197d83b994ebfc4[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Mon Apr 28 15:43:17 2025 +0300
+
+    Cards.jsx component added.
+
+[33mcommit fd23cc185905b0cd5ca7054523bd41b6f38be769[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Mon Apr 28 15:12:44 2025 +0300
+
+    Brands.jsx initiliazed and features added with Swiper.
+
+[33mcommit aca7f10304b70f2aa4d50d23bb8e67c714edf052[m
+Author: vnrnesia <102244488+vnrnesia@users.noreply.github.com>
+Date:   Mon Apr 28 14:33:39 2025 +0300
+
+    Main.jsx, Header.jsx, Form.jsx initiliazed, in the form location finde, number menu will added.
