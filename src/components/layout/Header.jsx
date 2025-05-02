@@ -2,6 +2,7 @@ import { useState } from "react";
 import ZinterLogo from "@/assets/ZinterLogo.png";
 import Whatsapp from "@/assets/Whatsapp.png";
 import Telegram from "@/assets/Telegram.png"
+import { Link } from "react-router-dom";
 // Fix for vercel
 
 export default function Header() {
@@ -12,14 +13,14 @@ export default function Header() {
     <>
       <header className="h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <a href="#" aria-label="Homepage" className="inline-block">
+          <Link to="/" aria-label="Homepage" className="inline-block">
             <img src={ZinterLogo} alt="Page Logo" className="h-[70%] w-[40%] md:h-auto md:w-auto lg:w-[40%]" loading="lazy" />
-          </a>
+          </Link>
 
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
               <li>
-                <a href="#" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Оплата</a>
+                <Link to="/payment" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Оплата</Link>
               </li>
 
               <li className="relative group">
@@ -30,21 +31,21 @@ export default function Header() {
                   </svg>
                 </button>
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-blue-50">Доставка из Китая</a>
-                  <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-blue-50">Доставка из Европы</a>
+                  <Link to="/china-delivery" className="block px-4 py-2 text-gray-700 hover:bg-blue-50">Доставка из Китая</Link>
+                  <Link to="/europe-delivery" className="block px-4 py-2 text-gray-700 hover:bg-blue-50">Доставка из Европы</Link>
                 </div>
               </li>
 
               <li>
-                <a href="#" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Оформление</a>
+                <Link to="/features" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Оформление</Link>
               </li>
 
               <li>
-                <a href="#" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Склад</a>
+                <Link to="/warehouse" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Склад</Link>
               </li>
 
               <li>
-                <a href="#" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Контакт</a>
+                <Link to="/contact" className="text-gray-700 hover:text-[#006FDC] transition-colors font-medium">Контакт</Link>
               </li>
             </ul>
           </nav>

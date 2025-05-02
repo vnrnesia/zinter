@@ -1,56 +1,31 @@
-import Header from "./components/layout/Header";
-import Main from "./components/home/Main";
-import Brands from "./components/shared/Brands";
-import Cards from "./components/ui/Cards";
-import CtaCard from "./components/shared/CtaCard";
-import CtaCardInside from "./components/ui/CtaCardInside";
-import StepSection from "./components/ui/StepSection";
-import Delivery from "./components/ui/Delivery";
-import CtaContact from "./components/shared/CtaContact";
-import ImportExport from "./components/ui/ImportExport";
-import WhoWeAre from "./components/shared/WhoWeAre";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Home from "@/pages/Home";
+import ChinaDelivery from "@/pages/ChinaDelivery";
+import EuropeDelivery from "@/pages/EuropeDelivery";
+import Payment from "@/pages/Payment";
+import Warehouse from "@/pages/Warehouse";
+import Contact from "@/pages/Contact";
+import Features from "@/pages/Features";
 
 function App() {
   return (
-    <div>
-      <div className="w-full">
-        <Header />
-        <Main />
-        <Brands />
-      </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/china-delivery" element={<ChinaDelivery />} />
+        <Route path="/europe-delivery" element={<EuropeDelivery />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/warehouse" element={<Warehouse />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/features" element={<Features />} />
 
-      <div className="container mx-auto px-4 lg:px-8">
-        <Cards />
-        <section className="flex flex-col items-center justify-center gap-8 py-12">
-          <div className="w-full flex justify-center">
-            <CtaCard />
-          </div>
-          <div className="w-full flex justify-center">
-            <CtaCardInside />
-          </div>
-        </section>
-      </div>
 
-      <div className="w-full">
-        <StepSection />
-      </div>
-
-      <div className="container mx-auto px-4 lg:px-8">
-        <Delivery />
-      </div>
-
-      <div className="w-full">
-        <CtaContact />
-      </div>
-
-      <div className="container mx-auto px-4 lg:px-8">
-        <ImportExport />
-        <WhoWeAre />
-      </div>
-
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
