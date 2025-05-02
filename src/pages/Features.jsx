@@ -3,12 +3,12 @@ import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
 import CtaCard from "@/components/shared/CtaCard.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
-import warehouse from "@/assets/warehouse.png";
+import features from "@/assets/features.png";
 import CtaContact from "@/components/shared/CtaContact.jsx";
-import WarehouseService from "@/components/ui/WarehouseService.jsx";
-import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
+import FeaturesService from "@/components/ui/FeaturesService.jsx";
+import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 
-export default function Warehouse() {
+export default function Features() {
   return (
     <>
       <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
@@ -45,12 +45,11 @@ export default function Warehouse() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Услуги склада <span className="text-[#FFC23E]">склада</span>
+            Tаможенное<span className="text-[#FFC23E]">оформление</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
-              Надежные мультимодальные перевозки, оптимизация сроков и затрат,
-              полный контроль на каждом этапе доставки.
+            Полное сопровождение таможенного оформления: декларирование, сертификация и юридическая поддержка для беспрепятственного импорта и экспорта.
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
@@ -67,9 +66,9 @@ export default function Warehouse() {
 
           <div className="w-full lg:w-1/2">
             <img
-              src={warehouse}
+              src={features}
               alt="Container"
-              className="w-full h-auto object-contain"
+              className="w-[60%] h-auto object-contain"
             />
           </div>
         </div>
@@ -83,7 +82,7 @@ export default function Warehouse() {
 
       <section className="bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
-          <WarehouseService />
+          <FeaturesService />
         </div>
       </section>
 
@@ -97,7 +96,7 @@ export default function Warehouse() {
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
-          <WarehouseHowWorks />
+          <FeaturesHowWorks />
         </div>
       </section>
 
