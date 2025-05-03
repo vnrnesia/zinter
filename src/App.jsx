@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import MobileToolbar from "@/components/layout/MobileToolbar";
 import Home from "@/pages/Home";
 import ChinaDelivery from "@/pages/ChinaDelivery";
 import EuropeDelivery from "@/pages/EuropeDelivery";
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/china-delivery" element={<ChinaDelivery />} />
@@ -24,7 +26,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/features" element={<Features />} />
       </Routes>
+
       <Footer />
+      <MobileToolbar />
     </Router>
   );
 }
