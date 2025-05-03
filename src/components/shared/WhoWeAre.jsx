@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import bigzworld from "@/assets/bigzworld.png";
+import Comments from "@/components/ui/Comments.jsx";
 
 const Counter = ({ targetNumber, duration = 1500, start }) => {
   const [count, setCount] = useState(0);
@@ -115,6 +116,7 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
           className="mt-16"
         >
+          <Comments />
           <h3 className="text-2xl sm:text-3xl font-bold text-center md:text-left text-gray-800 mb-12">
             Почему нас выбирают?
           </h3>

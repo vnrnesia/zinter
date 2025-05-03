@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 export default function Comments() {
-  const [leftLimit, setLeftLimit] = useState(-1200); // varsayılan
+  const [leftLimit, setLeftLimit] = useState(-1200);
   const containerRef = useRef(null);
 
   const comments = [
@@ -27,7 +27,7 @@ export default function Comments() {
     const updateLimits = () => {
       const screenWidth = window.innerWidth;
       let itemWidth = screenWidth < 640 ? 280 : screenWidth < 1024 ? 400 : 800;
-      const totalWidth = comments.length * (itemWidth + 24); 
+      const totalWidth = comments.length * (itemWidth + 24); // +gap
       const visibleWidth = containerRef.current?.offsetWidth || screenWidth;
       const left = Math.min(0, visibleWidth - totalWidth);
       setLeftLimit(left);
@@ -39,7 +39,7 @@ export default function Comments() {
   }, [comments.length]);
 
   return (
-    <section className="px-4 py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4" ref={containerRef}>
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
           Отзывы наших клиентов
@@ -49,7 +49,7 @@ export default function Comments() {
             className="py-4 flex gap-6"
             drag="x"
             dragConstraints={{ left: leftLimit, right: 0 }}
-            dragElastic={0.}
+            dragElastic={0.1}
           >
             {comments.map((item, idx) => (
               <motion.div
