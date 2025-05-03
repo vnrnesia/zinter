@@ -10,6 +10,7 @@ import Warehouse from "@/pages/Warehouse";
 import Contact from "@/pages/Contact";
 import Features from "@/pages/Features";
 import ScrollToTop from "@/components/ScrollToTop";
+import MobileToolbar from "@/components/layout/MobileToolBar";
 
 function App() {
   return (
