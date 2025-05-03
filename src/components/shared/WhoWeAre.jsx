@@ -120,7 +120,9 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
           className="mt-16"
         >
+          <div className="w-full">
           <Comments />
+          </div>
           <h3 className="text-2xl sm:text-3xl font-bold text-center md:text-left text-gray-800 mb-12">
             Почему нас выбирают?
           </h3>

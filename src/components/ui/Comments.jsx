@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 export default function Comments() {
   const [leftLimit, setLeftLimit] = useState(0);
   const containerRef = useRef(null);
-  const trackRef = useRef(null); // yeni: track containerı referansı
+  const trackRef = useRef(null);
 
   const comments = [
     {
@@ -31,9 +31,8 @@ export default function Comments() {
     const updateLimits = () => {
       const containerWidth = containerRef.current?.offsetWidth || 0;
       const trackWidth = trackRef.current?.scrollWidth || 0;
-
       const left = containerWidth - trackWidth;
-      setLeftLimit(left < 0 ? left : 0); 
+      setLeftLimit(left < 0 ? left : 0);
     };
 
     updateLimits();
@@ -42,15 +41,15 @@ export default function Comments() {
   }, []);
 
   return (
-    <section className="py-20">
-      <div className="w-full px-4" ref={containerRef}>
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+    <section className="py-20 bg-gray-50">
+      <div className="w-full max-w-7xl mx-auto px-4" ref={containerRef}>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Отзывы наших клиентов
         </h2>
-        <motion.div className="overflow-hidden cursor-grab">
+        <motion.div className="overflow-hidden cursor-grab active:cursor-grabbing">
           <motion.div
             ref={trackRef}
-            className="py-4 flex gap-6"
+            className="py-4 flex gap-6 pr-6"
             drag="x"
             dragConstraints={{ left: leftLimit, right: 0 }}
             dragElastic={0.1}
@@ -58,13 +57,11 @@ export default function Comments() {
             {comments.map((item, idx) => (
               <motion.div
                 key={idx}
-                className="min-w-[320px] sm:min-w-[400px] max-w-sm bg-white p-6 rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.1)]"
+                className="bg-white min-h-[250px] min-w-[400px] max-w-[520px] p-6 rounded-2xl shadow-lg"
               >
-                <p className="font-semibold text-gray-900">{item.name}</p>
-                <p className="text-sm text-gray-400 py-3">{item.company}</p>
-                <p className="text-gray-700 mb-4 opacity-90">
-                  "{item.comment}"
-                </p>
+                <p className="text-lg font-semibold text-gray-900">{item.name}</p>
+                <p className="text-sm text-gray-400 py-2">{item.company}</p>
+                <p className="text-gray-700 leading-relaxed">"{item.comment}"</p>
               </motion.div>
             ))}
           </motion.div>
