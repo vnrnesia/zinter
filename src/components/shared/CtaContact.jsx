@@ -95,18 +95,9 @@ export default function CtaContact() {
       ref={sectionRef}
       className="relative pt-20 text-center bg-white overflow-hidden"
     >
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="text-4xl sm:text-5xl font-semibold text-[#343434] mb-22 sm:mb-20"
-      >
-        Свяжитесь с нами!
-      </motion.h2>
 
       <div
         className="bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/img/Frame 294.png')" }}
       >
         <div className="w-full h-full">
           <div className="max-w-screen-xl mx-auto px-4 py-20 sm:py-28 relative z-10">

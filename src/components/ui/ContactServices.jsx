@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import icon1 from "@/assets/ContactServicesImg/icon1.png";
 import icon2 from "@/assets/ContactServicesImg/icon2.png";
@@ -24,7 +23,11 @@ const topServices = [
     title: "Позвоните нам",
     icon: icon2,
     description: "Пн–Пт с 8:00 до 17:00.",
-    footer: <p className="text-sm font-semibold text-gray-900">+1 (555) 000-0000</p>,
+    footer: (
+      <p className="text-sm font-semibold text-gray-900">
+        +1 (555) 000-0000
+      </p>
+    ),
   },
   {
     title: "Чат с поддержкой",
@@ -60,14 +63,14 @@ export default function ContactServices() {
           {topServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between"
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col items-center text-center md:items-start md:text-left justify-between"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <div>
-                <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden mx-auto md:mx-0">
                   <img
                     src={service.icon}
                     alt={`Icon ${index + 1}`}

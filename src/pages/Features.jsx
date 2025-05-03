@@ -14,18 +14,22 @@ export default function Features() {
       <section className="pt-10 pb-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
-            <div className="flex flex-col items-center lg:hidden gap-10">
-              <span className="uppercase text-2xl font-medium">
-                Мультимодальные перевозки
-              </span>
-              <img
-                src={plane2}
-                alt="Plane"
-                className="h-10 w-auto object-contain"
-              />
-              <span className="uppercase text-[#FFC23E] text-xl font-medium">
-                по всему миру
-              </span>
+            <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
+              <div className="flex items-start gap-3">
+                <img
+                  alt="Plane"
+                  className="w-auto h-12 object-contain"
+                  src={plane2}
+                />
+                <div className="min-h-12 flex items-center">
+                  <p className="text-xl md:text-2xl leading-tight">
+                    Мультимодальные перевозки
+                    <br />
+                    сборных грузов
+                    <span className="text-[#FFC23E]"> по всему миру</span>
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div className="hidden lg:flex items-center gap-4">
@@ -45,11 +49,13 @@ export default function Features() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Tаможенное<span className="text-[#FFC23E]"> оформление</span>
+              Tаможенное<span className="text-[#FFC23E]"> оформление</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
-            Полное сопровождение таможенного оформления: декларирование, сертификация и юридическая поддержка для беспрепятственного импорта и экспорта.
+              Полное сопровождение таможенного оформления: декларирование,
+              сертификация и юридическая поддержка для беспрепятственного
+              импорта и экспорта.
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
@@ -85,8 +91,6 @@ export default function Features() {
           <FeaturesService />
         </div>
       </section>
-
-
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">

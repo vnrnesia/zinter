@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import icon1 from "@/assets/FeaturesServiceImg/icon1.png";
 import icon2 from "@/assets/FeaturesServiceImg/icon2.png";
 import icon3 from "@/assets/FeaturesServiceImg/icon3.png";
 import icon4 from "@/assets/FeaturesServiceImg/icon4.png";
 import icon5 from "@/assets/FeaturesServiceImg/icon5.png";
 import icon6 from "@/assets/FeaturesServiceImg/icon6.png";
-
-
 
 const topServices = [
   {
@@ -59,16 +57,22 @@ export default function Services() {
           {topServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition"
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col items-center text-center md:items-start md:text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                <img src={service.icon} alt={`Icon ${index + 1}`} className="w-6 h-6 object-contain" />
+              <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden mx-auto md:mx-0">
+                <img
+                  src={service.icon}
+                  alt={`Icon ${index + 1}`}
+                  className="w-6 h-6 object-contain"
+                />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                {service.title}
+              </h3>
               <p className="text-blue-600 font-inter text-sm">Узнать больше</p>
             </motion.div>
           ))}

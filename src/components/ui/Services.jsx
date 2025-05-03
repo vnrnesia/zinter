@@ -66,7 +66,9 @@ export default function Services() {
           </div>
           <h2 className="text-4xl font-bold mb-4">Что входит в услугу?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Мы предлагаем комплексный логистический сервис, включая поиск и проверку поставщиков, выкуп и доставку товаров, а также полное таможенное оформление.
+            Мы предлагаем комплексный логистический сервис, включая поиск и
+            проверку поставщиков, выкуп и доставку товаров, а также полное
+            таможенное оформление.
           </p>
         </div>
 
@@ -74,19 +76,28 @@ export default function Services() {
           {topServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition"
+              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col items-center text-center md:items-start md:text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
-                <img src={service.icon} alt={`Icon ${index + 1}`} className="w-6 h-6 object-contain" />
+              <div className="w-12 h-12 mb-4 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden mx-auto md:mx-0">
+                <img
+                  src={service.icon}
+                  alt={`Icon ${index + 1}`}
+                  className="w-6 h-6 object-contain"
+                />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                {service.title}
+              </h3>
               <ul className="text-sm text-gray-600 space-y-2">
                 {service.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 justify-center md:justify-start"
+                  >
                     <img src={tick} alt="" />
                     <span>{point}</span>
                   </li>
@@ -95,7 +106,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
 
         <div className="flex flex-wrap -mx-2">
           {serviceItems.map((item, index) => {
@@ -125,7 +135,12 @@ export default function Services() {
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   </button>
 
@@ -139,7 +154,10 @@ export default function Services() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden px-5"
                       >
-                        <div ref={contentRef} className="py-4 text-sm text-gray-600">
+                        <div
+                          ref={contentRef}
+                          className="py-4 text-sm text-gray-600"
+                        >
                           {item.content}
                         </div>
                       </motion.div>

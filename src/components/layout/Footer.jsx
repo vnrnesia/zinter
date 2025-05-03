@@ -53,7 +53,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           <div className="footer-section flex flex-col items-center md:items-start space-y-4">
-            <Link to="/"><img src={ZinterLogo} alt="Zinter Logistics Logo" /></Link>
+            <Link to="/"><img className="mx-auto w-[40%] lg:w-[100%]" src={ZinterLogo} alt="Zinter Logistics Logo" /></Link>
             <p className="text-gray-600 text-sm">
               Больше 15 лет занимаемся перевозками грузов из Китая и других
               азиатских стран.
