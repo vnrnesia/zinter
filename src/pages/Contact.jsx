@@ -9,7 +9,7 @@ import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
 export default function Contact() {
   return (
     <>
-    <section className="py-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+    <section className="pt-10 pb-16 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10 items-center">
         <div className="lg:w-1/2 space-y-4 md:space-y-6 text-white text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mx-auto lg:mx-0">

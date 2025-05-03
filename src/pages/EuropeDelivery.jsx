@@ -4,7 +4,7 @@ import CtaCard from "@/components/shared/CtaCard.jsx";
 import HowWorks from "@/components/ui/HowWorks.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
-import containercn from "@/assets/containercn.png";
+import containereu from "@/assets/containereu.png";
 import Services from "@/components/ui/Services.jsx";
 import Delivery from "@/components/ui/Delivery.jsx";
 import CtaContact from "@/components/shared/CtaContact.jsx";
@@ -71,7 +71,7 @@ export default function ChinaDelivery() {
 
           <div className="w-full lg:w-1/2">
             <img
-              src={containercn}
+              src={containereu}
               alt="Container"
               className="w-full h-auto object-contain"
             />

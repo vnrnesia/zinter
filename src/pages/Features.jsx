@@ -11,8 +11,8 @@ import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 export default function Features() {
   return (
     <>
-      <section className="py-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-80">
+      <section className="pt-10 pb-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="flex flex-col items-center lg:hidden gap-10">
               <span className="uppercase text-2xl font-medium">
@@ -45,7 +45,7 @@ export default function Features() {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Tаможенное<span className="text-[#FFC23E]">оформление</span>
+            Tаможенное<span className="text-[#FFC23E]"> оформление</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
@@ -68,7 +68,7 @@ export default function Features() {
             <img
               src={features}
               alt="Container"
-              className="w-[80%] h-auto object-contain"
+              className="ml-6 w-[80%] h-auto object-contain"
             />
           </div>
         </div>

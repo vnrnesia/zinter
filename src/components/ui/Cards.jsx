@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import china from "@/assets/china.png";
 import currency from "@/assets/currency.png";
@@ -9,25 +10,27 @@ const cardsData = [
   {
     img: world,
     title: "ПОИСК ПОСТАВЩИКА",
-    description: "Подбираем товар, проверяем производителя и контролируем качество."
+    description: "Подбираем товар, проверяем производителя и контролируем качество.",
   },
   {
     img: china,
     title: "ДОСТАВКА ИЗ КИТАИЯ",
-    description: "надежные мультимодальные перевозки, оптимизация сроков и затрат"
+    description: "надежные мультимодальные перевозки, оптимизация сроков и затрат",
+    path: "/china-delivery"
   },
   {
     img: currency,
     title: "ОПЛАТА ТОВАРА",
-    description: "Подбираем товар, проверяем производителя и контролируем качество."
+    description: "Подбираем товар, проверяем производителя и контролируем качество.",
+    path: "/payment"
   },
   {
     img: europe,
     title: "ДОСТАВКА ИЗ ЕВРОПА",
-    description: "Комплексные логистические решения для бизнеса: регулярные и срочные грузоперевозки из Европы с таможенным оформлением"
+    description: "Комплексные логистические решения для бизнеса: регулярные и срочные грузоперевозки из Европы с таможенным оформлением",
+    path: "/europe-delivery"
   }
 ];
-
 
 export default function Cards() {
   return (
@@ -46,21 +49,22 @@ export default function Cards() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {cardsData.map((card, index) => (
-          <motion.div
-            key={index}
-            className="bg-[#fbfbfb] rounded-xl shadow-sm p-6 md:p-8 transition-all hover:shadow-lg"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="flex flex-col items-center text-center h-full space-y-4">
-              <img src={card.img} alt={card.title} className="h-10 w-10 object-contain" />
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">{card.title}</h3>
-              <p className="text-gray-600 mb-4 md:px-10">{card.description}</p>
-            </div>
-          </motion.div>
+          <Link to={card.path} key={index} className="block h-full">
+            <motion.div
+              className="bg-[#fbfbfb] rounded-xl shadow-sm p-6 md:p-8 transition-all hover:shadow-lg h-full"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="flex flex-col items-center text-center h-full space-y-4">
+                <img src={card.img} alt={card.title} className="h-10 w-10 object-contain" />
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{card.title}</h3>
+                <p className="text-gray-600 mb-4 md:px-10">{card.description}</p>
+              </div>
+            </motion.div>
+          </Link>
         ))}
       </div>
     </section>
