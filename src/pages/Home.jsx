@@ -11,7 +11,7 @@ import WhoWeAre from "@/components/shared/WhoWeAre";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Main />
 
       <Brands />

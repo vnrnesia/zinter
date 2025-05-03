@@ -19,20 +19,9 @@ export default function ChinaDelivery() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex items-start gap-3">
-                <img
-                  alt="Plane"
-                  className="w-auto h-12 object-contain"
-                  src={plane2}
-                />
-                <div className="min-h-12 flex items-center">
-                  <p className="text-xl md:text-2xl leading-tight">
-                    Мультимодальные перевозки
-                    <br />
-                    сборных грузов
-                    <span className="text-[#FFC23E]"> по всему миру</span>
-                  </p>
-                </div>
+              <div className="flex justify-center items-center">
+              
+                
               </div>
             </div>
 
@@ -51,7 +40,7 @@ export default function ChinaDelivery() {
                 <img
                   src={PhoneIcon}
                   alt="Phone Icon"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
                 />
               </button>
             </div>

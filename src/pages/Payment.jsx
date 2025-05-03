@@ -14,21 +14,8 @@ export default function Payment() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10 items-center">
           <div className="lg:w-1/2 space-y-4 md:space-y-6 text-white text-center lg:text-left">
             <div className="text-xl md:text-1xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex items-start gap-3">
-                <img
-                  src={plane2}
-                  alt="Plane"
-                  className="w-auto h-12 object-contain"
-                />
-                <div className="min-h-12 flex items-center">
-                  <p className="text-2xl md:text-xl leading-tight">
-                    Мультимодальные перевозки
-                    <br />
-                    сборных грузов
-                    
-                    <span className="text-[#FFC23E]"> по всему миру</span>
-                  </p>
-                </div>
+              <div className="flex justify-center items-center">
+               
               </div>
             </div>
             <div className="text-4xl md:text-5xl font-bold leading-tight mx-auto lg:mx-0">

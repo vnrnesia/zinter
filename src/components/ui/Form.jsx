@@ -123,15 +123,20 @@ export default function Form() {
           />
         </div>
 
-        <div className="relative w-full">
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-500 mb-1 w-full">
+       
+        <div className="relative w-full overflow-hidden max-w-full">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-500 mb-1">
             Номер Телефона
           </label>
           <input
             type="tel"
             id="phone"
             ref={phoneInputRef}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+            className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+            style={{
+              paddingLeft: "52px",
+              boxSizing: "border-box",
+            }}
             required
           />
           <p id="phoneError" className="mt-1 text-sm text-red-600 hidden">

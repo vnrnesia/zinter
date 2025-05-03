@@ -15,41 +15,16 @@ export default function Warehouse() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex items-start gap-3">
-                <img
-                  alt="Plane"
-                  className="w-auto h-12 object-contain"
-                  src={plane2}
-                />
-                <div className="min-h-12 flex items-center">
-                  <p className="text-xl md:text-2xl leading-tight">
-                    Мультимодальные перевозки
-                    <br />
-                    сборных грузов
-                    <span className="text-[#FFC23E]"> по всему миру</span>
-                  </p>
-                </div>
+              <div className="flex justify-center items-center">
+                
+               
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-4">
-              <img
-                src={plane2}
-                alt="Plane"
-                className="h-10 w-auto object-contain"
-              />
-              <div className="flex flex-col gap-1">
-                <span className="uppercase text-2xl font-medium">
-                  Мультимодальные перевозки
-                </span>
-                <span className="uppercase text-[#FFC23E] text-xl font-medium">
-                  по всему миру
-                </span>
-              </div>
-            </div>
+           
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Услуги склада <span className="text-[#FFC23E]">склада</span>
+              Услуги <span className="text-[#FFC23E]">склада</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
@@ -63,7 +38,7 @@ export default function Warehouse() {
                 <img
                   src={PhoneIcon}
                   alt="Phone Icon"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
                 />
               </button>
             </div>
