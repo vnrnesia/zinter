@@ -65,7 +65,7 @@ export default function ToolbarMobile() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="absolute bottom-[70px] left-1/2 transform -translate-x-1/2 bg-white border rounded-xl shadow-xl p-2 z-50 flex flex-col items-center gap-3"
+              className="absolute bottom-[70px] left-[61%] transform -translate-x-1/2 bg-white border rounded-xl shadow-xl p-2 z-50 flex flex-col items-center gap-3"
             >
               <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">
                 <img src={icons.whatsapp} alt="WhatsApp" className="w-12 h-12" />

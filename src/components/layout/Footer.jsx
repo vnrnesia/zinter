@@ -6,6 +6,7 @@ import {
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
+
 import ZinterLogo from "@/assets/ZinterLogo.png";
 
 const footerLinks = [
@@ -48,18 +49,11 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white w-full overflow-x-hidden">
+    <footer className="footer bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start space-y-4">
-            <Link to="/">
-              <img
-                className="w-[160px] h-auto"
-                src={ZinterLogo}
-                alt="Zinter Logistics Logo"
-                loading="lazy"
-              />
-            </Link>
+          <div className="footer-section flex flex-col items-center md:items-start space-y-4">
+            <Link to="/"><img className="mx-auto w-[40%] lg:w-[100%]" src={ZinterLogo} alt="Zinter Logistics Logo" /></Link>
             <p className="text-gray-600 text-sm">
               Больше 15 лет занимаемся перевозками грузов из Китая и других
               азиатских стран.
@@ -72,15 +66,17 @@ export default function Footer() {
           {footerLinks.map((section, index) => (
             <div
               key={index}
-              className="flex flex-col items-center md:items-start space-y-2"
+              className={`footer-section flex flex-col items-center md:items-start ${
+                index === 0 ? "ml-0 md:ml-[80px]" : ""
+              }`}
             >
-              <h3 className="text-lg font-semibold mb-2">{section.title}</h3>
-              <ul className="space-y-1">
+              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-2">
                 {section.items.map((item, i) => (
                   <li key={i}>
                     <Link
                       to={item.path}
-                      className="text-gray-600 hover:text-gray-900 transition"
+                      className="footer-link text-gray-600 hover:text-gray-900 transition"
                     >
                       {item.name}
                     </Link>
@@ -90,9 +86,9 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="flex flex-col items-center md:items-start space-y-4">
+          <div className="footer-section flex flex-col items-center md:items-start space-y-4">
             <h3 className="text-lg font-semibold">Подпишись на нас!</h3>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               {socialLinks.map((social, i) => (
                 <a
                   key={i}
