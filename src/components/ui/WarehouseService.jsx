@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 const serviceItems = [
   {
     title: "Ответственное хранение",
@@ -35,53 +36,74 @@ const serviceItems = [
   },
 ];
 
+function AccordionItem({ title, content, isOpen, onClick }) {
+  const contentRef = useRef(null);
+  const [height, setHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    if (isOpen && contentRef.current) {
+      setHeight(contentRef.current.scrollHeight);
+    }
+  }, [isOpen]);
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm transition-colors duration-300">
+      <button
+        onClick={onClick}
+        className="w-full px-5 py-4 flex justify-between items-center text-left font-medium text-gray-900 hover:bg-gray-50 transition"
+      >
+        <span>{title}</span>
+        <motion.svg
+          initial={false}
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.25 }}
+          className="w-5 h-5 text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </motion.svg>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height, opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <div ref={contentRef} className="px-5 py-4 text-sm text-gray-700">
+              {content}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Services() {
   const [openIndex, setOpenIndex] = useState(null);
-  const toggleIndex = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+
+  const handleToggle = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
     <section className="py-20 bg-white w-full">
       <div className="w-full max-w-[1300px] px-4 mx-auto">
-        
-
-        
-
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="flex flex-wrap -mx-2">
           {serviceItems.map((item, index) => (
-            <div key={index} className="w-full">
-              <button
-                onClick={() => toggleIndex(index)}
-                className="w-full text-left px-6 py-4 bg-white border border-gray-200 rounded-lg shadow-sm text-gray-800 font-medium flex justify-between items-center hover:bg-gray-50 transition"
-              >
-                {item.title}
-                <svg
-                  className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    key="content"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 py-4 text-sm text-gray-600 border border-t-0 border-gray-200 rounded-b-lg bg-gray-50 overflow-hidden"
-                  >
-                    {item.content}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+            <div key={index} className="w-full md:w-1/2 px-2 mb-4">
+              <AccordionItem
+                title={item.title}
+                content={item.content}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+              />
             </div>
           ))}
         </div>

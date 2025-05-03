@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import serviceicon1 from "@/assets/serviceicon1.png";
 import serviceicon2 from "@/assets/serviceicon2.png";
@@ -52,6 +52,7 @@ const serviceItems = [
 
 export default function Services() {
   const [openIndex, setOpenIndex] = useState(null);
+
   const toggleIndex = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -95,42 +96,59 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {serviceItems.map((item, index) => (
-            <div key={index} className="w-full">
-              <button
-                onClick={() => toggleIndex(index)}
-                className="w-full text-left px-6 py-4 bg-white border border-gray-200 rounded-lg shadow-sm text-gray-800 font-medium flex justify-between items-center hover:bg-gray-50 transition"
-              >
-                {item.title}
-                <svg
-                  className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
 
-              <AnimatePresence initial={false}>
-                {openIndex === index && (
-                  <motion.div
-                    key="content"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 py-4 text-sm text-gray-600 border border-t-0 border-gray-200 rounded-b-lg bg-gray-50 overflow-hidden"
+        <div className="flex flex-wrap -mx-2">
+          {serviceItems.map((item, index) => {
+            const isOpen = openIndex === index;
+            const contentRef = useRef(null);
+            const [height, setHeight] = useState(0);
+
+            useLayoutEffect(() => {
+              if (isOpen && contentRef.current) {
+                setHeight(contentRef.current.scrollHeight);
+              }
+            }, [isOpen]);
+
+            return (
+              <div key={index} className="w-full md:w-1/2 px-2 mb-4">
+                <div className="bg-white border border-gray-200 rounded-xl shadow-sm">
+                  <button
+                    onClick={() => toggleIndex(index)}
+                    className="w-full px-5 py-4 flex justify-between items-center text-left font-medium text-gray-900 hover:bg-gray-50 transition"
                   >
-                    {item.content}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                    {item.title}
+                    <svg
+                      className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height, opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden px-5"
+                      >
+                        <div ref={contentRef} className="py-4 text-sm text-gray-600">
+                          {item.content}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
