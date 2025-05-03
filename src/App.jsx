@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import MobileToolbar from "@/components/layout/MobileToolbar";
-import Home from "@/pages/Home";
-import ChinaDelivery from "@/pages/ChinaDelivery";
-import EuropeDelivery from "@/pages/EuropeDelivery";
-import Payment from "@/pages/Payment";
-import Warehouse from "@/pages/Warehouse";
-import Contact from "@/pages/Contact";
-import Features from "@/pages/Features";
-import ScrollToTop from "@/components/ScrollToTop";
+import Header from "@/components/layout/Header.jsx";
+import Footer from "@/components/layout/Footer.jsx";
+import MobileToolbar from "@/components/layout/MobileToolbar.jsx";
+import Home from "@/pages/Home.jsx";
+import ChinaDelivery from "@/pages/ChinaDelivery.jsx";
+import EuropeDelivery from "@/pages/EuropeDelivery.jsx";
+import Payment from "@/pages/Payment.jsx";
+import Warehouse from "@/pages/Warehouse.jsx";
+import Contact from "@/pages/Contact.jsx";
+import Features from "@/pages/Features.jsx";
+import ScrollToTop from "@/components/ScrollToTop.jsx";
 
 function App() {
   return (
