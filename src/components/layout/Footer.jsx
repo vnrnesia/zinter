@@ -14,7 +14,6 @@ const footerLinks = [
     title: "Компания",
     items: [
       { name: "О нас", path: "/about" },
-      { name: "Hakkımızda", path: "/hakkimizda" },
       { name: "Контакт", path: "/contact" },
       { name: "Партнёрство", path: "/partnership" },
     ],
