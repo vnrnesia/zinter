@@ -1,10 +1,11 @@
-import { motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { useMediaQuery } from "react-responsive";
 
 export default function Comments() {
-  const [leftLimit, setLeftLimit] = useState(0);
-  const containerRef = useRef(null);
-  const trackRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const comments = [
     {
@@ -27,45 +28,52 @@ export default function Comments() {
     },
   ];
 
-  useEffect(() => {
-    const updateLimits = () => {
-      const containerWidth = containerRef.current?.offsetWidth || 0;
-      const trackWidth = trackRef.current?.scrollWidth || 0;
-      const left = containerWidth - trackWidth;
-      setLeftLimit(left < 0 ? left : 0);
-    };
-
-    updateLimits();
-    window.addEventListener("resize", updateLimits);
-    return () => window.removeEventListener("resize", updateLimits);
-  }, []);
-
   return (
     <section className="py-20 bg-gray-50">
-      <div className="w-full max-w-7xl mx-auto px-4" ref={containerRef}>
+      <div className="w-full max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Отзывы наших клиентов
         </h2>
-        <motion.div className="overflow-hidden cursor-grab active:cursor-grabbing">
-          <motion.div
-            ref={trackRef}
-            className="py-4 flex gap-6 pr-6"
-            drag="x"
-            dragConstraints={{ left: leftLimit, right: 0 }}
-            dragElastic={0.1}
+
+        {isMobile ? (
+          <Swiper
+            spaceBetween={16}
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
+            className="w-full px-2"
           >
             {comments.map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-white min-h-[250px] min-w-[400px] max-w-[520px] p-6 rounded-2xl shadow-lg"
-              >
-                <p className="text-lg font-semibold text-gray-900">{item.name}</p>
-                <p className="text-sm text-gray-400 py-2">{item.company}</p>
-                <p className="text-gray-700 leading-relaxed">"{item.comment}"</p>
-              </motion.div>
+              <SwiperSlide key={idx}>
+                <div className="bg-white p-6 rounded-2xl shadow-lg w-full min-h-[250px]">
+                  <p className="text-lg font-semibold text-gray-900">
+                    {item.name}
+                  </p>
+                  <p className="text-sm text-gray-400 py-2">{item.company}</p>
+                  <p className="text-gray-700 leading-relaxed">
+                    "{item.comment}"
+                  </p>
+                </div>
+              </SwiperSlide>
             ))}
-          </motion.div>
-        </motion.div>
+          </Swiper>
+        ) : (
+          <div className="grid grid-cols-3 gap-6">
+            {comments.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-2xl shadow-lg min-h-[250px]"
+              >
+                <p className="text-lg font-semibold text-gray-900">
+                  {item.name}
+                </p>
+                <p className="text-sm text-gray-400 py-2">{item.company}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  "{item.comment}"
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
