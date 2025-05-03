@@ -100,19 +100,20 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
+        <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
         </div>
       </section>
 
       <section className="py-16 bg-gray-50">
-        <div className="w-full max-w-full px-4 mx-auto">
+        <div className="container mx-auto px-4 lg:px-8">
           <ServiceGrid />
         </div>
       </section>
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
+          
           <Delivery />
         </div>
       </section>
@@ -132,14 +133,10 @@ export default function ChinaDelivery() {
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
           <ImportExport />
-        </div>
-      </section>
-
-      <section className="py-16 bg-white">
-        <div className="w-full max-w-full px-4 mx-auto space-y-12">
           <WhoWeAre />
         </div>
       </section>
+
     </>
   );
 }

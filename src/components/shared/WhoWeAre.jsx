@@ -69,13 +69,26 @@ export default function WhoWeAre() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <select className="block w-full rounded-md border border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500">
-                <option>Наши офисы:</option>
-                <option>Москва</option>
-                <option>Стамбул</option>
-                <option>Алматы</option>
-                <option>Ташкент</option>
-              </select>
+              <a
+                href="https://t.me/kanaladiniz"
+                target="_blank"
+                class="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 
+                            bg-gradient-to-r from-[#006FDC] to-[#11B4EC] 
+                            text-white rounded-lg hover:shadow-md transition-all 
+                            max-w-max mx-auto md:mx-0 group"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.51.26l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"></path>
+                </svg>
+                <span class="group-hover:translate-x-1 transition-transform">
+                  Telegram Канал
+                </span>
+              </a>
             </motion.div>
           </motion.div>
 

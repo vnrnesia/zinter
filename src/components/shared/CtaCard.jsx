@@ -33,13 +33,13 @@ export default function CtaCard() {
   };
 
   return (
-    <section className="flex justify-center items-center py-16 px-4">
+    <section className="flex justify-center items-center py-16">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative bg-gradient-to-r from-[#006FDC] to-[#11B4EC] rounded-3xl shadow-2xl overflow-hidden w-full max-w-6xl min-h-[350px] px-8 py-10"
+        className="relative bg-gradient-to-r from-[#006FDC] to-[#11B4EC] rounded-3xl shadow-2xl overflow-hidden w-full max-w-[1250px] min-h-[350px] px-8 py-10"
       >
         <img
           src={World1}

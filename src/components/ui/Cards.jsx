@@ -34,7 +34,7 @@ const cardsData = [
 
 export default function Cards() {
   return (
-    <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-12 md:py-20 px-4 sm:px-6  max-w-[1300px] mx-auto">
       <div className="text-center mb-12 md:mb-16">
         <span className="px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full">
           Надёжная логистика

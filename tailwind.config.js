@@ -5,6 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        sm: "100%",
+        md: "100%",
+        lg: "1120px",
+        xl: "1280px",
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

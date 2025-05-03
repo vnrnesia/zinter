@@ -40,7 +40,7 @@ export default function StepsSection() {
 
   return (
     <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Этапы Сотруничества
@@ -73,7 +73,7 @@ export default function StepsSection() {
               />
             </div>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10">
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10 px-8">
             {steps.map((step, index) => (
               <motion.div
                 key={index}

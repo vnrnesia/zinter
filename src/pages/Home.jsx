@@ -1,4 +1,3 @@
-
 import Main from "@/components/home/Main";
 import Brands from "@/components/shared/Brands";
 import Cards from "@/components/ui/Cards";
@@ -13,37 +12,25 @@ import WhoWeAre from "@/components/shared/WhoWeAre";
 export default function Home() {
   return (
     <div>
-      <div className="w-full">
-        <Main />
-        <Brands />
-      </div>
+      <Main />
 
-      <div className="container mx-auto px-4 lg:px-8">
+      <Brands />
+
+      <div className="container">
         <Cards />
-        <section className="flex flex-col items-center justify-center gap-8 py-12">
-          <div className="w-full flex justify-center">
-            <CtaCard />
-          </div>
-          <div className="w-full flex justify-center">
-            <CtaCardInside />
-          </div>
-        </section>
-      </div>
-
-      <div className="w-full">
+        <CtaCard />
+        <CtaCardInside />
         <StepSection />
-      </div>
-
-      <div className="container mx-auto px-4 lg:px-8">
         <Delivery />
       </div>
 
-      <div className="w-full">
-        <CtaContact />
+      <CtaContact />
+
+      <div className="container">
+        <ImportExport />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8">
-        <ImportExport />
+      <div className="container pb-20">
         <WhoWeAre />
       </div>
     </div>

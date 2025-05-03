@@ -59,8 +59,11 @@ export default function Payment() {
       </section>
       <Brands />
       <HowWorks />
+      <div className="container mx-auto px-4 lg:px-8">
       <CtaCard />
       <WhoWeAre />
+      </div>
+    
     </>
   );
 }
