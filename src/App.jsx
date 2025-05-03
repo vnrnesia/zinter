@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "@/components/layout/Header.jsx";
 import Footer from "@/components/layout/Footer.jsx";
-import MobileToolbar from "@/components/layout/MobileToolbar.jsx";
+import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
 import Home from "@/pages/Home.jsx";
 import ChinaDelivery from "@/pages/ChinaDelivery.jsx";
 import EuropeDelivery from "@/pages/EuropeDelivery.jsx";
@@ -28,7 +28,7 @@ function App() {
       </Routes>
 
       <Footer />
-      <MobileToolbar />
+      <ToolbarMobile />
     </Router>
   );
 }

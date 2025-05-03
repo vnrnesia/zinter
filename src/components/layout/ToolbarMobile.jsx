@@ -10,7 +10,7 @@ const icons = {
   phone: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
 };
 
-export default function MobileToolbar() {
+export default function ToolbarMobile() {
   const [showMessageMenu, setShowMessageMenu] = useState(false);
   const messageRef = useRef(null);
   const [position, setPosition] = useState({ x: 0 });
