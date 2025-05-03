@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import brand1 from '@/assets/brand1.png';
-import brand2 from '@/assets/brand2.png';
-import brand3 from '@/assets/brand3.png';
-import brand4 from '@/assets/brand4.png';
-import brand5 from '@/assets/brand5.png';
-import brand6 from '@/assets/brand6.png';
-import brand7 from '@/assets/brand7.png';
-import brand8 from '@/assets/brand8.png';
+import brand1 from '@/assets/BrandsImg/brand1.png';
+import brand2 from '@/assets/BrandsImg/brand2.png';
+import brand3 from '@/assets/BrandsImg/brand3.png';
+import brand4 from '@/assets/BrandsImg/brand4.png';
+import brand5 from '@/assets/BrandsImg/brand5.png';
+import brand6 from '@/assets/BrandsImg/brand6.png';
+import brand7 from '@/assets/BrandsImg/brand7.png';
+import brand8 from '@/assets/BrandsImg/brand8.png';
 
 const brands = [
   brand1,
