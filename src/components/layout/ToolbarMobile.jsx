@@ -42,7 +42,7 @@ export default function ToolbarMobile() {
           </Link>
         </li>
         <li>
-          <Link to="/contact" className="flex pl-6 flex-col items-center text-gray-600">
+          <Link to="/contact" className="flex pl-2 flex-col items-center text-gray-600">
             <FileText size={24} />
             <span>Заявка</span>
           </Link>
