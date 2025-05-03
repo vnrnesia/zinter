@@ -85,11 +85,10 @@ export default function Main() {
               </button>
             </div>
           </div>
+          <div className="w-[110%]">
+            <Form />
+          </div>
         </div>
-        <div className="w-[80%] mx-auto">
-        <Form />
-        </div>
-       
       </section>
     </>
   );
