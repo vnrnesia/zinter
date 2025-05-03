@@ -34,19 +34,19 @@ const topServices = [
 const serviceItems = [
   {
     title: "Страхование груза",
-    content: "content",
+    content: "Поговорите с нашей дружелюбной командой: t.me/zinterlogistics",
   },
   {
     title: "Оплата товара",
-    content: "content",
+    content: "Надежные мультимодальные перевозки, оптимизация сроков и затрат",
   },
   {
     title: "Оптимизация стоимости",
-    content: "content",
+    content: "Подбираем товар, проверяем производителя и контролируем качество",
   },
   {
     title: "Складские услуги",
-    content: "content",
+    content: "Грузоперевозки из Европы с таможенным оформлением",
   },
 ];
 

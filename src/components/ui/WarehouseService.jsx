@@ -3,35 +3,35 @@ import { motion, AnimatePresence } from "framer-motion";
 const serviceItems = [
   {
     title: "Ответственное хранение",
-    content: "content",
+    content: "Поговорите с нашей дружелюбной командой: t.me/zinterlogistics",
   },
   {
     title: "Фасовка/сортировка/переупаковка",
-    content: "content",
+    content: "Надежные мультимодальные перевозки, оптимизация сроков и затрат",
   },
   {
     title: "Переупаковка товара",
-    content: "content",
+    content: "Подбираем товар, проверяем производителя и контролируем качество",
   },
   {
     title: "Паллетирование",
-    content: "content",
+    content: "Грузоперевозки из Европы с таможенным оформлением",
   },
   {
     title: "Маркировка",
-    content: "content",
+    content: "Профессиональное сопровождение таможни",
   },
   {
     title: "Стикеровка",
-    content: "content",
+    content: "Хранение и обработка ваших товаров",
   },
   {
     title: "Доставка получателю",
-    content: "content",
+    content: "Найдем надежных поставщиков по вашим критериям",
   },
   {
     title: "Кросс-докинг",
-    content: "content",
+    content: "Проверка товара перед отправкой",
   },
 ];
 

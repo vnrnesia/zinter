@@ -2,6 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import bigzworld from "@/assets/bigzworld.png";
 import Comments from "@/components/ui/Comments.jsx";
+import icon1 from "@/assets/WhoWeAreImg/icon1.png";
+import icon2 from "@/assets/WhoWeAreImg/icon2.png";
+import icon3 from "@/assets/WhoWeAreImg/icon3.png";
+import icon4 from "@/assets/WhoWeAreImg/icon4.png";
 
 const Counter = ({ targetNumber, duration = 1500, start }) => {
   const [count, setCount] = useState(0);
@@ -29,10 +33,10 @@ const Counter = ({ targetNumber, duration = 1500, start }) => {
 
 export default function WhoWeAre() {
   const stats = [
-    { number: "12", description: "Лет успешной работы" },
-    { number: "9", description: "Собственных складов по всему миру" },
-    { number: "35", description: "Рейсов еженедельно" },
-    { number: "80", description: "Постоянных клиентов" },
+    { number: "12", description: "Лет успешной работы", icon: icon1 },
+    { number: "9", description: "Собственных складов по всему миру", icon: icon2 },
+    { number: "35", description: "Рейсов еженедельно", icon: icon3 },
+    { number: "80", description: "Постоянных клиентов", icon: icon4 },
   ];
 
   const statsRef = useRef(null);
@@ -73,20 +77,20 @@ export default function WhoWeAre() {
               <a
                 href="https://t.me/kanaladiniz"
                 target="_blank"
-                class="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 
-                            bg-gradient-to-r from-[#006FDC] to-[#11B4EC] 
-                            text-white rounded-lg hover:shadow-md transition-all 
-                            max-w-max mx-auto md:mx-0 group"
+                className="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 
+                  bg-gradient-to-r from-[#006FDC] to-[#11B4EC] 
+                  text-white rounded-lg hover:shadow-md transition-all 
+                  max-w-max mx-auto md:mx-0 group"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 group-hover:scale-110 transition-transform"
+                  className="h-5 w-5 group-hover:scale-110 transition-transform"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.51.26l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"></path>
                 </svg>
-                <span class="group-hover:translate-x-1 transition-transform">
+                <span className="group-hover:translate-x-1 transition-transform">
                   Telegram Канал
                 </span>
               </a>
@@ -130,9 +134,16 @@ export default function WhoWeAre() {
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <p className="text-6xl font-semibold mb-4 text-gray-800">
-                  <Counter targetNumber={item.number} start={isInView} />
-                </p>
+                <div className="relative inline-block mb-4">
+                  <p className="text-6xl font-semibold text-gray-800">
+                    <Counter targetNumber={item.number} start={isInView} />
+                  </p>
+                  <img
+                    src={item.icon}
+                    alt="icon"
+                    className="w-9 h-9 absolute -top-2 -right-4"
+                  />
+                </div>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
