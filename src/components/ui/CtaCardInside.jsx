@@ -25,12 +25,12 @@ export default function CtaCardInside() {
               доставка – все в одном решении.
             </p>
             <button
-              className="mt-8 px-8 py-3 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+              className="w-full max-w-[500px] mt-8 px-8 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
               style={{
                 background: "linear-gradient(135deg, #006FDC 0%, #11B4EC 100%)",
               }}
             >
-              Узнать больше
+              +998 91 008 26 91
             </button>
           </div>
         </motion.div>

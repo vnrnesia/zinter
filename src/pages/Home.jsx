@@ -18,7 +18,11 @@ export default function Home() {
 
       <div className="container">
         <Cards />
-        <CtaCard />
+      </div>
+
+      <CtaCard />
+
+      <div className="container">
         <CtaCardInside />
         <StepSection />
         <Delivery />
