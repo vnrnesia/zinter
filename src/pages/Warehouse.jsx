@@ -9,7 +9,6 @@ import WarehouseService from "@/components/ui/WarehouseService.jsx";
 import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 
-
 export default function Warehouse() {
   return (
     <>
@@ -17,13 +16,8 @@ export default function Warehouse() {
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex justify-center items-center">
-                
-               
-              </div>
+              <div className="flex justify-center items-center"></div>
             </div>
-
-           
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Услуги <span className="text-[#FFC23E]">склада</span>
@@ -67,19 +61,16 @@ export default function Warehouse() {
           <WarehouseService />
         </div>
       </section>
-
       <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <CtaCard />
-        </div>
+        <CtaCard />
       </section>
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseHowWorks />
           <div className="block lg:hidden">
-        <Form/>
-        </div>
+            <Form />
+          </div>
         </div>
       </section>
 
