@@ -11,7 +11,7 @@ export default function Payment() {
   return (
     <>
       <section className="pt-10 lg:pt-40 pb-40 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10 items-center">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="lg:w-1/2 space-y-4 md:space-y-6 text-white text-center lg:text-left">
             <div className="text-xl md:text-1xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center">
