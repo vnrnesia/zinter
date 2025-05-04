@@ -17,6 +17,13 @@ export default function Features() {
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
             </div>
+            <div className="w-full lg:w-1/2">
+            <img
+              src={features}
+              alt="Container"
+              className="ml-6 w-[80%] h-auto object-contain"
+            />
+          </div>
 
             <div className="hidden lg:flex items-center gap-4"></div>
 
@@ -42,13 +49,7 @@ export default function Features() {
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <img
-              src={features}
-              alt="Container"
-              className="ml-6 w-[80%] h-auto object-contain"
-            />
-          </div>
+         
         </div>
       </section>
 

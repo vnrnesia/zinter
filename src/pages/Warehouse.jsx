@@ -15,13 +15,25 @@ export default function Warehouse() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex justify-center items-center">
-                
-               
-              </div>
+              <div className="flex justify-center items-center"></div>
             </div>
-
-           
+            <div className="w-full lg:w-1/2">
+            <img
+              src={warehouse}
+              alt="Container"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="pt-2 flex justify-center lg:justify-start">
+              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-6 pr-10 py-3 rounded-lg font-medium transition-colors shadow-md">
+                Связаться с менеджером
+                <img
+                  src={PhoneIcon}
+                  alt="Phone Icon"
+                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
+                />
+              </button>
+            </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Услуги <span className="text-[#FFC23E]">склада</span>
@@ -32,25 +44,10 @@ export default function Warehouse() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
-              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-6 pr-10 py-3 rounded-lg font-medium transition-colors shadow-md">
-                Связаться с менеджером
-                <img
-                  src={PhoneIcon}
-                  alt="Phone Icon"
-                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-                />
-              </button>
-            </div>
+           
           </div>
 
-          <div className="w-full lg:w-1/2">
-            <img
-              src={warehouse}
-              alt="Container"
-              className="w-full h-auto object-contain"
-            />
-          </div>
+    
         </div>
       </section>
 

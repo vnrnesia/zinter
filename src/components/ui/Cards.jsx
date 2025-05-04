@@ -19,17 +19,18 @@ const cardsData = [
     path: "/china-delivery"
   },
   {
+    img: europe,
+    title: "ДОСТАВКА ИЗ ЕВРОПА",
+    description: "Комплексные логистические решения для бизнеса: регулярные и срочные грузоперевозки из Европы с таможенным оформлением",
+    path: "/europe-delivery"
+  },
+  {
     img: currency,
     title: "ОПЛАТА ТОВАРА",
     description: "Подбираем товар, проверяем производителя и контролируем качество.",
     path: "/payment"
   },
-  {
-    img: europe,
-    title: "ДОСТАВКА ИЗ ЕВРОПА",
-    description: "Комплексные логистические решения для бизнеса: регулярные и срочные грузоперевозки из Европы с таможенным оформлением",
-    path: "/europe-delivery"
-  }
+ 
 ];
 
 export default function Cards() {
