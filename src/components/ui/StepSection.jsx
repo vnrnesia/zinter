@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Form from "@/components/ui/StepSection"
 
 export default function StepsSection() {
   const steps = [
@@ -97,6 +98,7 @@ export default function StepsSection() {
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

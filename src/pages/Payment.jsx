@@ -5,7 +5,7 @@ import Brands from "@/components/shared/Brands.jsx";
 import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
 import CtaCard from "@/components/shared/CtaCard.jsx";
 import HowWorks from "@/components/ui/HowWorks.jsx";
-
+import Form from "@/components/ui/Form.jsx";
 
 export default function Payment() {
   return (
@@ -14,9 +14,7 @@ export default function Payment() {
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="lg:w-1/2 space-y-4 md:space-y-6 text-white text-center lg:text-left">
             <div className="text-xl md:text-1xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex justify-center items-center">
-               
-              </div>
+              <div className="flex justify-center items-center"></div>
             </div>
             <div className="text-4xl md:text-5xl font-bold leading-tight mx-auto lg:mx-0">
               Факторинг и оплата
@@ -46,11 +44,16 @@ export default function Payment() {
       </section>
       <Brands />
       <HowWorks />
-      <div className="container mx-auto px-4 lg:px-8">
-      <CtaCard />
-      <WhoWeAre />
+      <div className="block lg:hidden">
+        <Form />
       </div>
-    
+      <div className="container mx-auto px-4 lg:px-8"></div>
+      <div>
+        <CtaCard />
+      </div>
+      <div>
+        <WhoWeAre />
+      </div>
     </>
   );
 }

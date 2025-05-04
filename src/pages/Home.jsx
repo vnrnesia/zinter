@@ -8,6 +8,8 @@ import Delivery from "@/components/ui/Delivery";
 import CtaContact from "@/components/shared/CtaContact";
 import ImportExport from "@/components/ui/ImportExport";
 import WhoWeAre from "@/components/shared/WhoWeAre";
+import Form from "@/components/ui/Form.jsx";
+
 
 export default function Home() {
   return (
@@ -25,6 +27,10 @@ export default function Home() {
       <div className="container">
         <CtaCardInside />
         <StepSection />
+        <div className="block lg:hidden">
+        <Form/>
+        </div>
+     
         <Delivery />
       </div>
 

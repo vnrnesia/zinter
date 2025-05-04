@@ -7,6 +7,8 @@ import warehouse from "@/assets/warehouse.png";
 import CtaContact from "@/components/shared/CtaContact.jsx";
 import WarehouseService from "@/components/ui/WarehouseService.jsx";
 import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
+import Form from "@/components/ui/Form.jsx";
+
 
 export default function Warehouse() {
   return (
@@ -75,6 +77,9 @@ export default function Warehouse() {
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseHowWorks />
+          <div className="block lg:hidden">
+        <Form/>
+        </div>
         </div>
       </section>
 

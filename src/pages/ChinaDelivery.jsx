@@ -11,6 +11,8 @@ import CtaContact from "@/components/shared/CtaContact.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
+import Form from "@/components/ui/Form.jsx";
+
 
 export default function ChinaDelivery() {
   return (
@@ -72,6 +74,9 @@ export default function ChinaDelivery() {
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
+          <div className="block lg:hidden">
+        <Form/>
+        </div>
         </div>
       </section>
 

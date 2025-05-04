@@ -7,12 +7,14 @@ import features from "@/assets/features.png";
 import CtaContact from "@/components/shared/CtaContact.jsx";
 import FeaturesService from "@/components/ui/FeaturesService.jsx";
 import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
+import Form from "@/components/ui/Form.jsx";
+
 
 export default function Features() {
   return (
     <>
       <section className="pt-10 pb-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
@@ -71,6 +73,9 @@ export default function Features() {
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <FeaturesHowWorks />
+          <div className="block lg:hidden">
+        <Form/>
+        </div>
         </div>
       </section>
 
