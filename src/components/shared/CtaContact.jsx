@@ -1,6 +1,7 @@
 import miniworldicon from "@/assets/miniworldicon.png";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import world1 from "@/assets/world1.png";
 
 export default function CtaContact() {
   const [open, setOpen] = useState(false);
@@ -93,14 +94,17 @@ export default function CtaContact() {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-20 text-center bg-white overflow-hidden"
+      className="max-h-[450px] relative pt-20 text-center bg-white overflow-hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]"
     >
+      <div className="relativeshadow-2xl overflow-hidden w-full max-w-[1250px] px-8 py-10 rounded-none min-h-[500px] sm:rounded-3xl sm:min-h-[400px] mx-auto">
+        <img
+          src={world1}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover object-[center_30%] opacity-50 pointer-events-none"
+        />
 
-      <div
-        className="bg-cover bg-center bg-no-repeat"
-      >
-        <div className="w-full h-full">
-          <div className="max-w-screen-xl mx-auto px-4 py-20 sm:py-28 relative z-10">
+        <div className="w-full h-full relative z-10">
+          <div className="max-w-screen-xl mx-auto px-4 py-20 sm:py-28">
             <motion.form
               onSubmit={handleSubmit}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -153,7 +157,12 @@ export default function CtaContact() {
 
                   {open && (
                     <div className="absolute left-0 mt-2 w-full bg-white shadow-md rounded-xl border border-gray-200 z-10 p-4 space-y-3">
-                      {["Доставка из Китая", "Доставка из Европы", "Экспресс-доставка", "Стандартная доставка"].map((option) => (
+                      {[
+                        "Доставка из Китая",
+                        "Доставка из Европы",
+                        "Экспресс-доставка",
+                        "Стандартная доставка",
+                      ].map((option) => (
                         <div key={option} className="flex items-center">
                           <input
                             type="checkbox"

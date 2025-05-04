@@ -12,7 +12,7 @@ export default function CtaCardInside() {
           viewport={{ once: true }}
           className="w-full lg:w-1/2 lg:pr-8 flex flex-col justify-center"
         >
-          <div className="max-w-lg w-full text-center md:text-left mx-auto">
+          <div className="hidden md:block max-w-lg w-full text-center md:text-left mx-auto">
             <span className="inline-block px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full mb-4">
               Глобальные поставки
             </span>

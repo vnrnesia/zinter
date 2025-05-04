@@ -98,6 +98,30 @@ export default function Form() {
         Получите <span className="text-[#FFC23E]">бесплатную</span> консультацию
       </h2>
 
+      <div>
+          <label htmlFor="service" className="block text-sm font-medium text-gray-500 mb-2">
+            Услуг
+          </label>
+          <div className="relative">
+            <select
+              id="service"
+              className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+              required
+            >
+              <option value="">Выберите услугу</option>
+              <option>Услуг 1</option>
+              <option>Услуг 2</option>
+              <option>Услуг 3</option>
+              <option>Услуг 4</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
       <form className="space-y-4" id="contactForm" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-1">
@@ -143,29 +167,7 @@ export default function Form() {
           </p>
         </div>
 
-        <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-500 mb-1">
-            Услуг
-          </label>
-          <div className="relative">
-            <select
-              id="service"
-              className="appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
-              required
-            >
-              <option value="">Выберите услугу</option>
-              <option>Услуг 1</option>
-              <option>Услуг 2</option>
-              <option>Услуг 3</option>
-              <option>Услуг 4</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
-        </div>
+       
 
         <div className="flex items-start gap-3 pt-2">
           <div className="flex items-start mt-0.5">

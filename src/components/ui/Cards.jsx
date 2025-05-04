@@ -52,14 +52,14 @@ export default function Cards() {
         {cardsData.map((card, index) => (
           <Link to={card.path} key={index} className="block h-full">
             <motion.div
-              className="bg-[#fbfbfb] rounded-xl shadow-sm p-6 md:p-8 transition-all hover:shadow-lg h-full"
+              className="bg-gray-100 rounded-xl shadow-sm p-6 md:p-8 transition-all hover:shadow-lg h-full"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="flex flex-col items-center text-center h-full space-y-4">
+              <div className="flex flex-col items-center text-center h-full space-y-4 bg">
                 <img src={card.img} alt={card.title} className="h-10 w-10 object-contain" />
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{card.title}</h3>
                 <p className="text-gray-600 mb-4 md:px-10">{card.description}</p>
