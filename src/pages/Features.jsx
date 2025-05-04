@@ -21,7 +21,7 @@ export default function Features() {
             <div className="hidden lg:flex items-center gap-4"></div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Tаможенное<span className="text-[#FFC23E]"> оформление</span>
+              Tаможенное <span className="text-[#FFC23E]">оформление</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
@@ -64,10 +64,8 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <CtaCard />
-        </div>
+      <section className="py-16 w-full">
+        <CtaCard />
       </section>
 
       <section className="py-16">

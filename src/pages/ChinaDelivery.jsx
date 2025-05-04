@@ -19,10 +19,7 @@ export default function ChinaDelivery() {
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
-              <div className="flex justify-center items-center">
-              
-                
-              </div>
+              <div className="flex justify-center items-center"></div>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -68,10 +65,8 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <CtaCard />
-        </div>
+      <section className="py-16 w-full">
+        <CtaCard />
       </section>
 
       <section className="py-16">

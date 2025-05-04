@@ -67,10 +67,8 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <CtaCard />
-        </div>
+      <section className="py-16 w-full">
+        <CtaCard />
       </section>
 
       <section className="py-16">
