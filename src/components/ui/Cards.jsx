@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import china from "@/assets/china.png";
-import currency from "@/assets/currency.png";
-import europe from "@/assets/europe.png";
-import world from "@/assets/world.png";
+import china from "@/assets/CardsImg/china.png";
+import currency from "@/assets/CardsImg/currency.png";
+import europe from "@/assets/CardsImg/europe.png";
+import world from "@/assets/CardsImg/world.png";
 
 const cardsData = [
   {
