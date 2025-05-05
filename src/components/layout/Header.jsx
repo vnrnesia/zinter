@@ -104,7 +104,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 setMobileMenuOpen((prev) => !prev);
                 setSubMenuOpen(false);
               }}
-              className="md:hidden p-2 text-gray-700 hover:text-blue-600 rounded-lg"
+              className="md:hidden p-2 text-blue-400 rounded-lg"
             >
               <svg
                 className="w-6 h-6"

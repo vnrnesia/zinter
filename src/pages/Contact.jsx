@@ -23,7 +23,7 @@ export default function Contact() {
             </p>
 
             <div className="py-10 flex justify-center lg:justify-start">
-              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-6 pr-10 py-3 rounded-lg font-medium transition-colors shadow-md overflow-visible">
+              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14  py-3 rounded-lg font-medium transition-colors shadow-md overflow-visible">
                 Связаться с менеджером
                 <img
                   src={PhoneIcon}
