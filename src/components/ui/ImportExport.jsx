@@ -74,17 +74,25 @@ export default function ImportExport() {
           viewport={{ once: true }}
           className="relative overflow-hidden"
         >
-          <ul className="flex sm:flex-nowrap  sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
+          <ul className="flex sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
-                className="flex items-center justify-center flex-shrink-0 snap-start w-36 sm:w-auto text-center"
+                className="flex items-center justify-center flex-shrink-0 snap-start w-24  sm:w-auto text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <img src={src} alt={`brand-${index}`} className="mx-auto" />
+                <img
+                  src={src}
+                  alt={`brand-${index}`}
+                  className={`mx-auto ${
+                    src === intel || src === siemens
+                      ? "w-14 sm:w-24"
+                      : "w-24 sm:w-26"
+                  }`}
+                />
               </motion.li>
             ))}
           </ul>
