@@ -88,7 +88,10 @@ export default function Form() {
   };
 
   return (
-    <div className="relative bg-white p-6 md:p-8 rounded-xl shadow-2xl mx-auto" style={{ maxWidth: "480px" }}>
+    <div
+      className="relative bg-white p-6 md:p-8 rounded-xl shadow-2xl mx-auto"
+      style={{ maxWidth: "480px" }}
+    >
       <img
         src={worldicon}
         alt=""
@@ -99,32 +102,48 @@ export default function Form() {
       </h2>
 
       <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-500 mb-2">
-            Услуг
-          </label>
-          <div className="relative">
-            <select
-              id="service"
-              className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
-              required
+        <label
+          htmlFor="service"
+          className="block text-sm font-medium text-gray-500 mb-2"
+        >
+          Услуг
+        </label>
+        <div className="relative">
+          <select
+            id="service"
+            className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+            required
+          >
+            <option value="">Выберите услугу</option>
+            <option>Услуг 1</option>
+            <option>Услуг 2</option>
+            <option>Услуг 3</option>
+            <option>Услуг 4</option>
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
             >
-              <option value="">Выберите услугу</option>
-              <option>Услуг 1</option>
-              <option>Услуг 2</option>
-              <option>Услуг 3</option>
-              <option>Услуг 4</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </div>
         </div>
+      </div>
 
       <form className="space-y-4" id="contactForm" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-500 mb-1"
+          >
             ФИО
           </label>
           <input
@@ -136,7 +155,10 @@ export default function Form() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-500 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-500 mb-1"
+          >
             Електронная Почта
           </label>
           <input
@@ -148,7 +170,10 @@ export default function Form() {
         </div>
 
         <div className="relative w-full overflow-hidden max-w-full">
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-500 mb-1">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-500 mb-1"
+          >
             Номер Телефона
           </label>
           <input
@@ -163,11 +188,9 @@ export default function Form() {
             required
           />
           <p id="phoneError" className="mt-1 text-sm text-red-600 hidden">
-          Неверный номер телефона
+            Неверный номер телефона
           </p>
         </div>
-
-       
 
         <div className="flex items-start gap-3 pt-2">
           <div className="flex items-start mt-0.5">
@@ -180,8 +203,12 @@ export default function Form() {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="consent" className="text-xs text-[#8C8C8C] leading-tight block">
-              Вы соглашаетесь на обработку файлов cookie и ваших персональных данных при использовании нашего сайта.
+            <label
+              htmlFor="consent"
+              className="text-xs text-[#8C8C8C] leading-tight block"
+            >
+              Вы соглашаетесь на обработку файлов cookie и ваших персональных
+              данных при использовании нашего сайта.
             </label>
           </div>
         </div>

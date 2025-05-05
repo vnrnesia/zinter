@@ -10,7 +10,6 @@ import ImportExport from "@/components/ui/ImportExport";
 import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
 
-
 export default function Home() {
   return (
     <div className="overflow-x-hidden">
@@ -27,10 +26,12 @@ export default function Home() {
       <div className="container">
         <CtaCardInside />
         <StepSection />
-        <div className="block lg:hidden">
-        <Form/>
-        </div>
-     
+      </div>
+      <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">
+        <Form className="w-full max-w-xs mx-auto py-10" />
+      </div>
+
+      <div>
         <Delivery />
       </div>
 

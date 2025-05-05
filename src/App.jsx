@@ -41,7 +41,7 @@ function App() {
         </Suspense>
 
         <Footer />
-        <ToolbarMobile setMobileMenuOpen={setMobileMenuOpen} /> {/* 🟡 Eklenen prop */}
+        <ToolbarMobile setMobileMenuOpen={setMobileMenuOpen} />
       </PageTransition>
     </Router>
   );
