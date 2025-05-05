@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import cater from "@/assets/ImportExportImg/cater.png";
 import electric from "@/assets/ImportExportImg/electric.png";
@@ -6,7 +7,21 @@ import mori from "@/assets/ImportExportImg/mori.png";
 import siemens from "@/assets/ImportExportImg/siemens.png";
 
 export default function ImportExport() {
-  const imageList = [cater, electric, intel, mori, siemens];
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const imageList = isMobile
+    ? [electric, intel, siemens]
+    : [cater, electric, intel, mori, siemens];
 
   const allCategories = [
     "Стройматериалы",
@@ -59,7 +74,7 @@ export default function ImportExport() {
           viewport={{ once: true }}
           className="relative overflow-hidden"
         >
-          <ul className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 sm:overflow-visible sm:justify-between sm:items-center">
+          <ul className="flex sm:flex-nowrap  sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
