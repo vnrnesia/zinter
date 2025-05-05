@@ -78,7 +78,7 @@ export default function ImportExport() {
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
-                className="flex items-center justify-center flex-shrink-0 snap-start w-24  sm:w-auto text-center"
+                className="flex items-center justify-center flex-shrink-0 snap-start w-28  sm:w-auto text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -87,10 +87,10 @@ export default function ImportExport() {
                 <img
                   src={src}
                   alt={`brand-${index}`}
-                  className={`mx-auto ${
+                  className={`mx-auto  ${
                     src === intel || src === siemens
-                      ? "w-14 sm:w-24"
-                      : "w-24 sm:w-26"
+                      ? "w-14 sm:w-24 md:w-28 lg:w-32"
+                      : "w-24 sm:w-28 md:w-32 lg:w-36"
                   }`}
                 />
               </motion.li>
