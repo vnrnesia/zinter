@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 
 import Header from "@/components/layout/Header.jsx";
 import Footer from "@/components/layout/Footer.jsx";
@@ -17,11 +17,16 @@ const Contact = lazy(() => import("@/pages/Contact.jsx"));
 const Features = lazy(() => import("@/pages/Features.jsx"));
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
+
   return (
     <Router>
       <PageTransition>
         <ScrollToTop />
-        <Header />
+        <Header
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+        />
 
         <Suspense fallback={<PageLoader />}>
           <Routes>
@@ -36,7 +41,7 @@ function App() {
         </Suspense>
 
         <Footer />
-        <ToolbarMobile />
+        <ToolbarMobile setMobileMenuOpen={setMobileMenuOpen} /> {/* 🟡 Eklenen prop */}
       </PageTransition>
     </Router>
   );

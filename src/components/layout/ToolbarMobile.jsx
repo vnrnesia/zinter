@@ -1,4 +1,12 @@
-import { Home, Package, PhoneCall, Menu, X, FileText } from "lucide-react";
+import {
+  Home,
+  Package,
+  PhoneCall,
+  Menu,
+  X,
+  FileText,
+  Grid,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,7 +19,7 @@ const icons = {
   phone: "https://cdn-icons-png.flaticon.com/512/597/597177.png",
 };
 
-export default function ToolbarMobile() {
+export default function ToolbarMobile({ setMobileMenuOpen }) {
   const [showMessageMenu, setShowMessageMenu] = useState(false);
 
   const toggleMessageMenu = () => {
@@ -47,6 +55,7 @@ export default function ToolbarMobile() {
             <span>Звонок</span>
           </a>
         </li>
+
         <li>
           <button
             onClick={toggleMessageMenu}
@@ -56,14 +65,15 @@ export default function ToolbarMobile() {
             <span>Сообщение</span>
           </button>
         </li>
+
         <li>
-          <Link
-            to="/warehouse"
+          <button
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
             className="flex flex-col items-center text-gray-600"
           >
-            <Package size={24} />
+            <Grid size={24} />
             <span>Меню</span>
-          </Link>
+          </button>
         </li>
 
         <AnimatePresence>

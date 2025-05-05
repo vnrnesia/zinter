@@ -52,7 +52,7 @@ export default function ImportExport() {
 
   return (
     <section>
-      <div className="container h-full px-4 pt-10 lg:px-8 py-20 space-y-10">
+      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -74,7 +74,19 @@ export default function ImportExport() {
           viewport={{ once: true }}
           className="relative overflow-hidden"
         >
-          <ul className="flex sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
+       
+        </motion.div>
+      </div>
+      <div className="w-full py-2">
+        <div className="container px-4 lg:px-8 mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
+            {allCategories.map((label, index) => (
+              <CategoryBox key={index} label={label} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <ul className="flex pt-10 sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
@@ -89,24 +101,13 @@ export default function ImportExport() {
                   alt={`brand-${index}`}
                   className={`mx-auto  ${
                     src === intel || src === siemens
-                      ? "w-14 sm:w-24 md:w-28 lg:w-32"
-                      : "w-24 sm:w-28 md:w-32 lg:w-36"
+                      ? "w-18 sm:w-24 md:w-28 lg:w-32"
+                      : "w-230 sm:w-28 md:w-32 lg:w-36"
                   }`}
                 />
               </motion.li>
             ))}
           </ul>
-        </motion.div>
-      </div>
-      <div className="w-full py-2">
-        <div className="container px-4 lg:px-8 mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
-            {allCategories.map((label, index) => (
-              <CategoryBox key={index} label={label} index={index} />
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
