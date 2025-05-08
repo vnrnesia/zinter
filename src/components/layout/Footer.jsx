@@ -49,7 +49,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="footer bg-white">
+    <footer className="footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           <div className="footer-section flex flex-col items-center md:items-start space-y-4">

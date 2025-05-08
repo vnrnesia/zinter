@@ -12,7 +12,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className="h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
+      <header className=" h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link to="/" aria-label="Homepage">
             <img

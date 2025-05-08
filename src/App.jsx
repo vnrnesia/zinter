@@ -7,6 +7,7 @@ import ToolbarMobile from "@/components/layout/ToolbarMobile.jsx";
 import ScrollToTop from "@/components/ScrollToTop.jsx";
 import PageTransition from "@/components/PageTransition.jsx";
 import PageLoader from "@/components/PageLoader.jsx";
+import ContactDesktop from "@/components/layout/ContactDesktop.jsx";
 
 import Home from "@/pages/Home.jsx";
 const ChinaDelivery = lazy(() => import("@/pages/ChinaDelivery.jsx"));
@@ -41,6 +42,7 @@ function App() {
         </Suspense>
 
         <Footer />
+        <ContactDesktop/>
         <ToolbarMobile setMobileMenuOpen={setMobileMenuOpen} />
       </PageTransition>
     </Router>

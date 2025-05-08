@@ -77,16 +77,15 @@ export default function ImportExport() {
        
         </motion.div>
       </div>
-      <div className="w-full py-2">
-        <div className="container px-4 lg:px-8 mx-auto">
+      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10">
+       
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
             {allCategories.map((label, index) => (
               <CategoryBox key={index} label={label} index={index} />
             ))}
           </div>
-        </div>
-      </div>
-      <ul className="flex pt-10 sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
+       
+        <ul className="flex pt-10 sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
@@ -108,6 +107,8 @@ export default function ImportExport() {
               </motion.li>
             ))}
           </ul>
+      </div>
+    
     </section>
   );
 }
