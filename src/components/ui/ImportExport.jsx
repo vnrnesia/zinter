@@ -85,7 +85,7 @@ export default function ImportExport() {
             ))}
           </div>
        
-        <ul className="flex pt-10 sm:flex-nowrap gap-2 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
+        <ul className="flex pt-10 sm:flex-nowrap gap-8 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
