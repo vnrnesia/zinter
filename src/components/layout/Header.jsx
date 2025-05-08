@@ -223,10 +223,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 </Link>
               </li>
             </ul>
-            <div className="container py-4  flex pl-10">
+            <div className="container py-4 justify-center">
               <a
                 href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-32 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg whitespace-nowrap text-center"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg whitespace-nowrap text-center"
               >
                 +7 (917) 889-94-57
               </a>

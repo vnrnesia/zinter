@@ -19,19 +19,29 @@ export default function ContactButton() {
   };
 
   return (
-    <div>
+    <div className="fixed bottom-5 right-5 z-50 flex items-end gap-2">
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3 }}
+        className="hidden md:flex items-center justify-center bg-white rounded-full shadow-lg px-4 py-2 mb-3"
+        style={{ transform: "translateY(-8px)" }}
+      >
+        <div>
+          <span className="text-gray-800 font-medium">Обратитесь к нам👋</span>
+        </div>
+      </motion.div>
+
+
       <motion.button
         onClick={toggleIcons}
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="hidden lg:flex items-center justify-center fixed bottom-5 right-5 z-50 w-16 h-16 bg-gradient-to-r from-[#f5d33bfd] to-[#ffbb00] rounded-full cursor-pointer shadow-lg"
+        className="hidden md:flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#f5d33bfd] to-[#ffbb00] rounded-full cursor-pointer shadow-lg"
       >
         <MessageCircle className="text-white w-7 h-7" />
-       
       </motion.button>
-      <span className="text-gray-800 font-medium">Chat with us</span>
-      <span className="text-xl">👋</span>
 
       <AnimatePresence>
         {showIcons && (
@@ -49,7 +59,7 @@ export default function ContactButton() {
               y: 10,
               transition: { duration: 0.3, type: "spring", stiffness: 250 },
             }}
-            className="fixed bottom-[90px] right-7 z-50  flex-col items-center gap-3 hidden sm:flex"
+            className="absolute bottom-[70px] right-2 flex flex-col items-center gap-3"
           >
             <a
               href="https://wa.me/79178899457"
