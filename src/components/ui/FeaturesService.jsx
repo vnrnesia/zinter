@@ -6,6 +6,7 @@ import icon3 from "@/assets/FeaturesServiceImg/icon3.png";
 import icon4 from "@/assets/FeaturesServiceImg/icon4.png";
 import icon5 from "@/assets/FeaturesServiceImg/icon5.png";
 import icon6 from "@/assets/FeaturesServiceImg/icon6.png";
+import { Link } from 'react-router-dom'; 
 
 const topServices = [
   {
@@ -49,7 +50,9 @@ export default function Services() {
           </div>
           <h2 className="text-4xl font-bold mb-4">Что входит в услугу?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Мы предлагаем комплексный логистический сервис, включая поиск и проверку поставщиков, выкуп и доставку товаров, а также полное таможенное оформление.
+            Мы предлагаем комплексный логистический сервис, включая поиск и
+            проверку поставщиков, выкуп и доставку товаров, а также полное
+            таможенное оформление.
           </p>
         </div>
 
@@ -73,7 +76,9 @@ export default function Services() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              <p className="text-blue-600 font-inter text-sm">Узнать больше</p>
+              <Link to="/contact" className="text-blue-600 font-inter text-sm">
+                Узнать больше
+              </Link>
             </motion.div>
           ))}
         </div>

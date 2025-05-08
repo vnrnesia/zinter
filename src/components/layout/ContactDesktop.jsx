@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import chaticon from "@/assets/chaticon.png";
-
+import { MessageCircle } from "lucide-react";
 
 const icons = {
   whatsapp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
@@ -20,15 +20,18 @@ export default function ContactButton() {
 
   return (
     <div>
-      <motion.img
-        src={chaticon}
-        alt="Button"
-        className="fixed bottom-5 right-5 z-50 w-16 h-16 rounded-full cursor-pointer"
+      <motion.button
+        onClick={toggleIcons}
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={toggleIcons} 
-      />
+        className="hidden lg:flex items-center justify-center fixed bottom-5 right-5 z-50 w-16 h-16 bg-gradient-to-r from-[#f5d33bfd] to-[#ffbb00] rounded-full cursor-pointer shadow-lg"
+      >
+        <MessageCircle className="text-white w-7 h-7" />
+       
+      </motion.button>
+      <span className="text-gray-800 font-medium">Chat with us</span>
+      <span className="text-xl">👋</span>
 
       <AnimatePresence>
         {showIcons && (

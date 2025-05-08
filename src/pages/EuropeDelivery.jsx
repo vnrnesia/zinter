@@ -17,7 +17,7 @@ import Form from "@/components/ui/Form.jsx";
 export default function ChinaDelivery() {
   return (
     <>
-      <section className="py-10 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+      <section className="py-20 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
@@ -51,7 +51,7 @@ export default function ChinaDelivery() {
             <img
               src={containereu}
               alt="Container"
-              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-full h-auto object-contain mx-auto"
+              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[600px] h-auto object-contain mx-auto"
             />
           </div>
         </div>

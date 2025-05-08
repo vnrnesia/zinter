@@ -104,14 +104,21 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 setMobileMenuOpen((prev) => !prev);
                 setSubMenuOpen(false);
               }}
-              className="md:hidden p-2 text-blue-400 rounded-lg"
+              className="md:hidden p-2 rounded-lg"
             >
               <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
+                className="w-16 h-12"
                 viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#gradient)"
+                xmlns="http://www.w3.org/2000/svg"
               >
+                <defs>
+                  <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
+                    <stop offset="0%" stopColor="#006FDC" />
+                    <stop offset="100%" stopColor="#11B4EC" />
+                  </linearGradient>
+                </defs>
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -132,14 +139,14 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
+            className=" md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
           >
-            <ul className="space-y-4 text-center">
+            <ul className="space-y-4 space-x-2 text-start ">
               <li>
                 <Link
                   to="/payment"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-white border-b"
+                  className="block py-4 px-2 text-gray-800 border-b "
                 >
                   Оплата
                 </Link>
@@ -147,11 +154,11 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <button
                   onClick={() => setSubMenuOpen((prev) => !prev)}
-                  className="flex justify-center items-center w-full py-4 text-white  border-b"
+                  className="flex justify-start items-start w-full py-4 text-gray-800  border-b"
                 >
                   Доставка
                   <svg
-                    className={`w-4 h-4 ml-2 transform transition-transform text-white ${
+                    className={`w-4 h-4 ml-2 transform transition-transform text-gray-800 ${
                       subMenuOpen ? "rotate-180" : ""
                     }`}
                     viewBox="0 0 24 24"
@@ -171,7 +178,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                       <Link
                         to="/china-delivery"
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-white"
+                        className="block py-2 text-gray-800 text-start"
                       >
                         Доставка из Китая
                       </Link>
@@ -180,7 +187,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                       <Link
                         to="/europe-delivery"
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-white"
+                        className="block py-2 text-gray-800 text-start"
                       >
                         Доставка из Европы
                       </Link>
@@ -192,7 +199,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/features"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-white border-b"
+                  className="block py-4 text-gray-800 border-b"
                 >
                   Оформление
                 </Link>
@@ -201,7 +208,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/warehouse"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-white border-b"
+                  className="block py-4 text-gray-800 border-b"
                 >
                   Склад
                 </Link>
@@ -210,28 +217,20 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-white border-b"
+                  className="block py-4 text-gray-800 border-b"
                 >
                   Контакт
                 </Link>
               </li>
-              <li>
-                <a
-                  href="tel:+79178899457"
-                  className="block py-4 text-white border-b"
-                >
-                  +7 (917) 889-94-57
-                </a>
-              </li>
-              <li>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="mt-4 w-full text-white font-semibold py-2 border border-blue-200 rounded-lg"
-                >
-                  Закрыть меню
-                </button>
-              </li>
             </ul>
+            <div className="container py-4  flex pl-10">
+              <a
+                href="tel:+79178899457"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-32 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg whitespace-nowrap text-center"
+              >
+                +7 (917) 889-94-57
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

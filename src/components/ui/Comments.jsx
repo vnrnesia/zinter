@@ -61,7 +61,7 @@ export default function Comments() {
             {comments.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl shadow-lg min-h-[250px]"
+                className="bg-gray-100 p-6 rounded-2xl shadow-lg min-h-[250px]"
               >
                 <p className="text-lg font-semibold text-gray-900">
                   {item.name}

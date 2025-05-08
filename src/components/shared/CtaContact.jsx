@@ -25,7 +25,6 @@ export default function CtaContact() {
     AZ: { code: "+994", placeholder: "51 123 45 67" },
   };
 
-  // Load and initialize intl-tel-input
   useEffect(() => {
     if (typeof window !== "undefined" && phoneInputRef.current) {
       const loadIntlTelInput = async () => {
