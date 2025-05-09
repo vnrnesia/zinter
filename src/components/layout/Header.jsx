@@ -25,6 +25,14 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
+               <li>
+                <Link
+                  to="/search-provider"
+                  className="text-gray-700 hover:text-[#006FDC] font-medium"
+                >
+                  Поиск 
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/payment"
@@ -142,11 +150,20 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             className=" md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
           >
             <ul className="space-y-4 space-x-2 text-start ">
+               <li>
+                <Link
+                  to="/search-provider"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-4 px-2 text-gray-800 border-b "
+                >
+                  Поиск
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/payment"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 px-2 text-gray-800 border-b "
+                  className="block py-4  text-gray-800 border-b "
                 >
                   Оплата
                 </Link>

@@ -85,7 +85,7 @@ export default function ImportExport() {
             ))}
           </div>
        
-        <ul className="flex pt-10 sm:flex-nowrap gap-8 sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
+        <ul className="flex pt-10 sm:flex-nowrap  sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center sm:justify-between">
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
@@ -100,8 +100,8 @@ export default function ImportExport() {
                   alt={`brand-${index}`}
                   className={`mx-auto  ${
                     src === intel || src === siemens
-                      ? "w-18 sm:w-24 md:w-28 lg:w-32"
-                      : "w-230 sm:w-28 md:w-32 lg:w-36"
+                      ? "w-13 sm:w-24 md:w-28 lg:w-32"
+                      : "w-28 sm:w-28 md:w-32 lg:w-36"
                   }`}
                 />
               </motion.li>

@@ -31,7 +31,7 @@ export default function Home() {
         <Form className="w-full max-w-xs mx-auto py-10" />
       </div>
 
-      <div>
+      <div className="px-10">
         <Delivery />
       </div>
 

@@ -25,7 +25,7 @@ export default function CtaCardInside() {
               доставка – все в одном решении.
             </p>
             <button
-              className="w-full max-w-[500px] mt-8 px-8 py-3 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+              className="mt-10 py-3 px-6 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
               style={{
                 background: "linear-gradient(135deg, #006FDC 0%, #11B4EC 100%)",
               }}

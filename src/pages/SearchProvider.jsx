@@ -1,19 +1,27 @@
 import Brands from "@/components/shared/Brands.jsx";
 import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
 import CtaCard from "@/components/shared/CtaCard.jsx";
+import HowWorks from "@/components/ui/HowWorks.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
-import features from "@/assets/features.png";
+import containereu from "@/assets/containereu.png";
+import Services from "@/components/ui/Services.jsx";
+import Delivery from "@/components/ui/Delivery.jsx";
 import CtaContact from "@/components/shared/CtaContact.jsx";
-import FeaturesService from "@/components/ui/FeaturesService.jsx";
-import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
+import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
+import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
+import ImportExport from "@/components/ui/ImportExport.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
+import bigzworld from "@/assets/bigzworld.png";
+import SearchCards from "@/components/ui/SearchCards.jsx";
+import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
 
-export default function Features() {
+
+export default function ChinaDelivery() {
   return (
     <>
-      <section className="pt-10 pb-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+      <section className="py-20 lg:py-44 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
@@ -23,13 +31,13 @@ export default function Features() {
             <div className="hidden lg:flex items-center gap-4"></div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Tаможенное <span className="text-[#FFC23E]">оформление</span>
+              ПОИСК <span className="text-[#FFC23E]">ПОСТАВЩИКА</span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
-              Полное сопровождение таможенного оформления: декларирование,
-              сертификация и юридическая поддержка для беспрепятственного
-              импорта и экспорта.
+              Выбираем оптимального производителя под ваш ТЗ и сопровождаем
+              контрактное производство — от заказа на заводе до доставки на ваш
+              склад в РФ.
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
@@ -48,9 +56,9 @@ export default function Features() {
 
           <div className="w-full lg:w-1/2">
             <img
-              src={features}
+              src={bigzworld}
               alt="Container"
-              className="ml-6 w-[80%] h-auto object-contain"
+              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[500px] h-auto object-contain mx-auto"
             />
           </div>
         </div>
@@ -62,9 +70,9 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="py-12 bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
-          <FeaturesService />
+          <SearchCards />
         </div>
       </section>
 
@@ -73,8 +81,8 @@ export default function Features() {
       </section>
 
       <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <FeaturesHowWorks />
+        <div className="container mx-auto px-4 lg:px-8">
+          <SearchHowWorks />
           <div className="block lg:hidden">
             <Form />
           </div>
@@ -82,13 +90,13 @@ export default function Features() {
       </section>
 
       <section className="py-16">
-        <div className="w-full max-w-full mx-auto">
+        <div className="w-full max-w-full  mx-auto">
           <CtaContact />
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="w-full max-w-full px-4 mx-auto space-y-12">
+      <section className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-full px-4 mx-auto">
           <WhoWeAre />
         </div>
       </section>

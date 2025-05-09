@@ -12,12 +12,12 @@ import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
 import Form from "@/components/ui/Form.jsx";
-
+import { Link } from "react-router-dom";
 
 export default function ChinaDelivery() {
   return (
     <>
-      <section className="py-20 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+      <section className="py-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
@@ -36,14 +36,16 @@ export default function ChinaDelivery() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14  py-3 rounded-lg font-medium transition-colors shadow-md">
-                Связаться с менеджером
-                <img
-                  src={PhoneIcon}
-                  alt="Phone Icon"
-                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-                />
-              </button>
+              <Link to="/contact">
+                <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-3 rounded-lg font-medium transition-colors shadow-md">
+                  Связаться с менеджером
+                  <img
+                    src={PhoneIcon}
+                    alt="Phone Icon"
+                    className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
+                  />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -51,7 +53,7 @@ export default function ChinaDelivery() {
             <img
               src={containereu}
               alt="Container"
-              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[600px] h-auto object-contain mx-auto"
+              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[500px] h-auto object-contain mx-auto"
             />
           </div>
         </div>
@@ -77,8 +79,8 @@ export default function ChinaDelivery() {
         <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
           <div className="block lg:hidden">
-        <Form/>
-        </div>
+            <Form />
+          </div>
         </div>
       </section>
 
@@ -95,7 +97,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
+        <div className="w-full max-w-full  mx-auto">
           <CtaContact />
         </div>
       </section>

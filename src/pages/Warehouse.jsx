@@ -8,6 +8,7 @@ import CtaContact from "@/components/shared/CtaContact.jsx";
 import WarehouseService from "@/components/ui/WarehouseService.jsx";
 import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
+import { Link } from "react-router-dom";
 
 export default function Warehouse() {
   return (
@@ -29,14 +30,16 @@ export default function Warehouse() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14  py-3 rounded-lg font-medium transition-colors shadow-md">
-                Связаться с менеджером
-                <img
-                  src={PhoneIcon}
-                  alt="Phone Icon"
-                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-                />
-              </button>
+              <Link to="/contact">
+                <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-3 rounded-lg font-medium transition-colors shadow-md">
+                  Связаться с менеджером
+                  <img
+                    src={PhoneIcon}
+                    alt="Phone Icon"
+                    className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
+                  />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -75,7 +78,7 @@ export default function Warehouse() {
       </section>
 
       <section className="py-16">
-        <div className="w-full max-w-full px-4 mx-auto">
+        <div className="w-full max-w-full mx-auto">
           <CtaContact />
         </div>
       </section>

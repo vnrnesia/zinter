@@ -16,6 +16,7 @@ const Payment = lazy(() => import("@/pages/Payment.jsx"));
 const Warehouse = lazy(() => import("@/pages/Warehouse.jsx"));
 const Contact = lazy(() => import("@/pages/Contact.jsx"));
 const Features = lazy(() => import("@/pages/Features.jsx"));
+const Search = lazy(() => import("@/pages/SearchProvider.jsx"));
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
@@ -38,6 +39,7 @@ function App() {
             <Route path="/warehouse" element={<Warehouse />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/features" element={<Features />} />
+            <Route path="/search-provider" element={<Search />} />
           </Routes>
         </Suspense>
 

@@ -57,7 +57,7 @@ export default function Cards() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
+              
             >
               <div className="flex flex-col items-center text-center h-full space-y-4 bg">
                 <img src={card.img} alt={card.title} className="h-10 w-10 object-contain" />
