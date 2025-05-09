@@ -119,14 +119,14 @@ export default function CtaContact() {
   return (
     <>
       <div className="flex justify-center items-center mt-20 mb-3 ">
-        <h2 className="text-4xl sm:text-5xl font-semibold text-[#343434] ">
+        <h2 className="sm:block hidden text-4xl sm:text-5xl font-semibold text-[#343434] ">
           Свяжитесь с нами!
         </h2>
       </div>
 
       <section
         ref={sectionRef}
-        className="relative pt-12 text-center bg-white overflow-hidden"
+        className="relative py-32 h-[580px] text-center bg-white overflow-hidden"
         style={{
           backgroundImage: `url(${background2})`,
           backgroundSize: "cover",
@@ -135,13 +135,13 @@ export default function CtaContact() {
       >
         <div className="bg-cover bg-center bg-no-repeat">
           <div className="w-full h-full">
-            <div className="max-w-screen-xl mx-auto px-4 py-20 sm:py-28 relative z-10">
+            <div className="max-w-screen-xl mx-auto px-4 py-20 relative z-10">
               <motion.form
                 onSubmit={handleSubmit}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="w-full bg-white bg-opacity-95 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8 sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8 border-[#FFC23E]"
+                className="w-full bg-white  rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8  sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8 border-[#FFC23E]"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}

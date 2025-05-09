@@ -17,7 +17,6 @@ import bigzworld from "@/assets/bigzworld.png";
 import SearchCards from "@/components/ui/SearchCards.jsx";
 import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
 
-
 export default function ChinaDelivery() {
   return (
     <>
@@ -76,20 +75,17 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16 w-full">
+      <section className="pt-16 w-full">
         <CtaCard />
       </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <SearchHowWorks />
-          <div className="block lg:hidden">
-            <Form />
-          </div>
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pb-16">
         <div className="w-full max-w-full  mx-auto">
           <CtaContact />
         </div>

@@ -25,12 +25,12 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
-               <li>
+              <li>
                 <Link
                   to="/search-provider"
                   className="text-gray-700 hover:text-[#006FDC] font-medium"
                 >
-                  Поиск 
+                  Поиск
                 </Link>
               </li>
               <li>
@@ -150,13 +150,13 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             className=" md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
           >
             <ul className="space-y-4 space-x-2 text-start ">
-               <li>
+              <li>
                 <Link
                   to="/search-provider"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-4 px-2 text-gray-800 border-b "
                 >
-                  Поиск
+                  Поиск Поставщика
                 </Link>
               </li>
               <li>
@@ -169,48 +169,24 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={() => setSubMenuOpen((prev) => !prev)}
-                  className="flex justify-start items-start w-full py-4 text-gray-800  border-b"
+                <ul className="text-center">
+                  <li>
+                    <Link
+                      to="/china-delivery"
+                      className="block py-4 text-gray-800 text-start border-b"
+                    >
+                      Доставка из Китая
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link
+                  to="/europe-delivery"
+                  className="block py-4 text-gray-800 text-start border-b"
                 >
-                  Доставка
-                  <svg
-                    className={`w-4 h-4 ml-2 transform transition-transform text-gray-800 ${
-                      subMenuOpen ? "rotate-180" : ""
-                    }`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {subMenuOpen && (
-                  <ul className="text-center">
-                    <li>
-                      <Link
-                        to="/china-delivery"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-gray-800 text-start"
-                      >
-                        Доставка из Китая
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/europe-delivery"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-gray-800 text-start"
-                      >
-                        Доставка из Европы
-                      </Link>
-                    </li>
-                  </ul>
-                )}
+                  Доставка из Европы
+                </Link>
               </li>
               <li>
                 <Link
