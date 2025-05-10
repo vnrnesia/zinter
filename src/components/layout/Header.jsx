@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ZinterLogo from "@/assets/ZinterLogo.png";
+import gridicon2 from "@/assets/ServiceGridImg/gridicon2.png";
+import gridicon3 from "@/assets/ServiceGridImg/gridicon3.png";
 
 export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -12,7 +14,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className=" h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
+      <header className="h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link to="/" aria-label="Homepage">
             <img
@@ -114,26 +116,51 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               }}
               className="md:hidden p-2 rounded-lg"
             >
-              <svg
-                className="w-16 h-12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="url(#gradient)"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
-                    <stop offset="0%" stopColor="#006FDC" />
-                    <stop offset="100%" stopColor="#11B4EC" />
-                  </linearGradient>
-                </defs>
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {mobileMenuOpen ? (
+                
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-16 w-16 pr-3 text-[#006FDC]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+            
+                <svg
+                  className="w-16 h-12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#gradient)"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <linearGradient
+                      id="gradient"
+                      x1="0"
+                      y1="0"
+                      x2="100%"
+                      y2="0"
+                    >
+                      <stop offset="0%" stopColor="#006FDC" />
+                      <stop offset="100%" stopColor="#11B4EC" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -147,14 +174,14 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className=" md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
+            className="md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
           >
-            <ul className="space-y-4 space-x-2 text-start ">
+            <ul className="space-y-4 space-x-2 text-start">
               <li>
                 <Link
                   to="/search-provider"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 px-2 text-gray-800 border-b "
+                  className="block py-4 px-2 text-gray-800 border-b"
                 >
                   Поиск Поставщика
                 </Link>
@@ -163,9 +190,9 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/payment"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4  text-gray-800 border-b "
+                  className="block py-4 text-gray-800 border-b"
                 >
-                  Оплата
+                  Оплата товара
                 </Link>
               </li>
               <li>
@@ -173,9 +200,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   <li>
                     <Link
                       to="/china-delivery"
-                      className="block py-4 text-gray-800 text-start border-b"
+                      className="flex py-4 text-gray-800 text-start border-b"
                     >
                       Доставка из Китая
+                      <img className="w-10 pl-2" src={gridicon2} alt="" />
                     </Link>
                   </li>
                 </ul>
@@ -183,9 +211,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <Link
                   to="/europe-delivery"
-                  className="block py-4 text-gray-800 text-start border-b"
+                  className="flex py-4 text-gray-800 text-start border-b"
                 >
                   Доставка из Европы
+                  <img className="w-10 pl-2" src={gridicon3} alt="" />
                 </Link>
               </li>
               <li>
@@ -194,7 +223,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-4 text-gray-800 border-b"
                 >
-                  Оформление
+                  Тамоэнное Оформление
                 </Link>
               </li>
               <li>
@@ -203,7 +232,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-4 text-gray-800 border-b"
                 >
-                  Склад
+                  Усилуги Склад
                 </Link>
               </li>
               <li>
@@ -212,7 +241,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-4 text-gray-800 border-b"
                 >
-                  Контакт
+                  о Компании
                 </Link>
               </li>
             </ul>
