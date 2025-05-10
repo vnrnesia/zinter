@@ -237,7 +237,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to="/about"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-4 text-gray-800 border-b"
                 >

@@ -118,7 +118,7 @@ export default function CtaContact() {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-20 mb-3 ">
+      <div className="flex justify-center items-center mt-20 mb-10 ">
         <h2 className="sm:block hidden text-4xl sm:text-5xl font-semibold text-[#343434] ">
           Свяжитесь с нами!
         </h2>
@@ -126,16 +126,16 @@ export default function CtaContact() {
 
       <section
         ref={sectionRef}
-        className="relative py-32 h-[580px] text-center bg-white overflow-hidden"
+        className=" text-center bg-white overflow-visible"
         style={{
           backgroundImage: `url(${background2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-cover bg-center bg-no-repeat">
+        <div className="bg-cover">
           <div className="w-full h-full">
-            <div className="max-w-screen-xl mx-auto px-4 py-20 relative z-10">
+            <div className="max-w-screen-xl mx-auto px-4 py-32 relative z-10">
               <motion.form
                 onSubmit={handleSubmit}
                 initial={{ opacity: 0, scale: 0.95 }}
