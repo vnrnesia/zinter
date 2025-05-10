@@ -4,7 +4,7 @@ import international from "@/assets/international.png";
 export default function CtaCardInside() {
   return (
     <section className="py-12 md:py-20">
-      <div className="lg:ml-10 container flex flex-col lg:flex-row items-center gap-6 lg:gap-96">
+      <div className="lg:ml-10 container flex flex-col lg:flex-row items-center gap-6 lg:gap-56">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}

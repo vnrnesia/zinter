@@ -1,5 +1,6 @@
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import Form from "@/components/ui/Form";
+import CallButton from "@/components/shared/CallButton.jsx"
 
 export default function Main() {
   return (
@@ -73,14 +74,7 @@ export default function Main() {
             </li>
           </ul>
           <div className="pt-2 flex justify-center lg:justify-start">
-            <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-2 rounded-lg font-medium transition-colors shadow-md overflow-visible">
-              Связаться с менеджером
-              <img
-                src={PhoneIcon}
-                alt="Phone Icon"
-                className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-              />
-            </button>
+           <CallButton />
           </div>
         </div>
         <div className="w-[90%] sm:w-[80%] lg:w-auto lg:ml-auto lg:pr-16">

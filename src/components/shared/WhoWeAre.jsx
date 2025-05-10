@@ -44,73 +44,14 @@ export default function WhoWeAre() {
 
   return (
     <motion.section
-      className="py-[120px]"
+      className="py-[100px]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-20">
-          <motion.div
-            className="lg:w-1/2 flex flex-col justify-center text-center md:text-left"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
-              Кто Мы?
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Это международный промышленный ВЭД консалтинг. Команда
-              специалистов с хорошо организованной системой международных
-              отношений и налаженными механизмами поставок в РФ и страны СНГ.
-            </p>
-            <motion.div
-              className="relative w-full max-w-xs mx-auto md:mx-0"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <a
-                href="https://t.me/kanaladiniz"
-                target="_blank"
-                className="inline-flex items-center justify-center md:justify-start gap-2 px-6 py-3 
-                  bg-gradient-to-r from-[#006FDC] to-[#11B4EC] 
-                  text-white rounded-lg hover:shadow-md transition-all 
-                  max-w-max mx-auto md:mx-0 group"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 group-hover:scale-110 transition-transform"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.51.26l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"></path>
-                </svg>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  Telegram Канал
-                </span>
-              </a>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="lg:w-1/2"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <img
-              src={bigzworld}
-              alt="Кто мы"
-              className="w-full h-auto rounded-lg object-cover md:block"
-            />
-          </motion.div>
-        </div>
+        
 
         <motion.div
           ref={statsRef}

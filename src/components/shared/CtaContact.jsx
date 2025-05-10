@@ -240,7 +240,7 @@ export default function CtaContact() {
                       value={countryCode}
                       onChange={(e) => {
                         setCountryCode(e.target.value);
-                        setPhone("");
+                        setPhone(""); 
                       }}
                       className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent text-sm sm:text-base text-gray-500 pr-2 focus:outline-none"
                     >
@@ -252,7 +252,9 @@ export default function CtaContact() {
                     </select>
 
                     <div className="absolute left-16 top-1/2 transform -translate-y-1/2 text-sm sm:text-base text-gray-500">
-                      {countryCodes[countryCode].code}
+                      {countryCodes[countryCode]
+                        ? countryCodes[countryCode].code
+                        : "+7"}
                     </div>
 
                     <input
@@ -260,7 +262,11 @@ export default function CtaContact() {
                       ref={phoneInputRef}
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder={countryCodes[countryCode].placeholder}
+                      placeholder={
+                        countryCodes[countryCode]
+                          ? countryCodes[countryCode].placeholder
+                          : "(917) 889-9457"
+                      }
                       required
                       className="w-full rounded-r-full border border-gray-300 py-3 pl-28 pr-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
                     />

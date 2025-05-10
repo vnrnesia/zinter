@@ -18,6 +18,7 @@ import SearchCards from "@/components/ui/SearchCards.jsx";
 import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
 import wholeworld from "@/assets/wholeworld.png";
 import AboutUsServiceGrid from "@/components/ui/AboutUsServiceGrid.jsx";
+import CallButton from "@/components/shared/CallButton.jsx"
 
 export default function AboutUs() {
   return (
@@ -43,16 +44,7 @@ export default function AboutUs() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-              <Link to="/contact">
-                <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-3 rounded-lg font-medium transition-colors shadow-md">
-                  Связаться с менеджером
-                  <img
-                    src={PhoneIcon}
-                    alt="Phone Icon"
-                    className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-                  />
-                </button>
-              </Link>
+              <CallButton />
             </div>
           </div>
 

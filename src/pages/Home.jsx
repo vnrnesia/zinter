@@ -9,6 +9,7 @@ import CtaContact from "@/components/shared/CtaContact";
 import ImportExport from "@/components/ui/ImportExport";
 import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
+import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 //test
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
       <CtaCard />
 
       <div className="container">
-        <CtaCardInside />
+        
         <StepSection />
       </div>
       <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">
@@ -36,6 +37,10 @@ export default function Home() {
       </div>
 
       <CtaContact />
+
+      <div className="py-20">
+        <DeliveryBox />
+      </div>
 
       <div className="container">
         <ImportExport />

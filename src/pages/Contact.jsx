@@ -5,6 +5,7 @@ import ContactServices from "@/components/ui/ContactServices.jsx";
 import CtaCard from "@/components/shared/CtaCard.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
 import WhoWeAre from "@/components/shared/WhoWeAre.jsx";
+import CallButton from "@/components/shared/CallButton.jsx"
 
 export default function Contact() {
   return (
@@ -23,14 +24,7 @@ export default function Contact() {
             </p>
 
             <div className="py-10 flex justify-center lg:justify-start">
-              <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14  py-3 rounded-lg font-medium transition-colors shadow-md overflow-visible">
-                Связаться с менеджером
-                <img
-                  src={PhoneIcon}
-                  alt="Phone Icon"
-                  className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-                />
-              </button>
+             <CallButton />
             </div>
           </div>
           <Form />
