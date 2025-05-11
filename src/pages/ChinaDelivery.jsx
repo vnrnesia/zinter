@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx";
 import zintercircle from "@/assets/zintercircle.png";
 import chinacircle from "@/assets/chinacircle.png";
+import CallButtonDelivery from "@/components/shared/CallButtonDelivery.jsx";
 
 export default function ChinaDelivery() {
   return (
@@ -52,9 +53,9 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
-              <CallButton />
-            </div>
+           
+              <CallButtonDelivery />
+            
           </div>
 
           <div className="w-full lg:w-1/2">

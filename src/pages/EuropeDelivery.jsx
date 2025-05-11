@@ -16,7 +16,8 @@ import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx";
 import zintercircle from "@/assets/zintercircle.png";
 import europecircle from "@/assets/europecircle.png";
-
+import { motion } from "framer-motion";
+import CallButtonDelivery from "@/components/shared/CallButtonDelivery.jsx";
 
 export default function ChinaDelivery() {
   return (
@@ -29,11 +30,7 @@ export default function ChinaDelivery() {
             </div>
             <div className="flex flex-row gap-2  ">
               <div className="w-20 h-14">
-                <img
-                  src={zintercircle}
-                  alt=""
-                  className=" object-contain "
-                />
+                <img src={zintercircle} alt="" className=" object-contain " />
               </div>
               <div className="w-20 h-14">
                 <img src={europecircle} alt="" className="object-contain" />
@@ -51,9 +48,7 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
-              <CallButton />
-            </div>
+          <CallButtonDelivery />
           </div>
 
           <div className="w-full lg:w-1/2">
@@ -79,7 +74,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard title="Организуем доставку из Европы — быстро и надёжно"/>
+        <CtaCard title="Организуем доставку из Европы — быстро и надёжно" />
       </section>
 
       <section className="py-16">
