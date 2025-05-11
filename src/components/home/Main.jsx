@@ -1,6 +1,7 @@
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import Form from "@/components/ui/Form";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
+
 
 export default function Main() {
   return (

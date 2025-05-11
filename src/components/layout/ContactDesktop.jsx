@@ -28,7 +28,7 @@ export default function ContactButton() {
         style={{ transform: "translateY(-8px)" }}
       >
         <div>
-          <span className="text-gray-800 font-medium">Обратитесь к нам👋</span>
+          <span className="text-gray-800 font-medium">Связаться с менеджером👋</span>
         </div>
       </motion.div>
 

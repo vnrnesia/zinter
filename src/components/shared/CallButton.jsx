@@ -4,7 +4,7 @@ export default function CallButton() {
   return (
     <div className="pt-2 flex flex-col items-center lg:items-start group relative">
       <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-2 rounded-lg font-medium transition-colors shadow-md overflow-visible">
-        Связаться с менеджером
+        Обратитесь к нам
         <img
           src={PhoneIcon}
           alt="Phone Icon"

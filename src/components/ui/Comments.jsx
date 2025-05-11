@@ -31,7 +31,10 @@ export default function Comments() {
   return (
     <section className="py-20">
       <div className="w-full max-w-7xl ">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+         <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
+            Доверие. Качество.
+          </span>
+        <h2 className="text-4xl sm:text-5xl font-semibold text-[#343434] mt-4 pb-14">
           Отзывы наших клиентов
         </h2>
 

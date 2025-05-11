@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import World1 from "@/assets/world1.png";
 
-export default function CtaCard() {
+export default function CtaCard({title}) {
   const [phone, setPhone] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -56,14 +56,51 @@ export default function CtaCard() {
             className="text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-5 py-5">
-              Профессиональная логистика для ваших товаров из Азии!
+              {title}
             </h2>
 
-            <p className="text-lg opacity-80 mb-5">
-              Оптимальные маршруты, выгодные тарифы и полный спектр логистических услуг.
-            </p>
-
-            <div className="flex flex-row items-center gap-4 py-2">
+              <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex flex-col w-full max-w-md mx-auto items-start md:items-center"
+          >
+            <p className="text-white text-lg font-medium mb-3">Оставьте контакт для связи!</p>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center bg-white rounded-full overflow-hidden shadow-md w-full"
+            >
+              <input
+                type="text"
+                placeholder="+7 917 889 94 57"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="px-4 py-2 outlin e-none text-gray-700 w-full"
+              />
+              <button
+                onClick={handleSubmit}
+                className="bg-yellow-400 hover:bg-yellow-500 p-3 flex items-center justify-center"
+              >
+                {sent ? (
+                  <span role="img" aria-label="success" className="text-white text-xl">
+                    ✅
+                  </span>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                )}
+              </button>
+            </motion.div>
+          </motion.div>
+            <div className="flex flex-row items-center justify-center place-items-center gap-4 py-2">
               <a href="#" className="text-white hover:text-blue-200 transition-colors">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path
@@ -90,47 +127,10 @@ export default function CtaCard() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-col w-full max-w-md mx-auto items-start md:items-center"
-          >
-            <p className="text-white text-lg font-medium mb-3">Оставьте контакт для связи!</p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center bg-white rounded-full overflow-hidden shadow-md w-full"
-            >
-              <input
-                type="text"
-                placeholder="+7 917 889 94 57"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="px-4 py-2 outline-none text-gray-700 w-full"
-              />
-              <button
-                onClick={handleSubmit}
-                className="bg-yellow-400 hover:bg-yellow-500 p-3 flex items-center justify-center"
-              >
-                {sent ? (
-                  <span role="img" aria-label="success" className="text-white text-xl">
-                    ✅
-                  </span>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                )}
-              </button>
-            </motion.div>
-          </motion.div>
+        <p className="text-lg opacity-80 mb-5">
+              resim
+            </p>
+
         </div>
       </motion.div>
     </section>

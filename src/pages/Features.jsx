@@ -61,7 +61,7 @@ export default function Features() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard />
+        <CtaCard title="Сопровождение на всех этапах — от Китая до Европы без проблем на границе" />
       </section>
 
       <section className="py-16">

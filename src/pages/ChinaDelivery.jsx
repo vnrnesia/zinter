@@ -13,7 +13,9 @@ import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
+import zintercircle from "@/assets/zintercircle.png";
+import chinacircle from "@/assets/chinacircle.png";
 
 export default function ChinaDelivery() {
   return (
@@ -23,6 +25,22 @@ export default function ChinaDelivery() {
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
+            </div>
+            <div className="flex flex-row py-2 ">
+              <div className="w-20 h-14">
+                <img
+                  src={zintercircle}
+                  alt=""
+                  className=" object-contain py-2"
+                />
+              </div>
+              <div className="w-24 h-14">
+                <img
+                  src={chinacircle}
+                  alt=""
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -35,7 +53,7 @@ export default function ChinaDelivery() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-            <CallButton />
+              <CallButton />
             </div>
           </div>
 
@@ -62,7 +80,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard />
+        <CtaCard title="Организуем доставку из Китая — быстро и надёжно" />
       </section>
 
       <section className="py-16">

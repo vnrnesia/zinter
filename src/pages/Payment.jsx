@@ -44,9 +44,9 @@ export default function Payment() {
       </div>
       <div className="container mx-auto px-4 lg:px-8"></div>
       <div>
-        <CtaCard />
+        <CtaCard title="Надёжная оплата и факторинг для санкционных товаров" />
       </div>
-      <div>
+      <div className="pb-24">
         <WhoWeAre />
       </div>
     </>

@@ -13,6 +13,10 @@ import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
+import CallButton from "@/components/shared/CallButton.jsx";
+import zintercircle from "@/assets/zintercircle.png";
+import europecircle from "@/assets/europecircle.png";
+
 
 export default function ChinaDelivery() {
   return (
@@ -23,11 +27,23 @@ export default function ChinaDelivery() {
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
             </div>
+            <div className="flex flex-row gap-2  ">
+              <div className="w-20 h-14">
+                <img
+                  src={zintercircle}
+                  alt=""
+                  className=" object-contain "
+                />
+              </div>
+              <div className="w-20 h-14">
+                <img src={europecircle} alt="" className="object-contain" />
+              </div>
+            </div>
 
             <div className="hidden lg:flex items-center gap-4"></div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Доставка из <span className="text-[#FFC23E]">Китая</span>
+              Доставка из <span className="text-[#FFC23E]">Европы </span>
             </h1>
 
             <p className="text-lg md:text-xl opacity-90">
@@ -36,7 +52,7 @@ export default function ChinaDelivery() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-             <CallButton />
+              <CallButton />
             </div>
           </div>
 
@@ -63,7 +79,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard />
+        <CtaCard title="Организуем доставку из Европы — быстро и надёжно"/>
       </section>
 
       <section className="py-16">

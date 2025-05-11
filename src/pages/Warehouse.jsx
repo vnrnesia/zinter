@@ -75,7 +75,7 @@ export default function Warehouse() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="pb-16 bg-white">
         <div className="w-full max-w-full px-4 mx-auto space-y-12">
           <WhoWeAre />
         </div>

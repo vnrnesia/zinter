@@ -60,7 +60,7 @@ export default function Services() {
           {topServices.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col items-center text-center md:items-start md:text-left"
+              className="bg-gray-50 rounded-2xl p-6 shadow-md hover:shadow-md transition flex flex-col items-center text-center md:items-start md:text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}

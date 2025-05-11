@@ -44,7 +44,7 @@ export default function WhoWeAre() {
 
   return (
     <motion.section
-      className="py-[100px]"
+      className="py-[10px]"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
