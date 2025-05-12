@@ -141,7 +141,7 @@ export default function CtaContact() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="w-full bg-white  rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8  sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8 border-[#FFC23E]"
+                className="w-full bg-white  rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8  sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -164,7 +164,7 @@ export default function CtaContact() {
                     <button
                       type="button"
                       onClick={() => setOpen((prev) => !prev)}
-                      className="w-full flex justify-between items-center bg-white border border-gray-300 rounded-full py-3 px-5 text-sm sm:text-base text-gray-600 focus:ring-2 focus:ring-blue-500"
+                      className="w-full flex justify-between items-center bg-white border border-gray-300 rounded-xl py-3 px-5 text-sm sm:text-base text-gray-600 focus:ring-2 focus:ring-blue-500"
                     >
                       <span>
                         {selectedOptions.length > 0
@@ -221,7 +221,7 @@ export default function CtaContact() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="nikolay@mail.ru"
                     required
-                    className="w-full sm:w-1/2 rounded-full border border-gray-300 py-3 px-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
+                    className="w-full sm:w-1/2 rounded-xl border border-gray-300 py-3 px-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -232,7 +232,7 @@ export default function CtaContact() {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Елисеев Николай Артёмович"
                     required
-                    className="sm:col-span-4 rounded-full border border-gray-300 py-3 px-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
+                    className="sm:col-span-4 rounded-xl border border-gray-300 py-3 px-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
                   />
 
                   <div className="relative sm:col-span-5 bg-transparent">
@@ -268,14 +268,14 @@ export default function CtaContact() {
                           : "(917) 889-9457"
                       }
                       required
-                      className="w-full rounded-r-full border border-gray-300 py-3 pl-28 pr-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
+                      className="w-full rounded-xl border border-gray-300 py-3 pl-28 pr-5 text-sm sm:text-base focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
 
                   <div className="sm:col-span-3">
                     <button
                       type="submit"
-                      className="w-full bg-[#088EE3] text-white text-sm sm:text-base font-medium px-6 py-3 rounded-full hover:bg-[#066bb8] transition flex items-center justify-center space-x-2"
+                      className="w-full bg-[#088EE3] text-white text-sm sm:text-base font-medium px-6 py-3 rounded-xl hover:bg-[#066bb8] transition flex items-center justify-center space-x-2"
                     >
                       {success ? (
                         <svg

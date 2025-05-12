@@ -14,3 +14,10 @@
   .iti input {
     width: 100% !important;
   }
+
+.iti__selected-flag {
+  background: transparent !important;
+  border-radius: 9999px !important; 
+  padding: 0 0.5rem !important; 
+}
+
