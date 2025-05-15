@@ -8,6 +8,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 import ZinterLogo from "@/assets/ZinterLogo.png";
+import zintercircle from "@/assets/zintercircle.png";
 
 const footerLinks = [
   {
@@ -49,11 +50,21 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
+    <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
+      <div className="w-full flex justify-center -mb-10 z-20 absolute -top-10">
+        <img src={zintercircle} alt="" className="w-20 h-20" />
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           <div className="footer-section flex flex-col items-center md:items-start space-y-4">
-            <Link to="/"><img className="mx-auto w-[40%] lg:w-[100%]" src={ZinterLogo} alt="Zinter Logistics Logo" /></Link>
+            <Link to="/">
+              <img
+                className="mx-auto w-[40%] lg:w-[100%]"
+                src={ZinterLogo}
+                alt="Zinter Logistics Logo"
+              />
+            </Link>
             <p className="text-gray-600 text-sm">
               Больше 15 лет занимаемся перевозками грузов из Китая и других
               азиатских стран.

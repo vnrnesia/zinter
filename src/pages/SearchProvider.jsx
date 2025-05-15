@@ -61,7 +61,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section >
         <div className="w-full max-w-full px-4 mx-auto">
           <SearchCards />
         </div>

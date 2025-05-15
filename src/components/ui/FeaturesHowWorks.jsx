@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import featureicon1 from "@/assets/FeaturesHowWorksImg/featureicon1.png";
 import featureicon2 from "@/assets/FeaturesHowWorksImg/featureicon2.png";
 import featureicon3 from "@/assets/FeaturesHowWorksImg/featureicon3.png";
+import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
+
 
 export default function HowWorks() {
   const steps = [
@@ -33,6 +35,8 @@ export default function HowWorks() {
   const [visibleCount, setVisibleCount] = useState(0);
   const controls = useAnimation();
   const lineRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     if (visibleCount > 0 && lineRef.current) {

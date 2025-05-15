@@ -60,7 +60,7 @@ export default function Warehouse() {
         <CtaCard />
       </section>
 
-      <section className="py-16">
+      <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseHowWorks />
           <div className="block lg:hidden">

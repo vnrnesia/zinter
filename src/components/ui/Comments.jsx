@@ -29,7 +29,7 @@ export default function Comments() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="pb-14">
       <div className="w-full max-w-7xl ">
          <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
             Доверие. Качество.

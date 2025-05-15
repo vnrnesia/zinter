@@ -22,17 +22,15 @@ export default function ChinaDelivery() {
   return (
     <>
       <section className="py-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-         <img src={chinacircle} alt="" className="w-20 h-20 absolute top-20 right-0 m-4 z-10" />
+        <img src={chinacircle} alt="" className="w-20 h-20 absolute top-20 right-0 m-4 z-10" />
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
             </div>
             <div className="flex flex-row py-2 ">
-              <div className="w-20 h-14"></div>
-              <div className="w-24 h-14">
-               
-              </div>
+            
+           
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -44,7 +42,9 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <CallButtonDelivery />
+           
+              <CallButtonDelivery />
+            
           </div>
 
           <div className="w-full lg:w-1/2">
@@ -63,7 +63,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="pt-12 bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <Services />
         </div>
@@ -88,7 +88,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <Delivery />
         </div>

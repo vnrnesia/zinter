@@ -40,7 +40,7 @@ export default function Delivery() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center justify-center py-12 md:py-16">
+    <section className="w-full flex flex-col items-center justify-center ">
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="text-center md:text-left mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

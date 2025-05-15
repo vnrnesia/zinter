@@ -42,7 +42,7 @@ export default function Services() {
   };
 
   return (
-    <section className="py-20 bg-white w-full">
+    <section className="pt-20 bg-white w-full">
       <div className="w-full max-w-[1300px] px-4 mx-auto">
         <div className="text-center mb-12">
           <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">

@@ -61,7 +61,7 @@ export default function HowWorks() {
   }, [visibleCount, controls]);
 
   return (
-    <section className="max-w-5xl mx-auto px-4 py-20">
+    <section className="max-w-5xl mx-auto px-4 ">
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/2 flex flex-col justify-start self-start mt-0">
           <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">

@@ -47,7 +47,7 @@ function App() {
         </Suspense>
 
         <Footer />
-      
+      <ContactDesktop/>
         <ToolbarMobile setMobileMenuOpen={setMobileMenuOpen} />
       </PageTransition>
     </Router>

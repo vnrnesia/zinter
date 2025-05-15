@@ -33,7 +33,7 @@ export default function CtaCard({title}) {
   };
 
   return (
-    <section className="w-full flex justify-center items-center py-16">
+    <section className="w-full flex justify-center items-center ">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

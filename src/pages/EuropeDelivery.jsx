@@ -61,7 +61,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className=" bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <Services />
         </div>
@@ -80,13 +80,13 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="pt-16 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <ServiceGrid />
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <Delivery />
         </div>
