@@ -181,47 +181,52 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/search-provider"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 px-2 text-gray-800 border-b"
+                  className="block py-6 px-2 text-gray-800 border-b"
                 >
                   Поиск Поставщика
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/payment"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-gray-800 border-b"
-                >
-                  Оплата товара
-                </Link>
-              </li>
+            
               <li>
                 <ul className="text-center">
                   <li>
                     <Link
                       to="/china-delivery"
-                      className="flex py-4 text-gray-800 text-start border-b"
+                       onClick={() => setMobileMenuOpen(false)}
+                      className="flex pt-3 py-6 text-gray-800 text-start border-b"
                     >
                       Доставка из Китая
                       <img className="w-10 pl-2" src={gridicon2} alt="" />
                     </Link>
                   </li>
+                  
                 </ul>
+                
               </li>
               <li>
                 <Link
                   to="/europe-delivery"
-                  className="flex py-4 text-gray-800 text-start border-b"
+                   onClick={() => setMobileMenuOpen(false)}
+                  className="flex pt-3 py-6 text-gray-800 text-start border-b"
                 >
                   Доставка из Европы
                   <img className="w-10 pl-2" src={gridicon3} alt="" />
+                </Link>
+              </li>
+                <li>
+                <Link
+                  to="/payment"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block pt-3 py-6 text-gray-800 border-b"
+                >
+                  Оплата товара
                 </Link>
               </li>
               <li>
                 <Link
                   to="/features"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-gray-800 border-b"
+                  className="block pt-3 py-6 text-gray-800 border-b"
                 >
                   Тамоэнное Оформление
                 </Link>
@@ -230,7 +235,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/warehouse"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-gray-800 border-b"
+                  className="block pt-3 py-6 text-gray-800 border-b"
                 >
                   Усилуги Склад
                 </Link>
@@ -239,13 +244,13 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/about"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-4 text-gray-800 border-b"
+                  className="block pt-3 py-6 text-gray-800 border-b"
                 >
                   о Компании
                 </Link>
               </li>
             </ul>
-            <div className="container py-4 justify-center">
+            <div className="w-full flex justify-center items-center py-4">
               <a
                 href="tel:+79178899457"
                 className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg whitespace-nowrap text-center"

@@ -14,9 +14,9 @@ export default function CallButton() {
 
       <div
         className={`
-    opacity-0 group-hover:opacity-100 transition-opacity duration-300
+   
     flex gap-2 mt-3
-    lg:opacity-0 lg:group-hover:opacity-100
+    
     lg:absolute lg:left-full lg:top-[25%] lg:transform lg:-translate-y-1/2 lg:ml-12
   `}
       >

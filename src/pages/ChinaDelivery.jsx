@@ -22,25 +22,16 @@ export default function ChinaDelivery() {
   return (
     <>
       <section className="py-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+         <img src={chinacircle} alt="" className="w-20 h-20 absolute top-20 right-0 m-4 z-10" />
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
             </div>
             <div className="flex flex-row py-2 ">
-              <div className="w-20 h-14">
-                <img
-                  src={zintercircle}
-                  alt=""
-                  className=" object-contain py-2"
-                />
-              </div>
+              <div className="w-20 h-14"></div>
               <div className="w-24 h-14">
-                <img
-                  src={chinacircle}
-                  alt=""
-                  className="object-contain"
-                />
+               
               </div>
             </div>
 
@@ -53,9 +44,7 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-           
-              <CallButtonDelivery />
-            
+            <CallButtonDelivery />
           </div>
 
           <div className="w-full lg:w-1/2">

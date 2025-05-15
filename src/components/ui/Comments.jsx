@@ -29,7 +29,7 @@ export default function Comments() {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gray-50">
       <div className="w-full max-w-7xl ">
          <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
             Доверие. Качество.
@@ -43,11 +43,11 @@ export default function Comments() {
             spaceBetween={16}
             pagination={{ clickable: true }}
             modules={[Pagination]}
-            className="w-full px-2"
+            className="w-full px-2 py-8 bg-gray-50 "
           >
             {comments.map((item, idx) => (
               <SwiperSlide key={idx}>
-                <div className="bg-white p-6 rounded-2xl shadow-lg w-full min-h-[250px]">
+                <div className=" p-6 rounded-2xl shadow-lg w-full min-h-[250px]">
                   <p className="text-lg font-semibold text-gray-900">
                     {item.name}
                   </p>
