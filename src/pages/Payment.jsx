@@ -38,16 +38,21 @@ export default function Payment() {
         </div>
       </section>
       <Brands />
-      <HowWorks />
+     <div className="py-16">
+       <HowWorks />
+     </div>
       <div className="block lg:hidden">
         <Form />
       </div>
-      <div className="container mx-auto px-4 lg:px-8"></div>
+      <div className="container mx-auto px-4 lg:px-8">
+         <CtaCard title="Надёжная оплата и факторинг для санкционных товаров" />
+          <WhoWeAre />
+      </div>
       <div>
-        <CtaCard title="Надёжная оплата и факторинг для санкционных товаров" />
+       
       </div>
       <div className="pb-24">
-        <WhoWeAre />
+      
       </div>
     </>
   );
