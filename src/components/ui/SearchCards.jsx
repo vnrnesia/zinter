@@ -6,7 +6,8 @@ import icon3 from "@/assets/SearchCardsImg/icon3.png";
 import icon4 from "@/assets/SearchCardsImg/icon4.png";
 import icon5 from "@/assets/SearchCardsImg/icon5.png";
 import icon6 from "@/assets/SearchCardsImg/icon6.png";
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
+import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
 
 const topServices = [
   {
@@ -37,6 +38,7 @@ const topServices = [
 
 export default function Services() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleIndex = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -76,13 +78,17 @@ export default function Services() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              <Link to="/contact" className="text-blue-600 font-inter text-sm">
+              <button
+                onClick={() => setIsOpen(true)}
+                className=" text-blue-600"
+              >
                 Узнать больше
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>
       </div>
+      <SlideOverForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </section>
   );
 }

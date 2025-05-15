@@ -40,6 +40,7 @@ export default function Contact() {
             <WhoWeAre />
           </div>
         </section>
+        
       </div>
     </>
   );
