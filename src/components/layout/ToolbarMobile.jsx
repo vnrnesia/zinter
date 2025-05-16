@@ -8,9 +8,11 @@ import {
   Grid,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import zintermini from "@/assets/zintermini.png";
+import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
+import Modal from 'react';
 
 const icons = {
   whatsapp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
@@ -23,9 +25,14 @@ const icons = {
 export default function ToolbarMobile({ setMobileMenuOpen }) {
   const [showMessageMenu, setShowMessageMenu] = useState(false);
 
+  const [isOpen, setIsOpen] = useState(false);
   const toggleMessageMenu = () => {
     setShowMessageMenu((prev) => !prev);
   };
+
+  useEffect(() => {
+    console.log("isOpen değişti:", isOpen);
+  }, [isOpen]);
 
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-white border-t z-50 md:hidden">
@@ -38,8 +45,9 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
         </li>
 
         <li>
-          <Link
-            to="/contact"
+          <button
+            onClick={() => setIsOpen(true)}
+            
             className="flex pl-2 flex-col items-center text-gray-600"
           >
             <svg
@@ -51,9 +59,10 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             >
               <path d="M19.74 7.33l-4.44-5a1 1 0 0 0-.74-.33h-8A2.53 2.53 0 0 0 4 4.5v15A2.53 2.53 0 0 0 6.56 22h10.88A2.53 2.53 0 0 0 20 19.5V8a1 1 0 0 0-.26-.67zM9 12h3a1 1 0 0 1 0 2H9a1 1 0 0 1 0-2zm6 6H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm-.29-10a.79.79 0 0 1-.71-.85V4l3.74 4z" />
             </svg>
-
+           
             <span>Заявка</span>
-          </Link>
+          </button>
+           <SlideOverForm isOpen={isOpen} onClose={() => setIsOpen(false)} />
         </li>
 
         <li>

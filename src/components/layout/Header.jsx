@@ -20,7 +20,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <img
               src={ZinterLogo}
               alt="Page Logo"
-              className="h-auto max-h-10 w-auto max-w-[300px] sm:max-h-16"
+              className="h-auto max-h-8 w-auto max-w-[300px] sm:max-h-16"
               loading="lazy"
             />
           </Link>
@@ -122,7 +122,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-20 w-20 pr-3 text-[#006FDC]"
                   fill="none"
-                  viewBox="10 0 24 24"
+                  viewBox="5 0 24 24"
                   stroke="currentColor"
                   strokeWidth={1}
                 >
@@ -136,7 +136,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             
                 <svg
                   className="w-24 h-20 mt-3"
-                  viewBox="10 0 24 24"
+                  viewBox="5 0 24 24"
                   fill="none"
                   stroke="url(#gradient)"
                   xmlns="http://www.w3.org/2000/svg"
