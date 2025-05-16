@@ -36,11 +36,11 @@ export default function CallButton() {
       <div
         className="
          
-          flex gap-2 mt-3
+          flex gap-2 mt-3 
         
-          lg:absolute  lg:top-1/2 lg:-translate-y-1/2 lg:ml-4
+          lg:absolute  lg:top-1/2 lg:-translate-y-1/2 lg:ml-6
         "
-        style={{ right: "160px", bottom: "10px" }}
+        style={{ right: "140px", bottom: "10px" }}
       >
         <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">
           <svg

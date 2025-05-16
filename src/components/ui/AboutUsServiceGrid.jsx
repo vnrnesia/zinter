@@ -11,13 +11,14 @@ export default function ServiceGrid() {
     { title: "Поиск поставщика", img: gridicon1, link: "/search-provider" },
     { title: "Доставка из Китая", img: gridicon2, link: "/china-delivery" },
     { title: "Доставка из Европы", img: gridicon3, link: "/europe-delivery" },
-    { title: "Таможенное оформление", img: gridicon5, link: "/feautures" },
+    { title: "Таможенное оформление", img: gridicon5, link: "/features" },
     { title: "Оплата товара", img: gridicon4, link: "/payment" },
     { title: "Услуги склада", img: gridicon6, link: "/warehouse" },
   ];
 
   return (
     <section className="pb-12 bg-gray-50 text-center">
+      
       <div className="container mx-auto px-4 bg-gray-50">
         <p className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
           Чем Занимаемся?

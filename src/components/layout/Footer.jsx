@@ -51,8 +51,8 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
-      <div className="w-full flex justify-center -mb-10 z-20 absolute -top-10">
-        <img src={zintercircle} alt="" className="w-20 h-20" />
+      <div className="w-full flex justify-center -mb-10 z-20 absolute -top-7">
+        <img src={zintercircle} alt="" className=" md:hidden w-14 h-14" />
       </div>
 
       <div className="container mx-auto px-4 py-12">

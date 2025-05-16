@@ -74,9 +74,7 @@ export default function ChinaDelivery() {
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
-          <div className="block lg:hidden">
-            <Form />
-          </div>
+         
         </div>
       </section>
 

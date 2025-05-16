@@ -1,16 +1,35 @@
-import { Link } from "react-router-dom"; // 🔗 Link ekleniyor
+import { Link, useLocation } from "react-router-dom"; // useLocation'u buraya aldım
 import gridicon1 from "@/assets/ServiceGridImg/gridicon1.png";
 import gridicon2 from "@/assets/ServiceGridImg/gridicon2.png";
 import gridicon3 from "@/assets/ServiceGridImg/gridicon3.png";
 import gridicon4 from "@/assets/ServiceGridImg/gridicon4.png";
+import gridicon5 from "@/assets/ServiceGridImg/gridicon5.png"; // Features sayfası ikonu
 
 export default function ServiceGrid() {
+  const location = useLocation();
+
   const services = [
     { title: "Поиск поставщика", img: gridicon1, link: "/search-provider" },
     { title: "Доставка из Китая", img: gridicon2, link: "/china-delivery" },
     { title: "Доставка из Европы", img: gridicon3, link: "/europe-delivery" },
     { title: "Оплата товара", img: gridicon4, link: "/payment" },
   ];
+
+
+  const updatedServices = services.map((service) => {
+    if (
+      (location.pathname === "/china-delivery" && service.title === "Доставка из Китая") ||
+      (location.pathname === "/europe-delivery" && service.title === "Доставка из Европы")
+    ) {
+      return {
+        ...service,
+        title: "Таможенное оформление",
+        link: "/features",
+        img: gridicon5, 
+      };
+    }
+    return service;
+  });
 
   return (
     <section className="pb-12 bg-gray-50 text-center">
@@ -21,7 +40,7 @@ export default function ServiceGrid() {
         <h2 className="text-3xl md:text-4xl font-bold mb-10">Мы больше, чем доставка!</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {services.map((service, idx) => (
+          {updatedServices.map((service, idx) => (
             <Link
               to={service.link}
               key={idx}

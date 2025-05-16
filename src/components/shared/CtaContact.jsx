@@ -126,7 +126,7 @@ export default function CtaContact() {
 
       <section
         ref={sectionRef}
-        className=" text-center bg-white overflow-visible"
+        className="text-center bg-white overflow-visible"
         style={{
           backgroundImage: `url(${background2})`,
           backgroundSize: "cover",
@@ -135,13 +135,13 @@ export default function CtaContact() {
       >
         <div className="bg-cover">
           <div className="w-full h-full">
-            <div className="max-w-screen-xl mx-auto px-4 py-32 relative z-10">
+            <div className="max-w-screen-xl mx-auto px-4 py-14 relative z-10">
               <motion.form
                 onSubmit={handleSubmit}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="w-full bg-white  rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8  sm:p-10 space-y-8 -mt-36 sm:-mt-40 border-b-8"
+                className="w-full bg-white  rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] p-8  sm:p-10 space-y-8  border-b-8"
               >
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -187,7 +187,7 @@ export default function CtaContact() {
                     </button>
 
                     {open && (
-                      <div className="absolute left-0 mt-2 w-full bg-white shadow-md rounded-xl border border-gray-200 z-10 p-4 space-y-3">
+                      <div className="absolute left-0 mt-2 w-full bg-white shadow-md rounded-xl border border-gray-200 z-50 p-4 space-y-3">
                         {[
                           "Доставка из Китая",
                           "Доставка из Европы",

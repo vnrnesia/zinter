@@ -18,13 +18,11 @@ export default function SlideOverForm({ isOpen, onClose }) {
               onClick={onClose}
               className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
             >
-              <X className="w-6 h-6" />
+              <X className="w-16 h-16" />
             </button>
 
-            <div className="w-full max-w-md text-center">
-              <h3 className="text-2xl text-white font-bold mb-6">
-                Связаться с нами
-              </h3>
+            <div className="w-full max-w-md">
+             
               <Form />
             </div>
           </div>
