@@ -14,8 +14,8 @@ import CallButton from "@/components/shared/CallButton.jsx"
 export default function Warehouse() {
   return (
     <>
-      <section className="pt-20 pb-40 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
+      <section className="pt-20 py-5 lg:pt-40 lg:pb-40 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
@@ -63,9 +63,7 @@ export default function Warehouse() {
       <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseHowWorks />
-          <div className="block lg:hidden">
-            <Form />
-          </div>
+          
         </div>
       </section>
 

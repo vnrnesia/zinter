@@ -41,9 +41,7 @@ export default function Payment() {
      <div className="py-16">
        <HowWorks />
      </div>
-      <div className="block lg:hidden">
-        <Form />
-      </div>
+     
       <div className="container mx-auto px-4 lg:px-8">
          <CtaCard title="Надёжная оплата и факторинг для санкционных товаров" />
           <WhoWeAre />

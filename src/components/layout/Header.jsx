@@ -14,13 +14,13 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className="h-20 flex items-center shadow-sm bg-white sticky top-0 z-50 border-b-4 border-b-[#FFC23E]">
+      <header className="w-full h-20 flex items-center shadow-sm bg-white fixed bottom-0 left-0 top-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link to="/" aria-label="Homepage">
             <img
               src={ZinterLogo}
               alt="Page Logo"
-              className="h-auto max-h-12 w-auto max-w-[300px] sm:max-h-16"
+              className="h-auto max-h-10 w-auto max-w-[300px] sm:max-h-16"
               loading="lazy"
             />
           </Link>
@@ -122,7 +122,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-20 w-20 pr-3 text-[#006FDC]"
                   fill="none"
-                  viewBox="0 0 24 24"
+                  viewBox="10 0 24 24"
                   stroke="currentColor"
                   strokeWidth={1}
                 >
@@ -135,8 +135,8 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               ) : (
             
                 <svg
-                  className="w-30 h-20 mt-3"
-                  viewBox="0 0 21 24"
+                  className="w-24 h-20 mt-3"
+                  viewBox="10 0 24 24"
                   fill="none"
                   stroke="url(#gradient)"
                   xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@ import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 //test
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="pt-10 lg:pt-20 overflow-x-hidden">
       <Main />
 
       <Brands />
