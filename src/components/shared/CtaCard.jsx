@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import World1 from "@/assets/world1.png";
 import international from "@/assets/international.png";
 
-export default function CtaCard() {
+export default function CtaCard({title, text}) {
   const [phone, setPhone] = useState("");
   const [sent, setSent] = useState(false);
 
@@ -58,13 +58,11 @@ export default function CtaCard() {
               className="text-white"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-5 ">
-                Профессиональная логистика для ваших товаров из Азии!
+                {title}
               </h2>
 
               <p className="text-lg opacity-80 mb-2">
-                Оптимальные маршруты, выгодные тарифы и полный спектр
-                логистических услуг.
-                Оптимальные маршруты, выгодные тарифы и полный спектр логистических услуг.
+               {text}
               </p>
                  <div className="flex flex-row items-center gap-4 py-2 justify-center ">
               <a href="#" className="text-white hover:text-blue-200 transition-colors">

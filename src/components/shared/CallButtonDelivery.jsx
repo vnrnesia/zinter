@@ -40,7 +40,7 @@ export default function CallButton() {
         
           lg:absolute  lg:top-1/2 lg:-translate-y-1/2 lg:ml-6
         "
-        style={{ right: "140px", bottom: "10px" }}
+        style={{ right: "170px", bottom: "10px" }}
       >
         <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">
           <svg

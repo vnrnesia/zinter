@@ -9,7 +9,7 @@ import WarehouseService from "@/components/ui/WarehouseService.jsx";
 import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
 
 export default function Warehouse() {
   return (
@@ -31,7 +31,7 @@ export default function Warehouse() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-            <CallButton />
+              <CallButton />
             </div>
           </div>
 
@@ -57,13 +57,15 @@ export default function Warehouse() {
         </div>
       </section>
       <section className="py-16">
-        <CtaCard />
+        <CtaCard
+          title="Надёжный склад для вашего бизнеса"
+          text="Безопасное хранение товаров с удобным доступом и гибкими условиями аренды. Контроль качества и оперативное обслуживание — всё для вашего спокойствия."
+        />
       </section>
 
       <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseHowWorks />
-          
         </div>
       </section>
 

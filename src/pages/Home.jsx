@@ -22,10 +22,12 @@ export default function Home() {
         <Cards />
       </div>
 
-      <CtaCard />
+      <CtaCard
+        title="Эффективная логистика — ключ к успеху вашего бизнеса"
+        text="Мы предлагаем полный спектр логистических услуг: от транспортировки и таможенного оформления до хранения и доставки. Гарантируем надёжность, своевременность и индивидуальный подход к каждому клиенту."
+      />
 
       <div className="container">
-        
         <StepSection />
       </div>
       <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">

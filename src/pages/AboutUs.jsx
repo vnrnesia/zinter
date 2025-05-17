@@ -18,7 +18,7 @@ import SearchCards from "@/components/ui/SearchCards.jsx";
 import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
 import wholeworld from "@/assets/wholeworld.png";
 import AboutUsServiceGrid from "@/components/ui/AboutUsServiceGrid.jsx";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
 
 export default function AboutUs() {
   return (
@@ -71,7 +71,10 @@ export default function AboutUs() {
       </section>
 
       <section className="pt-16 w-full">
-        <CtaCard />
+        <CtaCard
+          title="🌟 Кто мы и почему нам доверяют"
+          text="Наша компания — надёжный партнёр в сфере логистики и поставок. Мы объединяем опыт, профессионализм и индивидуальный подход, чтобы помочь вашему бизнесу расти и развиваться. Для нас важен каждый клиент — мы всегда на связи и готовы предложить лучшие решения."
+        />
       </section>
 
       <section>

@@ -72,7 +72,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard title="Организуем доставку из Европы — быстро и надёжно" />
+        <CtaCard title="Организуем доставку из Европы — быстро и надёжно" text="Мы обеспечиваем полный контроль над логистикой: от оформления документов до своевременной доставки прямо к вам. Надёжно, быстро и без лишних хлопот." />
       </section>
 
       <section className="py-16">

@@ -9,7 +9,7 @@ import FeaturesService from "@/components/ui/FeaturesService.jsx";
 import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
 
 export default function Features() {
   return (
@@ -34,11 +34,11 @@ export default function Features() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-             <CallButton />
+              <CallButton />
             </div>
           </div>
 
-          <div className="w-full lg:w-1/2">
+          <div className="w-[70%] md:w-auto">
             <img
               src={features}
               alt="Container"
@@ -61,13 +61,15 @@ export default function Features() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard title="Сопровождение на всех этапах — от Китая до Европы без проблем на границе" />
+        <CtaCard
+          title="Сопровождение на всех этапах — от Китая до Европы без проблем на границе"
+          text="Обеспечиваем полный контроль и поддержку на каждом этапе перевозки — от упаковки и отправки в Китае до таможенного оформления и доставки в Европу. Без задержек и проблем на границе."
+        />
       </section>
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <FeaturesHowWorks />
-         
         </div>
       </section>
 
