@@ -14,14 +14,14 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
+      <header className="w-full  h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className=" mx-auto md:px-4 flex justify-between items-center w-full">
           {/* Logo */}
           <Link to="/" aria-label="Homepage" className="flex-shrink-0">
             <img
               src={ZinterLogo}
               alt="Page Logo"
-              className="h-auto max-h-8 sm:max-h-16 w-auto"
+              className="h-auto max-h-7 md:max-h-10 w-auto"
               loading="lazy"
             />
           </Link>
