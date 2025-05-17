@@ -17,7 +17,7 @@ export default function CallButton() {
    
     flex gap-2 mt-3
     
-    lg:absolute lg:left-full lg:top-[25%] lg:transform lg:-translate-y-1/2 lg:ml-12
+    lg:absolute lg:left-full lg:top-[25%] lg:transform lg:-translate-y-1/2 lg:ml-12 
   `}
       >
         <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">

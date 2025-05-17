@@ -1,55 +1,33 @@
 import { motion } from "framer-motion";
+import PhoneIcon from "@/assets/PhoneIcon.png";
 
 export default function CallButton() {
   return (
-    <div className="pt-2 flex flex-col items-center lg:items-start group relative">
-      <div>
-        <p className="text-white text-lg font-medium mb-3">
-          Оставьте контакт для связи!
-        </p>
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="inline-flex items-center bg-white rounded-full overflow-hidden shadow-md"
-        >
-          <button className="px-12 py-2 text-gray-700 font-semibold">
-            Рассчитать Заявку
-          </button>
-          <button className="bg-yellow-400 hover:bg-yellow-500 p-3 flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </button>
-        </motion.div>
-      </div>
+    <div className="pt-2 flex items-center">
+      <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-2 rounded-lg font-medium transition-colors shadow-md">
+        Обратитесь к нам
+        <img
+          src={PhoneIcon}
+          alt="Phone Icon"
+          className=" absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
+        />
+      </button>
 
-      <div
-        className="
-         
-          flex gap-2 mt-3 
-        
-          lg:absolute  lg:top-1/2 lg:-translate-y-1/2 lg:ml-6
-        "
-        style={{ right: "170px", bottom: "10px" }}
-      >
-        <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">
+        <div className="flex gap-2 ml-10">
+           <a href="https://wa.me/79178899457" target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 455.731 455.731"
             className="w-12 h-12 rounded-md"
           >
             <g>
-              <rect x="0" y="0" fill="#1BD741" width="455.731" height="455.731" />
+              <rect
+                x="0"
+                y="0"
+                fill="#1BD741"
+                width="455.731"
+                height="455.731"
+              />
               <g>
                 <path
                   fill="#FFFFFF"
@@ -80,7 +58,10 @@ export default function CallButton() {
             className="w-12 h-12 rounded-md"
           >
             <rect width="512" height="512" rx="15%" fill="#37aee2" />
-            <path fill="#c8daea" d="M199 404c-11 0-10-4-13-14l-32-105 245-144" />
+            <path
+              fill="#c8daea"
+              d="M199 404c-11 0-10-4-13-14l-32-105 245-144"
+            />
             <path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34" />
             <path
               fill="#f6fbfe"
@@ -135,31 +116,8 @@ export default function CallButton() {
             />
           </svg>
         </a>
+        </div>
 
-        <a
-          href="tel:+79178899457"
-          className="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white shadow-lg transform transition-all hover:scale-110 hover:shadow-xl"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            className="w-12 h-12 rounded-md"
-          >
-            <rect width="512" height="512" rx="15%" fill="#FFC23E" />
-            <path
-              fill="#ffffff"
-              d="M395 338c-10-9-22-17-33-23-23-16-43-17-59 6-10 14-23 16-37 10-39-18-68-43-84-82-8-16-8-31 10-42 9-6 19-14 18-28-1-18-44-78-62-84-8-2-14-2-22 0-41 14-57 46-42 85a451 451 0 0 0 251 248l17 5c26 0 57-25 67-50 9-24-10-34-24-45z"
-            />
-            <path
-              fill="none"
-              stroke="#ffffff"
-              strokeLinecap="round"
-              strokeWidth="17"
-              d="M268 138s41-1 72 30c31 30 27 74 27 74m-87-63s18-2 33 14c15 15 13 34 13 34M255 98s64-3 111 44c47 48 43 114 43 114"
-            />
-          </svg>
-        </a>
-      </div>
     </div>
   );
 }
