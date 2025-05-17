@@ -96,9 +96,9 @@ export default function CtaCard({title, text}) {
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="flex flex-col w-full max-w-md mx-auto items-start md:items-center"
+                  className="flex flex-col w-full max-w-md mx-auto items-center"
                 >
-                  <p className="text-white text-lg font-medium mb-3">
+                  <p className="text-white text-lg font-medium mb-3 text-center">
                     Оставьте контакт для связи!
                   </p>
                   <motion.div
