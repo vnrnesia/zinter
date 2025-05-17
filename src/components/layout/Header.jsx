@@ -14,17 +14,19 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className="w-full h-20 flex items-center shadow-sm bg-white fixed bottom-0 left-0 top-0 z-50 border-b-4 border-b-[#FFC23E]">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link to="/" aria-label="Homepage">
+      <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
+        <div className=" mx-auto md:px-4 flex justify-between items-center w-full">
+          {/* Logo */}
+          <Link to="/" aria-label="Homepage" className="flex-shrink-0">
             <img
               src={ZinterLogo}
               alt="Page Logo"
-              className="h-auto max-h-8 w-auto max-w-[300px] sm:max-h-16"
+              className="h-auto max-h-8 sm:max-h-16 w-auto"
               loading="lazy"
             />
           </Link>
 
+          {/* Navigation (desktop only) */}
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
               <li>
@@ -57,7 +59,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M19 9l-7 7-7-7"
-                    ></path>
+                    />
                   </svg>
                 </button>
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
@@ -102,27 +104,30 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-1 md:gap-4">
+          {/* Right Side (phone + mobile menu) */}
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Phone (desktop only) */}
             <a
               href="tel:+79178899457"
               className="hidden lg:block bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
             >
               +7 (917) 889-94-57
             </a>
+
+            {/* Hamburger Menu (mobile only) */}
             <button
               onClick={() => {
                 setMobileMenuOpen((prev) => !prev);
                 setSubMenuOpen(false);
               }}
-              className="md:hidden p-2 rounded-lg"
+              className="md:hidden  w-24 h-24 flex items-center sm:justify-between md:justify-center rounded-xl"
             >
               {mobileMenuOpen ? (
-                
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-20 w-20 pr-3 text-[#006FDC]"
+                  className="w-24 h-14 text-[#006FDC]"
                   fill="none"
-                  viewBox="5 0 24 24"
+                  viewBox="-10 0 24 24"
                   stroke="currentColor"
                   strokeWidth={1}
                 >
@@ -133,13 +138,13 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   />
                 </svg>
               ) : (
-            
                 <svg
-                  className="w-24 h-20 mt-3"
-                  viewBox="5 0 24 24"
+                  className="w-52 h-14"
+                  viewBox="-10 0 24 24"
                   fill="none"
                   stroke="url(#gradient)"
                   xmlns="http://www.w3.org/2000/svg"
+                
                 >
                   <defs>
                     <linearGradient
@@ -157,7 +162,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="1"
-                    d="M4 6h16 M4 10h16 M4 14h16"
+                    d="M4 6h16 M4 12h16 M4 18h16"
                   />
                 </svg>
               )}
@@ -166,6 +171,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
         </div>
       </header>
 
+      {/* Mobile menu panel */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -176,7 +182,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             transition={{ duration: 0.3 }}
             className="md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
           >
-            <ul className="space-y-4 space-x-2 text-start">
+            <ul className="space-y-4 text-start">
               <li>
                 <Link
                   to="/search-provider"
@@ -186,34 +192,27 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   Поиск Поставщика
                 </Link>
               </li>
-            
               <li>
-                <ul className="text-center">
-                  <li>
-                    <Link
-                      to="/china-delivery"
-                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex pt-3 py-6 text-gray-800 text-start border-b"
-                    >
-                      Доставка из Китая
-                      <img className="w-10 pl-2" src={gridicon2} alt="" />
-                    </Link>
-                  </li>
-                  
-                </ul>
-                
+                <Link
+                  to="/china-delivery"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center pt-3 py-6 text-gray-800 text-start border-b"
+                >
+                  Доставка из Китая
+                  <img className="w-10 pl-2" src={gridicon2} alt="" />
+                </Link>
               </li>
               <li>
                 <Link
                   to="/europe-delivery"
-                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex pt-3 py-6 text-gray-800 text-start border-b"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center pt-3 py-6 text-gray-800 text-start border-b"
                 >
                   Доставка из Европы
                   <img className="w-10 pl-2" src={gridicon3} alt="" />
                 </Link>
               </li>
-                <li>
+              <li>
                 <Link
                   to="/payment"
                   onClick={() => setMobileMenuOpen(false)}
@@ -253,7 +252,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <div className="w-full flex justify-center items-center py-4">
               <a
                 href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg whitespace-nowrap text-center"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center"
               >
                 +7 (917) 889-94-57
               </a>
