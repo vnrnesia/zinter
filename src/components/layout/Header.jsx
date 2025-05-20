@@ -26,7 +26,6 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             />
           </Link>
 
-          {/* Navigation (desktop only) */}
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-8">
               <li>
@@ -104,9 +103,9 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             </ul>
           </nav>
 
-          {/* Right Side (phone + mobile menu) */}
+ 
           <div className="flex items-center gap-2 md:gap-4">
-            {/* Phone (desktop only) */}
+        
             <a
               href="tel:+79178899457"
               className="hidden lg:block bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
@@ -187,7 +186,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/search-provider"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-6 px-2 text-gray-800 border-b"
+                  className="block py-6 text-gray-800 border-b"
                 >
                   Поиск Поставщика
                 </Link>
