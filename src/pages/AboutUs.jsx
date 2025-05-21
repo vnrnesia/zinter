@@ -74,7 +74,7 @@ export default function AboutUs() {
 
       <section className="pt-16 w-full">
         <CtaCard
-          title="🌟 Кто мы и почему нам доверяют"
+          title="Кто мы и почему нам доверяют"
           text="Наша компания — надёжный партнёр в сфере логистики и поставок. Мы объединяем опыт, профессионализм и индивидуальный подход, чтобы помочь вашему бизнесу расти и развиваться. Для нас важен каждый клиент — мы всегда на связи и готовы предложить лучшие решения."
         />
       </section>
@@ -110,10 +110,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="pt-16 w-full">
-        <CtaCard />
-      </section>
-
+      
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
           <WhoWeAre />
