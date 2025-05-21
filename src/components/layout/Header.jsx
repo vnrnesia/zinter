@@ -64,7 +64,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <Link
               to="/"
               aria-label="Homepage"
-              className="flex-shrink-0 ml-auto md:ml-0"
+              className="flex-shrink ml-auto md:ml-0"
             >
               <img
                 src={ZinterLogo}
