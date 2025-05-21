@@ -6,7 +6,15 @@ import gridicon2 from "@/assets/ServiceGridImg/gridicon2.png";
 import gridicon3 from "@/assets/ServiceGridImg/gridicon3.png";
 
 export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsDesktop(window.innerWidth >= 768);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
@@ -14,19 +22,61 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <>
-      <header className="w-full  h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
-        <div className=" mx-auto md:px-4 flex justify-between items-center w-full">
-          {/* Logo */}
-          <Link to="/" aria-label="Homepage" className="flex-shrink-0">
-            <img
-              src={ZinterLogo}
-              alt="Page Logo"
-              className="h-auto max-h-7 md:max-h-10 w-auto"
-              loading="lazy"
-            />
-          </Link>
+      <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
+        <div className="mx-auto md:px-4 flex items-center justify-between w-full">
+          {/* Sol: Hamburger | Sağ: Logo (mobil için) */}
+          <div className="pr-2 flex flex-row-reverse gap-24 md:gap-0 items-center justify-between w-full md:w-auto md:space-x-4 order-1 md:order-0">
+            <button
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle menu"
+              className=" md:order-2 flex-shrink-0 w-14 h-14 flex justify-center items-center text-[#006FDC]"
+            >
+              {mobileMenuOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-14 h-14"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-14 h-14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={1}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
 
-          <nav className="hidden md:block">
+            <Link
+              to="/"
+              aria-label="Homepage"
+              className="flex-shrink-0 ml-auto md:ml-0"
+            >
+              <img
+                src={ZinterLogo}
+                alt="Page Logo"
+                className="order-1 md:order-2 h-auto max-h-9 mt-2 md:max-h-10 w-auto"
+                loading="lazy"
+              />
+            </Link>
+          </div>
+
+          {/* Menü ortada */}
+          <nav className="hidden md:flex flex-grow justify-center order-0 md:order-1">
             <ul className="flex items-center space-x-8">
               <li>
                 <Link
@@ -103,90 +153,37 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             </ul>
           </nav>
 
- 
-          <div className="flex items-center gap-2 md:gap-4">
-        
+          {/* Telefon numarası (masaüstü) */}
+          <div className="hidden lg:flex items-center gap-4 order-2">
             <a
               href="tel:+79178899457"
-              className="hidden lg:block bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
+              className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
             >
               +7 (917) 889-94-57
             </a>
-
-            {/* Hamburger Menu (mobile only) */}
-            <button
-              onClick={() => {
-                setMobileMenuOpen((prev) => !prev);
-                setSubMenuOpen(false);
-              }}
-              className="md:hidden  w-24 h-24 flex items-center sm:justify-between md:justify-center rounded-xl"
-            >
-              {mobileMenuOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-24 h-14 text-[#006FDC]"
-                  fill="none"
-                  viewBox="-10 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-52 h-14"
-                  viewBox="-10 0 24 24"
-                  fill="none"
-                  stroke="url(#gradient)"
-                  xmlns="http://www.w3.org/2000/svg"
-                
-                >
-                  <defs>
-                    <linearGradient
-                      id="gradient"
-                      x1="0"
-                      y1="0"
-                      x2="100%"
-                      y2="0"
-                    >
-                      <stop offset="0%" stopColor="#006FDC" />
-                      <stop offset="100%" stopColor="#11B4EC" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1"
-                    d="M4 6h16 M4 12h16 M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu panel */}
+      {/* Mobil Menü Paneli */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            key="mobile-menu"
-            initial={{ x: "100%", opacity: 0 }}
+            key="menu-panel"
+            initial={{ x: isDesktop ? "-100%" : "100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "100%", opacity: 0 }}
+            exit={{ x: isDesktop ? "-100%" : "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-0 bg-white z-40 pt-20 px-4"
+            className={`fixed top-0 ${isDesktop ? "left-0" : "right-0"} h-full bg-white z-10 pt-20 px-4 overflow-auto ${
+              isDesktop ? "w-1/4" : "w-full"
+            }`}
           >
             <ul className="space-y-4 text-start">
               <li>
                 <Link
                   to="/search-provider"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block py-6 text-gray-800 border-b"
+                  className="block py-6 text-gray-800 border-b md:pl-6"
                 >
                   Поиск Поставщика
                 </Link>
@@ -195,7 +192,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/china-delivery"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center pt-3 py-6 text-gray-800 text-start border-b"
+                  className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
                 >
                   Доставка из Китая
                   <img className="w-10 pl-2" src={gridicon2} alt="" />
@@ -205,7 +202,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/europe-delivery"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center pt-3 py-6 text-gray-800 text-start border-b"
+                  className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
                 >
                   Доставка из Европы
                   <img className="w-10 pl-2" src={gridicon3} alt="" />
@@ -215,7 +212,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/payment"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block pt-3 py-6 text-gray-800 border-b"
+                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
                 >
                   Оплата товара
                 </Link>
@@ -224,7 +221,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/features"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block pt-3 py-6 text-gray-800 border-b"
+                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
                 >
                   Тамоэнное Оформление
                 </Link>
@@ -233,7 +230,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/warehouse"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block pt-3 py-6 text-gray-800 border-b"
+                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
                 >
                   Усилуги Склад
                 </Link>
@@ -242,7 +239,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 <Link
                   to="/about"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block pt-3 py-6 text-gray-800 border-b"
+                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
                 >
                   о Компании
                 </Link>
@@ -251,7 +248,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <div className="w-full flex justify-center items-center py-4">
               <a
                 href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-2 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center md:hidden"
               >
                 +7 (917) 889-94-57
               </a>

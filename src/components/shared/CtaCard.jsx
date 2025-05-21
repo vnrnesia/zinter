@@ -47,7 +47,7 @@ export default function CtaCard({ title, text }) {
             className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none"
           />
 
-          <div className="relative flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-start">
+          <div className="relative flex flex-col md:grid md:grid-cols-2 gap-12 items-start">
             <div className="flex justify-center items-center md:order-2">
               <img
                 src={international}
@@ -73,8 +73,8 @@ export default function CtaCard({ title, text }) {
                   Оставьте контакт для связи!
                 </p>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center bg-white rounded-full overflow-hidden shadow-md w-full"
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-center bg-white rounded-sm overflow-hidden shadow-md w-full"
                 >
                   <input
                     type="text"
@@ -111,7 +111,7 @@ export default function CtaCard({ title, text }) {
                 </motion.div>
               </div>
 
-              <div className="flex flex-row items-center justify-center gap-4 mt-6 md:mr-36">
+              <div className="flex flex-row items-start justify-start gap-4 mt-3 ml-1 ">
                 <a href="#" className="text-white hover:text-blue-200 transition-colors">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path

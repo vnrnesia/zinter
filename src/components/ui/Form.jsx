@@ -115,10 +115,12 @@ export default function Form() {
             required
           >
             <option value="">Выберите услугу</option>
-            <option>Услуг 1</option>
-            <option>Услуг 2</option>
-            <option>Услуг 3</option>
-            <option>Услуг 4</option>
+            <option>Поиск Поставщика</option>
+            <option>Доставка из Китая</option>
+            <option>Доставка из Европы</option>
+            <option>Оплата товара</option>
+            <option>Тамоэнное Оформление</option>
+            <option>Усилуги Склад</option>
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
             <svg
