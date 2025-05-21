@@ -13,18 +13,13 @@ export default function ContactButton() {
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-    
-      
       if (currentScrollY > 500) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
-        setShowIcons(false); 
-        
+        setShowIcons(false);
       }
 
-     
-      
       if (currentScrollY !== lastScrollY.current) {
         setShowScrollText(true);
         if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
@@ -53,7 +48,6 @@ export default function ContactButton() {
           transition={{ duration: 0.5 }}
           className="fixed bottom-20 right-5 z-50 flex flex-row gap-2 md:hidden"
         >
-         
           <AnimatePresence>
             {showScrollText && (
               <motion.div
@@ -71,7 +65,6 @@ export default function ContactButton() {
             )}
           </AnimatePresence>
 
-     
           <motion.button
             onClick={() => setShowIcons((prev) => !prev)}
             initial={{ scale: 0.8 }}
@@ -101,7 +94,6 @@ export default function ContactButton() {
                 }}
                 className="absolute bottom-[70px] right-2 flex flex-col items-center gap-3"
               >
-          
                 <a
                   href="https://wa.me/79178899457"
                   target="_blank"
@@ -143,8 +135,11 @@ export default function ContactButton() {
                   </svg>
                 </a>
 
-    
-                <a href="https://t.me/yourtelegrambot" target="_blank" rel="noreferrer">
+                <a
+                  href="https://t.me/yourtelegrambot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
@@ -155,14 +150,16 @@ export default function ContactButton() {
                       fill="#c8daea"
                       d="M199 404c-11 0-10-4-13-14l-32-105 245-144"
                     />
-                    <path fill="#a9c9dd" d="M199 404c7 0 11-4 16-8l45-43-56-34" />
+                    <path
+                      fill="#a9c9dd"
+                      d="M199 404c7 0 11-4 16-8l45-43-56-34"
+                    />
                     <path
                       fill="#f6fbfe"
                       d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"
                     />
                   </svg>
                 </a>
-
 
                 <a
                   href="mailto:zinter@zinter.com"
@@ -193,12 +190,23 @@ export default function ContactButton() {
                       fill="#34A853"
                     />
                     <path
+                      d="M9.94811 24.0001V15.0732L9.94043 15.0669L9.94811 24.0001Z"
+                      fill="#C5221F"
+                    />
+                    <path
+                      d="M9.94014 8.52404L8.37646 7.39382C5.60179 5.91001 5 9.17692 5 9.17692V11.4651L9.94014 15.0667V8.52404Z"
+                      fill="#C5221F"
+                    />
+                    <path
+                      d="M9.94043 8.52441V15.0671L9.94811 15.0734V8.53073L9.94043 8.52441Z"
+                      fill="#C5221F"
+                    />
+                    <path
                       d="M5 11.4668V22.6591C5.07646 23.8904 6.15673 24.0003 6.15673 24.0003H9.94877L9.94014 15.0671L5 11.4668Z"
                       fill="#4285F4"
                     />
                   </svg>
                 </a>
-
                 <a
                   href="tel:+79178899457"
                   className="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center text-white shadow-lg transform transition-all hover:scale-110 hover:shadow-xl"

@@ -19,6 +19,8 @@ import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
 import wholeworld from "@/assets/wholeworld.png";
 import AboutUsServiceGrid from "@/components/ui/AboutUsServiceGrid.jsx";
 import CallButton from "@/components/shared/CallButton.jsx";
+import TeamProfiles from "@/components/ui/TeamProfiles.jsx";
+
 
 export default function AboutUs() {
   return (
@@ -66,7 +68,7 @@ export default function AboutUs() {
 
       <section className="py-12 bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
-          <SearchCards />
+          <TeamProfiles />
         </div>
       </section>
 
