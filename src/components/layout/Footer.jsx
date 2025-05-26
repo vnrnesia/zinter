@@ -1,4 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Brands from "@/components/shared/Brands";
+import { useLocation } from "react-router-dom";
+
 import {
   faTelegramPlane,
   faWhatsapp,
@@ -49,9 +52,14 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
-      <div className="w-full flex justify-center -mb-10 z-20 absolute -top-7">
+      {!isHome && <Brands />}
+
+      <div className="w-full flex justify-center -mb-10 z-20 absolute -top-[-70px]">
         <img src={zintercircle} alt="" className=" md:hidden w-14 h-14" />
       </div>
 

@@ -1,5 +1,5 @@
-import ivan from "@/assets/TeamProfilesImg/ivan.png";
-import sencer from "@/assets/TeamProfilesImg/sencer.png";
+import ivan from "@/assets/TeamProfilesImg/ivan.webp";
+import sencer from "@/assets/TeamProfilesImg/sencer.webp";
 
 export default function TeamProfiles() {
   const profiles = [

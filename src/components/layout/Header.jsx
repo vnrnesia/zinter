@@ -25,7 +25,8 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
       <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="mx-auto md:px-4 flex items-center justify-between w-full">
           {/* Sol: Hamburger | Sağ: Logo (mobil için) */}
-          <div className="pr-2 flex flex-row-reverse gap-24 md:gap-0 items-center justify-between w-full md:w-auto md:space-x-4 order-1 md:order-0">
+          <div className="ppr-1 flex flex-row-reverse gap-4 md:gap-0 items-center justify-start w-fit md:w-auto md:space-x-4 order-1 md:order-0
+">
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
@@ -64,12 +65,12 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <Link
               to="/"
               aria-label="Homepage"
-              className="flex-shrink ml-auto md:ml-0"
+              className="flex-shrink  md:ml-0"
             >
               <img
                 src={ZinterLogo}
                 alt="Page Logo"
-                className="order-1 md:order-2 h-auto max-h-9 mt-2 md:max-h-10 w-auto"
+                className="order-1 md:order-2 h-auto max-h-12 mt-2 md:max-h-10 w-auto"
                 loading="lazy"
               />
             </Link>
@@ -248,7 +249,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <div className="w-full flex justify-center items-center py-4">
               <a
                 href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-2 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center md:hidden"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center md:hidden"
               >
                 +7 (917) 889-94-57
               </a>

@@ -60,14 +60,14 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="py-16 w-full">
+      <section className="pt-16 w-full">
         <CtaCard
           title="Сопровождение на всех этапах — от Китая до Европы без проблем на границе"
           text="Обеспечиваем полный контроль и поддержку на каждом этапе перевозки — от упаковки и отправки в Китае до таможенного оформления и доставки в Европу. Без задержек и проблем на границе."
         />
       </section>
 
-      <section className="py-16">
+      <section className="lg:py-16">
         <div className="w-full max-w-full px-4 mx-auto">
           <FeaturesHowWorks />
         </div>

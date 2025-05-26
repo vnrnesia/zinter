@@ -43,6 +43,9 @@ export default function StepsSection() {
     <section className="py-16 md:py-24">
       <div className="container mx-auto">
         <div className="text-center mb-12 md:mb-16">
+           <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
+            шаг за шагом
+          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Этапы Сотруничества
           </h2>
