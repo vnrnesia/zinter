@@ -1,6 +1,9 @@
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import Form from "@/components/ui/Form";
 import CallButton from "@/components/shared/CallButton.jsx";
+import Svg from "@/components/ui/Svg.jsx";
+
+
 
 
 export default function Main() {
@@ -74,12 +77,15 @@ export default function Main() {
               </span>
             </li>
           </ul>
-          <div className="pt-2 flex justify-center lg:justify-start">
+          <div className="pt-2 flex justify-center lg:justify-start ">
            <CallButton />
           </div>
         </div>
         <div className="w-[90%] sm:w-[80%] lg:w-auto lg:ml-auto lg:pr-16">
         <Form />
+        <div>
+   
+        </div>
         </div>
         
       </div>

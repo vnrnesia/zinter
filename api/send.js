@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       phone,
       countryName,
       service,
+      service1,
       dateTime,
       selectedOptions,
       countryCode,
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
       message = `📞 Контакт из карточки CTA:\n\n📱 Телефон: ${phone}`;
     } else {
       thread_id = "7";
-      message = `📩 Новая заявка\n👤 ФИО: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n🌍 Страна: ${countryName}\n📅 Дата и Время: ${dateTime}\n🛠 Услуга: ${service}`;
+      message = `📩 Новая заявка\n👤 ФИО: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n🌍 Страна: ${countryName}\n📅 Дата и Время: ${dateTime}\n🛠 Услуга: ${service} \n🛠 Связаться: ${service1}`;
     }
   
     try {

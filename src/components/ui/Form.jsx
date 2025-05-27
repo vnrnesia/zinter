@@ -48,6 +48,7 @@ export default function Form() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const service = document.getElementById("service").value;
+    const service1 = document.getElementById("service1").value;
 
     const phone =
       itiRef.current?.getNumber(window.intlTelInputUtils.numberFormat.E164) ||
@@ -71,6 +72,7 @@ export default function Form() {
           phone,
           countryName,
           service,
+          service1,
           dateTime,
         }),
       });
@@ -192,6 +194,42 @@ export default function Form() {
           <p id="phoneError" className="mt-1 text-sm text-red-600 hidden">
             Неверный номер телефона
           </p>
+        </div>
+        <div>
+          <label
+            htmlFor="service1"
+            className="block text-sm font-medium text-gray-500 mb-2"
+          >
+            Каким способом с вами связаться?
+          </label>
+          <div className="relative">
+            <select
+              id="service1"
+              className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+              required
+            >
+              <option value="">Выберите способ связи</option>
+              <option>Telegram</option>
+              <option>Whatsapp</option>
+              <option>E-mail</option>
+              <option>телефона</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
 
         <div className="flex items-start gap-3 pt-2">

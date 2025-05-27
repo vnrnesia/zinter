@@ -175,7 +175,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: isDesktop ? "-100%" : "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className={`fixed top-0 ${isDesktop ? "left-0" : "right-0"} h-full bg-white z-10 pt-20 px-4 overflow-auto ${
+            className={`fixed top-0 ${isDesktop ? "left-0" : "right-0"} h-full bg-white z-20 pt-20 px-4 overflow-auto  ${
               isDesktop ? "w-1/4" : "w-full"
             }`}
           >
