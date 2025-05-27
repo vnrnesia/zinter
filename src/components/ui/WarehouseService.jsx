@@ -105,9 +105,7 @@ export default function Services() {
     <section className="py-20 bg-white w-full">
       <div className="w-full max-w-[1300px] px-4 mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <span className="px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full">
-            Надёжная логистика
-          </span>
+      
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 my-4">
             Наши услуги
           </h2>

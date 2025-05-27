@@ -57,7 +57,7 @@ export default function Footer() {
 
   return (
     <>
-     <div className="py-14">
+     <div className="pb-36">
        {!isHome && <Brands />}
      </div>
       <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
