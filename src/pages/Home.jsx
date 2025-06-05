@@ -48,7 +48,7 @@ export default function Home() {
         <ImportExport />
       </div>
 
-      <div className="container pb-20">
+      <div className="container">
         <WhoWeAre />
       </div>
     </div>

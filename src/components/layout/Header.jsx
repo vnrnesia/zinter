@@ -196,7 +196,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
                 >
                   Доставка из Китая
-                  <img className="w-10 pl-2" src={gridicon2} alt="" />
+                 
                 </Link>
               </li>
               <li>
@@ -206,7 +206,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
                 >
                   Доставка из Европы
-                  <img className="w-10 pl-2" src={gridicon3} alt="" />
+                
                 </Link>
               </li>
               <li>
