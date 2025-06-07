@@ -25,8 +25,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
       <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="mx-auto md:px-4 flex items-center justify-between w-full">
           {/* Sol: Hamburger | Sağ: Logo (mobil için) */}
-          <div className="ppr-1 flex flex-row-reverse gap-4 md:gap-0 items-center justify-start w-fit md:w-auto md:space-x-4 order-1 md:order-0
-">
+          <div
+            className="ppr-1 flex flex-row-reverse gap-4 md:gap-0 items-center justify-start w-fit md:w-auto md:space-x-4 order-1 md:order-0
+"
+          >
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
@@ -62,11 +64,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               )}
             </button>
 
-            <Link
-              to="/"
-              aria-label="Homepage"
-              className="flex-shrink  md:ml-0"
-            >
+            <Link to="/" aria-label="Homepage" className="flex-shrink  md:ml-0">
               <img
                 src={ZinterLogo}
                 alt="Page Logo"
@@ -171,85 +169,55 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
         {mobileMenuOpen && (
           <motion.div
             key="menu-panel"
-            initial={{ x: isDesktop ? "-100%" : "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: isDesktop ? "-100%" : "100%", opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`fixed top-0 ${isDesktop ? "left-0" : "right-0"} h-full bg-white z-20 pt-20 px-4 overflow-auto  ${
-              isDesktop ? "w-1/4" : "w-full"
-            }`}
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-0 bg-white z-40 pt-20 px-4 overflow-y-auto"
           >
-            <ul className="space-y-4 text-start">
-              <li>
-                <Link
-                  to="/search-provider"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-6 text-gray-800 border-b md:pl-6"
+            <motion.ul
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: { transition: { staggerChildren: 0.05 } },
+                hidden: {
+                  transition: { staggerChildren: 0.03, staggerDirection: -1 },
+                },
+              }}
+              className="space-y-4 text-start"
+            >
+              {[
+                { to: "/search-provider", label: "Поиск Поставщика" },
+                { to: "/china-delivery", label: "Доставка из Китая" },
+                { to: "/europe-delivery", label: "Доставка из Европы" },
+                { to: "/payment", label: "Оплата товара" },
+                { to: "/features", label: "Таможенное Оформление" },
+                { to: "/warehouse", label: "Услуги Склад" },
+                { to: "/about", label: "О Компании" },
+              ].map(({ to, label }) => (
+                <motion.li
+                  key={to}
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
                 >
-                  Поиск Поставщика
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/china-delivery"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
-                >
-                  Доставка из Китая
-                 
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/europe-delivery"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 flex items-center pt-3 py-6 text-gray-800 border-b"
-                >
-                  Доставка из Европы
-                
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/payment"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
-                >
-                  Оплата товара
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/features"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
-                >
-                  Тамоэнное Оформление
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/warehouse"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
-                >
-                  Усилуги Склад
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="md:pl-6 block pt-3 py-6 text-gray-800 border-b"
-                >
-                  о Компании
-                </Link>
-              </li>
-            </ul>
-            <div className="w-full flex justify-center items-center py-4">
+                  <Link
+                    to={to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-4 text-gray-800 border-b"
+                  >
+                    {label}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+
+            <div className="w-full flex justify-center items-center py-6">
               <a
                 href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center md:hidden"
+                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center"
               >
                 +7 (917) 889-94-57
               </a>
