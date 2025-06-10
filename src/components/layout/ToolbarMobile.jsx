@@ -39,8 +39,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
     <nav className="fixed bottom-0 left-0 w-full bg-gray-100 border-t z-50 md:hidden">
       <ul className="flex justify-evenly items-center h-16 text-sm relative">
         <li>
-          <Link to="/" className="flex flex-col items-center text-gray-600 pt-[5px]">
-            <img src={zintermini} className="w-6" />
+          <Link to="/" className="flex flex-col items-center text-gray-600 pt-[px]">
+            <img src={zintermini} className="w-9" />
             <span>Главная</span>
           </Link>
         </li>
@@ -48,11 +48,11 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
         <li>
           <button
             onClick={() => setIsOpen(true)}
-            className="flex pl-2 flex-col items-center text-gray-600"
+            className="flex pl- flex-col items-center text-gray-600"
           >
             <svg
-              height="30px"
-              width="25px"
+              height="35px"
+              width="30px"
               viewBox="0 0 183.667 183.667"
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
@@ -87,14 +87,14 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
         <li>
           <a
             href="tel:+79178899457"
-            className="flex flex-col items-center text-gray-600 mt-[-4px]"
+            className="flex flex-col  -mr-2 items-center text-gray-600 mt-[-4px]"
           >
             <svg
               viewBox="0 0 48 48"
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
-              width="33px"
-              height="35px"
+              width="40px"
+              height="40px"
             >
               <g strokeWidth="0"></g>
               <g strokeLinecap="round" strokeLinejoin="round"></g>
@@ -108,29 +108,29 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
                 />
               </g>
             </svg>
-            <span className="mt-[-4px]">Звонок</span>
+            <span className="mt-[px]">Звонок</span>
           </a>
         </li>
 
         <li className="">
           <button
             onClick={toggleMessageMenu}
-            className="h-16 w-22 flex flex-col items-center justify-center text-gray-600 overflow-visible relative"
+            className="h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
           >
-           <img src={chatbubble} alt="" className="w-8 h-8" />
-            <p className="w-24 text-gray-400  mb-[4px]">Сообщение</p>
+           <img src={chatbubble} alt="" className="w-10 h-9" />
+            <p className="w-24 text-gray-400  mb-[2px]">Сообщение</p>
           </button>
         </li>
 
-        <li className="py-2">
+        <li className="py-2 -ml-2">
           <button
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             className="flex flex-col items-center text-gray-600 "
           >
             <svg
               fill="#000000"
-              height="25px"
-              width="25px"
+              height="40px"
+              width="33px"
               viewBox="0 0 492.308 492.308"
               xmlns="http://www.w3.org/2000/svg"
               className=""
@@ -186,7 +186,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               </g>
             </svg>
 
-            <span className="mt-[1px] py-">Меню</span>
+            <span className="mt-[-6px] py-[4px]">Меню</span>
           </button>
         </li>
 
