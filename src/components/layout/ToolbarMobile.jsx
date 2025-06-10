@@ -13,6 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import zintermini from "@/assets/zintermini.png";
 import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
 import Modal from "react";
+import chatbubble from '@/assets/chatbubble.png';
 
 const icons = {
   whatsapp: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
@@ -38,7 +39,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
     <nav className="fixed bottom-0 left-0 w-full bg-gray-100 border-t z-50 md:hidden">
       <ul className="flex justify-evenly items-center h-16 text-sm relative">
         <li>
-          <Link to="/" className="flex flex-col items-center text-gray-600">
+          <Link to="/" className="flex flex-col items-center text-gray-600 pt-[5px]">
             <img src={zintermini} className="w-6" />
             <span>Главная</span>
           </Link>
@@ -116,19 +117,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             onClick={toggleMessageMenu}
             className="h-16 w-22 flex flex-col items-center justify-center text-gray-600 overflow-visible relative"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="#ffffff"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute -top-[16px] w-9 h-20"
-              stroke="#000000"
-              strokeWidth="0.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M19.4003 18C19.7837 17.2499 20 16.4002 20 15.5C20 12.4624 17.5376 10 14.5 10C11.4624 10 9 12.4624 9 15.5C9 18.5376 11.4624 21 14.5 21L21 21C21 21 20 20 19.4143 18.0292M18.85 12C18.9484 11.5153 19 11.0137 19 10.5C19 6.35786 15.6421 3 11.5 3C7.35786 3 4 6.35786 4 10.5C4 11.3766 4.15039 12.2181 4.42676 13C5.50098 16.0117 3 18 3 18H9.5" />
-            </svg>
-            <p className="w-24  -mb-[25px]">Сообщение</p>
+           <img src={chatbubble} alt="" className="w-8 h-8" />
+            <p className="w-24 text-gray-400  mb-[4px]">Сообщение</p>
           </button>
         </li>
 
@@ -196,7 +186,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               </g>
             </svg>
 
-            <span className="-mt-[1px] py-">Меню</span>
+            <span className="mt-[1px] py-">Меню</span>
           </button>
         </li>
 
