@@ -173,7 +173,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 bg-white z-40 pt-20 px-4 overflow-y-auto"
+            className="fixed top-0 left-0 h-full w-full md:w-1/5 bg-white z-40 pt-20 px-4 overflow-y-auto shadow-lg"
           >
             <motion.ul
               initial="hidden"
