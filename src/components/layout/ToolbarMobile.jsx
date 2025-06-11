@@ -39,8 +39,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
     <nav className="fixed bottom-0 left-0 w-full bg-gray-100 border-t z-50 md:hidden">
       <ul className="flex justify-evenly items-center h-16 text-sm relative">
         <li>
-          <Link to="/" className="flex flex-col items-center text-gray-600 pt-[px]">
-            <img src={zintermini} className="w-9" />
+          <Link to="/" className="flex flex-col items-center text-gray-600 mt-[-2px]">
+            <img src={zintermini} className="w-7" />
             <span>Главная</span>
           </Link>
         </li>
@@ -51,8 +51,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             className="flex pl- flex-col items-center text-gray-600"
           >
             <svg
-              height="35px"
-              width="30px"
+              height="25px"
+              width="25px"
               viewBox="0 0 183.667 183.667"
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
@@ -93,8 +93,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               viewBox="0 0 48 48"
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
-              width="40px"
-              height="40px"
+              width="30px"
+              height="30px"
             >
               <g strokeWidth="0"></g>
               <g strokeLinecap="round" strokeLinejoin="round"></g>
@@ -117,7 +117,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
             onClick={toggleMessageMenu}
             className="h-16 w-22 flex flex-col -ml-2 items-center justify-center text-gray-600 overflow-visible relative"
           >
-           <img src={chatbubble} alt="" className="w-10 h-9" />
+           <img src={chatbubble} alt="" className="w-7 h-7" />
             <p className="w-24 text-gray-400  mb-[2px]">Сообщение</p>
           </button>
         </li>
@@ -129,8 +129,8 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
           >
             <svg
               fill="#000000"
-              height="40px"
-              width="33px"
+              height="24px"
+              width="25px"
               viewBox="0 0 492.308 492.308"
               xmlns="http://www.w3.org/2000/svg"
               className=""
@@ -186,7 +186,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
               </g>
             </svg>
 
-            <span className="mt-[-6px] py-[4px]">Меню</span>
+            <span className="mt-[2px] py-[px]">Меню</span>
           </button>
         </li>
 
