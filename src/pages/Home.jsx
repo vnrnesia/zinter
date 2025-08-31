@@ -38,8 +38,6 @@ export default function Home() {
         <Delivery />
       </div>
 
-      <CtaContact />
-
       <div className="py-20">
         <DeliveryBox />
       </div>

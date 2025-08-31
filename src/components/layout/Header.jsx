@@ -32,7 +32,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
-              className=" md:order-2 flex-shrink-0 w-14 h-14 flex justify-center items-center text-[#006FDC]"
+              className=" md:order-2 flex-shrink-0 w-14 h-14  flex md:hidden justify-center items-center text-[#006FDC]"
             >
               {mobileMenuOpen ? (
                 <svg
@@ -93,62 +93,26 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   Оплата
                 </Link>
               </li>
-              <li className="relative group">
-                <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium">
-                  Доставка
-                  <svg
-                    className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
-                  <Link
+             
+                <li>
+                    <Link
                     to="/china-delivery"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50"
+                    className="block px-4 py-2 text-gray-700 hover:text-[#006FDC]"
                   >
                     Доставка из Китая
                   </Link>
-                  <Link
+                </li>
+                <li>
+                   <Link
                     to="/europe-delivery"
-                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50"
+                    className="block px-4 py-2 text-gray-700 hover:text-[#006FDC]"
                   >
                     Доставка из Европы
                   </Link>
-                </div>
-              </li>
-              <li>
-                <Link
-                  to="/features"
-                  className="text-gray-700 hover:text-[#006FDC] font-medium"
-                >
-                  Оформление
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/warehouse"
-                  className="text-gray-700 hover:text-[#006FDC] font-medium"
-                >
-                  Склад
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="text-gray-700 hover:text-[#006FDC] font-medium"
-                >
-                  О нас
-                </Link>
-              </li>
+                </li>
+            
+             
+             
             </ul>
           </nav>
 

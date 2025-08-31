@@ -3,14 +3,28 @@ import PhoneIcon from "@/assets/PhoneIcon.png";
 export default function CallButton() {
   return (
     <div className="pt-2 flex flex-col items-center lg:items-start group relative">
-      <button className="relative flex items-center bg-white hover:bg-gray-100 text-gray-900 pl-8 pr-14 py-2 rounded-lg font-medium transition-colors shadow-md overflow-visible">
-        Обратитесь к нам
-        <img
-          src={PhoneIcon}
-          alt="Phone Icon"
-          className="absolute right-[-30px] top-1/2 transform -translate-y-1/2 transition-transform group-hover:scale-110"
-        />
-      </button>
+      <div className="flex w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer">
+        <div className="flex-grow px-6 py-2 text-base text-gray-700 bg-gray-100">
+          Оставьте заявку
+        </div>
+        <div className="flex items-center justify-center px-4 py- bg-gradient-to-l from-[#0273DE] to-[#10B0EB]  hover:scale-125 transition-transform duration-300">
+          {" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </div>
 
       <div
         className={`
@@ -122,8 +136,6 @@ export default function CallButton() {
             />
           </svg>
         </a>
-
-    
       </div>
     </div>
   );

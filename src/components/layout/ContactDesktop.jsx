@@ -46,7 +46,7 @@ export default function ContactButton() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-20 right-5 z-50 flex flex-row gap-2 md:hidden"
+          className="fixed bottom-20 md:bottom-5 right-5 z-50 flex flex-row gap-2 "
         >
           <AnimatePresence>
             {showScrollText && (

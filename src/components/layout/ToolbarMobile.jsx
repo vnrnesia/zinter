@@ -40,7 +40,7 @@ export default function ToolbarMobile({ setMobileMenuOpen }) {
       <ul className="flex justify-evenly items-center h-16 text-sm relative">
         <li>
           <Link to="/" className="flex flex-col items-center text-gray-600 mt-[-2px]">
-            <img src={zintermini} className="w-7" />
+            <img src={zintermini} className="w-7 pt-" />
             <span>Главная</span>
           </Link>
         </li>
