@@ -43,7 +43,9 @@ export default function ChinaDelivery() {
             </p>
 
            
-              <CallButtonDelivery />
+             <div className=" flex justify-center lg:justify-start">
+                           <CallButton />
+                         </div>
             
           </div>
 
@@ -59,7 +61,6 @@ export default function ChinaDelivery() {
 
       <section className="bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
         </div>
       </section>
 

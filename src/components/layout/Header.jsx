@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ZinterLogo from "@/assets/ZinterLogo.png";
-import gridicon2 from "@/assets/ServiceGridImg/gridicon2.png";
-import gridicon3 from "@/assets/ServiceGridImg/gridicon3.png";
+
 
 export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
@@ -155,9 +154,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 { to: "/search-provider", label: "Поиск Поставщика" },
                 { to: "/china-delivery", label: "Доставка из Китая" },
                 { to: "/europe-delivery", label: "Доставка из Европы" },
-                { to: "/payment", label: "Оплата товара" },
-                { to: "/features", label: "Таможенное Оформление" },
-                { to: "/warehouse", label: "Услуги Склад" },
+             
                 { to: "/about", label: "О Компании" },
               ].map(({ to, label }) => (
                 <motion.li

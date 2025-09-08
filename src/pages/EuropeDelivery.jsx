@@ -46,7 +46,9 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <CallButtonDelivery />
+            <div className=" flex justify-center lg:justify-start">
+              <CallButton />
+            </div>
           </div>
 
           <div className="w-full lg:w-1/2">
@@ -60,9 +62,7 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
-        </div>
+        <div className="w-full max-w-full px-4 mx-auto"></div>
       </section>
 
       <section className=" bg-white">
@@ -72,7 +72,10 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="py-16 w-full">
-        <CtaCard title="Организуем доставку из Европы — быстро и надёжно" text="Мы обеспечиваем полный контроль над логистикой: от оформления документов до своевременной доставки прямо к вам. Надёжно, быстро и без лишних хлопот." />
+        <CtaCard
+          title="Организуем доставку из Европы — быстро и надёжно"
+          text="Мы обеспечиваем полный контроль над логистикой: от оформления документов до своевременной доставки прямо к вам. Надёжно, быстро и без лишних хлопот."
+        />
       </section>
 
       <section className="py-16">

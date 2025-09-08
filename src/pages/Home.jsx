@@ -16,7 +16,7 @@ export default function Home() {
     <div className="pt-10 lg:pt-20 overflow-x-hidden">
       <Main />
 
-      <Brands />
+     
 
       <div className="container">
         <Cards />

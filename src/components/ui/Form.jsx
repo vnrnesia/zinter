@@ -6,6 +6,7 @@ export default function Form() {
   const itiRef = useRef(null);
   const [countryName, setCountryName] = useState("Неизвестно");
   const [status, setStatus] = useState(null);
+  const [contactMethod, setContactMethod] = useState("телефона"); 
 
   useEffect(() => {
     if (typeof window !== "undefined" && phoneInputRef.current) {
@@ -40,19 +41,28 @@ export default function Form() {
 
       loadIntlTelInput();
     }
-  }, []);
+  }, [contactMethod]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
+    const name = document.getElementById("name")?.value;
     const service = document.getElementById("service").value;
     const service1 = document.getElementById("service1").value;
 
-    const phone =
-      itiRef.current?.getNumber(window.intlTelInputUtils.numberFormat.E164) ||
-      phoneInputRef.current?.value;
+    let email = "";
+    let phone = "";
+    let telegram = "";
+
+    if (service1 === "E-mail") {
+      email = document.getElementById("email").value;
+    } else if (service1 === "Telegram") {
+      telegram = document.getElementById("telegram").value;
+    } else if (service1 === "Whatsapp" || service1 === "телефона") {
+      phone =
+        itiRef.current?.getNumber(window.intlTelInputUtils.numberFormat.E164) ||
+        phoneInputRef.current?.value;
+    }
 
     const dateTime = new Date().toLocaleString("ru-RU", {
       timeZone: "Europe/Moscow",
@@ -70,6 +80,7 @@ export default function Form() {
           name,
           email,
           phone,
+          telegram,
           countryName,
           service,
           service1,
@@ -82,6 +93,7 @@ export default function Form() {
       setStatus("success");
       setTimeout(() => setStatus(null), 4000);
       e.target.reset();
+      setContactMethod("телефона"); 
     } catch (err) {
       console.error("Hata:", err);
       setStatus("error");
@@ -144,35 +156,19 @@ export default function Form() {
 
       <form className="space-y-4" id="contactForm" onSubmit={handleSubmit}>
         <div>
-        
-         
-        </div>
-
-        <div>
-        
-        </div>
-
-        <div className="relative w-full overflow-hidden max-w-full">
           <label
-            htmlFor="phone"
+            htmlFor="name"
             className="block text-sm font-medium text-gray-500 mb-1"
           >
-            Номер Телефона
+            Ваше имя
           </label>
           <input
-            type="tel"
-            id="phone"
-            ref={phoneInputRef}
+            type="text"
+            id="name"
+            placeholder="Иван Иванов"
             className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
-            style={{
-              paddingLeft: "52px",
-              boxSizing: "border-box",
-            }}
             required
           />
-          <p id="phoneError" className="mt-1 text-sm text-red-600 hidden">
-            Неверный номер телефона
-          </p>
         </div>
         <div>
           <label
@@ -186,12 +182,13 @@ export default function Form() {
               id="service1"
               className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
               required
+              value={contactMethod}
+              onChange={(e) => setContactMethod(e.target.value)}
             >
-              <option value="">Выберите способ связи</option>
-              <option>Telegram</option>
-              <option>Whatsapp</option>
-              <option>E-mail</option>
-              <option>телефона</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Whatsapp">Whatsapp</option>
+              <option value="E-mail">E-mail</option>
+              <option value="телефона">телефона</option>
             </select>
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
               <svg
@@ -210,6 +207,67 @@ export default function Form() {
             </div>
           </div>
         </div>
+
+        {["телефона", "Whatsapp"].includes(contactMethod) && (
+          <div className="relative w-full overflow-hidden max-w-full">
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-500 mb-1"
+            >
+              {contactMethod === "Whatsapp"
+                ? "Whatsapp номер"
+                : "Номер Телефона"}
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              ref={phoneInputRef}
+              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              style={{
+                paddingLeft: "52px",
+                boxSizing: "border-box",
+              }}
+              required
+            />
+          </div>
+        )}
+
+        {/* E-mail */}
+        {contactMethod === "E-mail" && (
+          <div className="relative w-full overflow-hidden max-w-full">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-500 mb-1"
+            >
+              E-mail
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              required
+            />
+          </div>
+        )}
+
+        {/* Telegram */}
+        {contactMethod === "Telegram" && (
+          <div className="relative w-full overflow-hidden max-w-full">
+            <label
+              htmlFor="telegram"
+              className="block text-sm font-medium text-gray-500 mb-1"
+            >
+              Telegram
+            </label>
+            <input
+              type="text"
+              id="telegram"
+              placeholder="@username"
+              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              required
+            />
+          </div>
+        )}
 
         <div className="flex items-start gap-3 pt-2">
           <div className="flex items-start mt-0.5">

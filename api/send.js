@@ -9,8 +9,9 @@ export default async function handler(req, res) {
     const {
       formType,
       name,
-      email,
+            email,
       phone,
+      telegram,
       countryName,
       service,
       service1,
@@ -34,7 +35,17 @@ export default async function handler(req, res) {
       message = `📞 Контакт из карточки CTA:\n\n📱 Телефон: ${phone}`;
     } else {
       thread_id = "7";
-      message = `📩 Новая заявка\n👤 ФИО: ${name}\n📧 Email: ${email}\n📞 Телефон: ${phone}\n🌍 Страна: ${countryName}\n📅 Дата и Время: ${dateTime}\n🛠 Услуга: ${service} \n🛠 Связаться: ${service1}`;
+      let contactInfo = "";
+      if (service1 === "Telegram") {
+        contactInfo = `💬 Telegram: ${telegram}`;
+      } else if (service1 === "E-mail") {
+        contactInfo = `📧 Email: ${email}`;
+      } else if (service1 === "Whatsapp") {
+        contactInfo = `📞 Whatsapp: ${phone}`;
+      } else {
+        contactInfo = `📞 Телефон: ${phone}`;
+      }
+      message = `📩 Новая заявка\n\n👤 ФИО: ${name}\n${contactInfo}\n🌍 Страна: ${countryName}\n🛠 Услуга: ${service}\n📅 Дата и Время: ${dateTime}`;
     }
   
     try {
@@ -51,7 +62,11 @@ export default async function handler(req, res) {
         }
       );
   
-      if (!telegramRes.ok) throw new Error("Telegram API error");
+      if (!telegramRes.ok) {
+        const errorData = await telegramRes.json();
+        console.error("Telegram API Error:", errorData);
+        throw new Error("Telegram API error");
+      }
   
       return res.status(200).json({ success: true });
     } catch (err) {

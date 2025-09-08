@@ -23,7 +23,7 @@ const Brands = () => {
   const duplicatedBrands = [...brands, ...brands]; 
 
   return (
-    <div className="overflow-hidden bg-gray-50 rounded-xl shadow-sm py-12 md:py-8">
+    <div className="overflow-hidden bg-gray-50 rounded-xl  p-3">
       <motion.div
         className="flex gap-16"
         animate={{ x: ['0%', '-50%'] }}

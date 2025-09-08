@@ -37,7 +37,6 @@ export default function Payment() {
           <img className="w-[70%] md:w-auto"src={payment} alt="Payment Image" />
         </div>
       </section>
-      <Brands />
      <div className="py-16">
        <HowWorks />
      </div>
