@@ -61,17 +61,14 @@ export default function WhoWeAre() {
           viewport={{ once: true }}
           className="mt-16"
         >
-          <div className="w-full">
-          <Comments />
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-center md:text-left text-gray-800 mb-12">
+           <h3 className="text-2xl sm:text-3xl font-bold text-center md:text-left text-gray-800 mb-12">
             Почему нас выбирают?
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-md border border-gray-100 text-center h-full"
+                className="bg-gray-100 p-8 rounded-lg shadow-md border border-gray-100 text-center h-full"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
@@ -91,6 +88,10 @@ export default function WhoWeAre() {
               </motion.div>
             ))}
           </div>
+          <div className="w-full">
+          <Comments />
+          </div>
+         
         </motion.div>
       </div>
     </motion.section>

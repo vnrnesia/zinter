@@ -11,7 +11,7 @@ import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 import GetStarted from "../components/shared/GetStarted";
-import Contact from "../components/ui/Contact"
+import Contact from "../components/ui/Contact";
 //test
 export default function Home() {
   return (
@@ -21,8 +21,9 @@ export default function Home() {
       <div className="container">
         <Cards />
       </div>
-
-     
+      <div className="container">
+        <ImportExport />
+      </div>
 
       <div className="container">
         <StepSection />
@@ -34,16 +35,13 @@ export default function Home() {
       <div className="px-10">
         <Delivery />
       </div>
+
       <div className="py-24">
         <GetStarted />
       </div>
 
       <div className="py-20">
         <DeliveryBox />
-      </div>
-
-      <div className="container">
-        <ImportExport />
       </div>
 
       <div className="container pb-20">
