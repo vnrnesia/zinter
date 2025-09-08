@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactSlide from "./ContactSlideForm"
+import Form from "../ui/Form"
 const GetStarted = () => {
   return (
    <div className="bg-gradient-to-l  from-[#0273DE] to-[#10B0EB] ">
@@ -11,7 +12,7 @@ const GetStarted = () => {
 
       <div className="rounded-2xl max-w-sm md:max-w-7xl  w-full  sm:p-10 md:p-12 flex flex-col md:flex-row justify-between items-stretch">
         <div className="flex  md:ml-24 flex-col md:w-1/2 w-full md:pr-8">
-               <ContactSlide />
+               <Form />
 
         </div>
 
@@ -20,7 +21,7 @@ const GetStarted = () => {
             <img
               src="/world.png"
               alt="world"
-              className="w-full absolute max-w-[350px] md:max-w-[400px] md:pt-[180px]"
+              className="w-full absolute max-w-[350px] md:max-w-[400px] md:pt-[220px]"
             />
           </div>
         </div>

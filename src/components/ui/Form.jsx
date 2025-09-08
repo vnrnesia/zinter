@@ -5,8 +5,85 @@ export default function Form() {
   const phoneInputRef = useRef(null);
   const itiRef = useRef(null);
   const [countryName, setCountryName] = useState("Неизвестно");
-  const [status, setStatus] = useState(null);
-  const [contactMethod, setContactMethod] = useState("телефона"); 
+  const [contactMethod, setContactMethod] = useState("телефона");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [cooldownUntil, setCooldownUntil] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const sendToTelegram = async (message) => {
+    const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "HTML",
+        }),
+      });
+
+      if (response.ok) return true;
+      console.error("Ошибка от Telegram API:", await response.json());
+      return false;
+    } catch (error) {
+      console.error("Ошибка при отправке:", error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (cooldownUntil && new Date() < cooldownUntil) {
+      const remainingSeconds = Math.ceil((cooldownUntil - new Date()) / 1000);
+      setErrorMessage(
+        `Пожалуйста, подождите ${remainingSeconds} секунд перед повторной отправкой.`
+      );
+      return;
+    }
+
+    setErrorMessage("");
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target);
+    const entries = {};
+    formData.forEach((value, key) => (entries[key] = value));
+
+    let phoneNumber = entries.phone;
+    if (itiRef.current && ["телефона", "Whatsapp"].includes(contactMethod)) {
+      phoneNumber = itiRef.current.getNumber(); // alan koduyla birlikte numara
+    }
+
+    const message = `
+<b>Новая заявка:</b>
+
+🌍 Страна: ${countryName}
+📞 Способ связи: ${contactMethod}
+${entries.service ? "🛠️ Услуга: " + entries.service + "\n" : ""}
+${phoneNumber ? `☎️ Телефон: ${phoneNumber}\n` : ""}
+${entries.email ? "📧 E-mail: " + entries.email + "\n" : ""}
+${entries.telegram ? "💬 Telegram: " + entries.telegram + "\n" : ""}
+✅ Cookie согласие: ${entries.consent ? "Да" : "Нет"}
+`;
+
+    const success = await sendToTelegram(message);
+    setIsSubmitting(false);
+
+    if (success) {
+      setIsSuccess(true);
+      setCooldownUntil(new Date(new Date().getTime() + 60000));
+      e.target.reset();
+      setContactMethod("телефона");
+      setTimeout(() => setIsSuccess(false), 5000);
+    } else {
+      setErrorMessage("Произошла ошибка. Попробуйте ещё раз.");
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined" && phoneInputRef.current) {
@@ -17,89 +94,28 @@ export default function Form() {
         utilsScript.onload = () => {
           const iti = window.intlTelInput(phoneInputRef.current, {
             initialCountry: "auto",
-            geoIpLookup: (callback) => {
+            geoIpLookup: (cb) => {
               fetch("https://ipapi.co/json")
                 .then((res) => res.json())
                 .then((data) => {
-                  callback(data.country_code);
+                  cb(data.country_code);
                   setCountryName(data.country_name);
                 })
                 .catch(() => {
-                  callback("RU");
+                  cb("RU");
                   setCountryName("Россия");
                 });
             },
-            utilsScript:
-              "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-            preferredCountries: ["ru", "tr", "de", "cn"],
             separateDialCode: true,
+            preferredCountries: ["ru", "tr", "de", "cn"],
           });
           itiRef.current = iti;
         };
         document.body.appendChild(utilsScript);
       };
-
       loadIntlTelInput();
     }
   }, [contactMethod]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("name")?.value;
-    const service = document.getElementById("service").value;
-    const service1 = document.getElementById("service1").value;
-
-    let email = "";
-    let phone = "";
-    let telegram = "";
-
-    if (service1 === "E-mail") {
-      email = document.getElementById("email").value;
-    } else if (service1 === "Telegram") {
-      telegram = document.getElementById("telegram").value;
-    } else if (service1 === "Whatsapp" || service1 === "телефона") {
-      phone =
-        itiRef.current?.getNumber(window.intlTelInputUtils.numberFormat.E164) ||
-        phoneInputRef.current?.value;
-    }
-
-    const dateTime = new Date().toLocaleString("ru-RU", {
-      timeZone: "Europe/Moscow",
-      dateStyle: "medium",
-      timeStyle: "short",
-    });
-
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          telegram,
-          countryName,
-          service,
-          service1,
-          dateTime,
-        }),
-      });
-
-      if (!response.ok) throw new Error("Sunucu hatası");
-
-      setStatus("success");
-      setTimeout(() => setStatus(null), 4000);
-      e.target.reset();
-      setContactMethod("телефона"); 
-    } catch (err) {
-      console.error("Hata:", err);
-      setStatus("error");
-      setTimeout(() => setStatus(null), 4000);
-    }
-  };
 
   return (
     <div
@@ -115,6 +131,7 @@ export default function Form() {
         Получите <span className="text-[#FFC23E]">бесплатную</span> консультацию
       </h2>
 
+      {/* ✅ Услуг alanı geri eklendi */}
       <div>
         <label
           htmlFor="service"
@@ -125,6 +142,7 @@ export default function Form() {
         <div className="relative">
           <select
             id="service"
+            name="service"
             className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
             required
           >
@@ -133,193 +151,126 @@ export default function Form() {
             <option>Доставка из Китая</option>
             <option>Доставка из Европы</option>
             <option>Оплата товара</option>
-            <option>Тамоэнное Оформление</option>
-            <option>Усилуги Склад</option>
+            <option>Таможенное Оформление</option>
+            <option>Услуги Склад</option>
           </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
         </div>
       </div>
 
-      <form className="space-y-4" id="contactForm" onSubmit={handleSubmit}>
+      <form className="space-y-4" onSubmit={handleSubmit}>
+        {/* İletişim yöntemi */}
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-500 mb-1"
-          >
-            Ваше имя
-          </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Иван Иванов"
-            className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
-            required
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="service1"
-            className="block text-sm font-medium text-gray-500 mb-2"
-          >
+          <label className="block text-sm font-medium text-gray-500 mb-2">
             Каким способом с вами связаться?
           </label>
-          <div className="relative">
-            <select
-              id="service1"
-              className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
-              required
-              value={contactMethod}
-              onChange={(e) => setContactMethod(e.target.value)}
-            >
-              <option value="Telegram">Telegram</option>
-              <option value="Whatsapp">Whatsapp</option>
-              <option value="E-mail">E-mail</option>
-              <option value="телефона">телефона</option>
-            </select>
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </div>
-          </div>
+          <select
+            name="contactMethod"
+            value={contactMethod}
+            onChange={(e) => setContactMethod(e.target.value)}
+            className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+            required
+          >
+            <option value="Telegram">Telegram</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="E-mail">E-mail</option>
+            <option value="телефона">телефона</option>
+          </select>
         </div>
 
         {["телефона", "Whatsapp"].includes(contactMethod) && (
-          <div className="relative w-full overflow-hidden max-w-full">
-            <label
-              htmlFor="phone"
-              className="block text-sm font-medium text-gray-500 mb-1"
-            >
+          <div>
+            <label className="block text-sm font-medium text-gray-500 mb-1">
               {contactMethod === "Whatsapp"
                 ? "Whatsapp номер"
                 : "Номер Телефона"}
             </label>
             <input
               type="tel"
-              id="phone"
+              name="phone"
               ref={phoneInputRef}
-              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
-              style={{
-                paddingLeft: "52px",
-                boxSizing: "border-box",
-              }}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              style={{ paddingLeft: "52px" }}
               required
             />
           </div>
         )}
 
-        {/* E-mail */}
         {contactMethod === "E-mail" && (
-          <div className="relative w-full overflow-hidden max-w-full">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-500 mb-1"
-            >
+          <div>
+            <label className="block text-sm font-medium text-gray-500 mb-1">
               E-mail
             </label>
             <input
               type="email"
-              id="email"
-              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              name="email"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
               required
             />
           </div>
         )}
 
-        {/* Telegram */}
         {contactMethod === "Telegram" && (
-          <div className="relative w-full overflow-hidden max-w-full">
-            <label
-              htmlFor="telegram"
-              className="block text-sm font-medium text-gray-500 mb-1"
-            >
+          <div>
+            <label className="block text-sm font-medium text-gray-500 mb-1">
               Telegram
             </label>
             <input
               type="text"
-              id="telegram"
+              name="telegram"
               placeholder="@username"
-              className="w-full max-w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC]"
               required
             />
           </div>
         )}
 
+        {/* Cookie onayı */}
         <div className="flex items-start gap-3 pt-2">
-          <div className="flex items-start mt-0.5">
-            <input
-              id="consent"
-              name="consent"
-              type="checkbox"
-              className="focus:ring-[#11B4EC] h-4 w-4 text-[#11B4EC] border-gray-300 rounded mt-0.5"
-              required
-            />
-          </div>
-          <div className="flex-1">
-            <label
-              htmlFor="consent"
-              className="text-xs text-[#8C8C8C] leading-tight block"
-            >
-              Вы соглашаетесь на обработку файлов cookie и ваших персональных
-              данных при использовании нашего сайта.
-            </label>
-          </div>
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            className="h-4 w-4 text-[#11B4EC] border-gray-300 rounded"
+            required
+          />
+          <label
+            htmlFor="consent"
+            className="text-xs text-[#8C8C8C] leading-tight"
+          >
+            Вы соглашаетесь на обработку файлов cookie и ваших персональных
+            данных при использовании нашего сайта.
+          </label>
         </div>
 
+        {/* Gönder butonu */}
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:from-[#005bbc] hover:to-[#0e9fd4] text-white py-3 px-4 rounded-lg font-medium transition-all shadow-md"
+          className="w-full bg-gradient-to-r from-[#006FDC] to-[#11B4EC] text-white py-3 px-4 rounded-lg font-medium flex items-center justify-center"
+          disabled={isSubmitting || isSuccess}
         >
-          Подайте Заявку
+          {isSubmitting ? (
+            "Отправка..."
+          ) : isSuccess ? (
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          ) : (
+            "Подайте Заявку"
+          )}
         </button>
 
-        {status === "success" && (
-          <div className="flex justify-center mt-4">
-            <div className="flex items-center justify-center w-10 h-10 bg-green-500 rounded-full animate-scale-in">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-white"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-          </div>
-        )}
-
-        {status === "error" && (
-          <p className="mt-4 text-red-600 text-sm text-center">
-            Произошла ошибка при отправке. Пожалуйста, попробуйте снова.
-          </p>
+        {errorMessage && (
+          <p className="text-red-500 text-sm mt-2 text-center">{errorMessage}</p>
         )}
       </form>
     </div>

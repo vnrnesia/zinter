@@ -10,14 +10,13 @@ import ImportExport from "@/components/ui/ImportExport";
 import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
-import GetStarted from "../components/shared/GetStarted"
+import GetStarted from "../components/shared/GetStarted";
+import Contact from "../components/ui/Contact"
 //test
 export default function Home() {
   return (
     <div className="pt-10 lg:pt-20 overflow-x-hidden">
       <Main />
-
-     
 
       <div className="container">
         <Cards />
@@ -38,7 +37,9 @@ export default function Home() {
       <div className="px-10">
         <Delivery />
       </div>
-      <div className="py-24"><GetStarted/></div>
+      <div className="py-24">
+        <GetStarted />
+      </div>
 
       <div className="py-20">
         <DeliveryBox />
@@ -50,6 +51,9 @@ export default function Home() {
 
       <div className="container pb-20">
         <WhoWeAre />
+      </div>
+      <div>
+        <Contact />
       </div>
     </div>
   );

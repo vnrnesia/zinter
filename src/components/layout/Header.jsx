@@ -31,7 +31,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
-              className=" md:order-2 flex-shrink-0 w-14 h-14  flex md:hidden justify-center items-center text-[#006FDC]"
+              className=" md:order-2 flex-shrink-0 w-14 h-14  flex justify-center items-center text-[#006FDC]"
             >
               {mobileMenuOpen ? (
                 <svg

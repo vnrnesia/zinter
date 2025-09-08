@@ -89,14 +89,15 @@ export default function Contact() {
   const [contactMethod, setContactMethod] = useState("WhatsApp");
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phone: "", // masked value
+    unmaskedPhone: "", // unmasked value for validation
   });
   const [successMessage, setSuccessMessage] = useState("");
 
   const phoneInputRef = useMask({
     value: formData.phone,
-    onChange: (phone) => {
-      setFormData((prev) => ({ ...prev, phone }));
+    onChange: (maskedValue, unmaskedValue) => {
+      setFormData((prev) => ({ ...prev, phone: maskedValue, unmaskedPhone: unmaskedValue }));
     },
     mask: "+7 (___) ___-__-__",
     replacement: { _: /\d/ },
@@ -113,7 +114,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone) {
+    if (!formData.name || formData.unmaskedPhone.length < 10) { // Assuming 10 digits for a complete phone number
       alert("Please fill in all required fields (Name and Phone).");
       return;
     }

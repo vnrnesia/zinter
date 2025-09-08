@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Brands from "../shared/Brands"
+import Brands from "../shared/Brands";
 
 import avatar1 from "@/assets/Avatar/avatar1.png";
 import avatar2 from "@/assets/Avatar/avatar2.png";
@@ -31,7 +31,6 @@ const testimonials = [
     image: avatar3,
   },
 ];
-
 
 const icons = [
   { src: "/Comment/brand1.png", width: "w-[80%] md:w-[69%]" },
@@ -247,7 +246,23 @@ const Comments = () => {
       <div className="w-full border-t border-gray-300 mt-14 pb-6" />
 
       {/* Brand Logos */}
-    <Brands />
+      <div
+        ref={brandsRef}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6"
+      >
+        {icons.map((icon, index) => (
+          <div
+            key={index}
+            className="brand-item group rounded-xl p-4 flex items-center justify-center h-20  hover:shadow-md transition"
+          >
+            <img
+              src={icon.src}
+              alt={`Company logo ${index + 1}`}
+              className={`object-contain group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ease-in-out ${icon.width}`}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
