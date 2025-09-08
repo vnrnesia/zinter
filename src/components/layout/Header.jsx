@@ -115,19 +115,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             </ul>
           </nav>
 
-          {/* Telefon numarası (masaüstü) */}
-          <div className="hidden lg:flex items-center gap-4 order-2">
-            <a
-              href="tel:+79178899457"
-              className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
-            >
-              +7 (917) 889-94-57
-            </a>
-          </div>
+       
         </div>
       </header>
 
-      {/* Mobil Menü Paneli */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -167,7 +158,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   <Link
                     to={to}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-4 text-gray-800 border-b"
+                    className="block py-4 text-gray-800 bg-gray-200 pl-4 rounded-sm mt-2"
                   >
                     {label}
                   </Link>
@@ -175,14 +166,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               ))}
             </motion.ul>
 
-            <div className="w-full flex justify-center items-center py-6">
-              <a
-                href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center"
-              >
-                +7 (917) 889-94-57
-              </a>
-            </div>
+           
           </motion.div>
         )}
       </AnimatePresence>

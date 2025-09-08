@@ -55,11 +55,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
-        </div>
-      </section>
+     
 
       <section >
         <div className="w-full max-w-full px-4 mx-auto">
