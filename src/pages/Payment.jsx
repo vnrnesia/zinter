@@ -41,7 +41,7 @@ export default function Payment() {
        <HowWorks />
      </div>
      
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="mx-auto ">
          <CtaCard title="💳 Безопасная и быстрая оплата" text="Оплатите удобным способом — ваши данные надёжно защищены. Мы гарантируем безопасность каждой транзакции." />
           <WhoWeAre />
       </div>
