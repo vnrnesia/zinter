@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className=" md:py-16 mb-24 text-center">
+    <section className=" text-center">
       <div className="inline-flex px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full">
         Давайте сотрудничать{" "}
       </div>{" "}
