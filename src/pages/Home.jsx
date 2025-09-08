@@ -1,15 +1,16 @@
 import Main from "@/components/home/Main";
-import Brands from "@/components/shared/Brands";
+
 import Cards from "@/components/ui/Cards";
 import CtaCard from "@/components/shared/CtaCard";
-import CtaCardInside from "@/components/ui/CtaCardInside";
+
 import StepSection from "@/components/ui/StepSection";
 import Delivery from "@/components/ui/Delivery";
-import CtaContact from "@/components/shared/CtaContact";
+
 import ImportExport from "@/components/ui/ImportExport";
 import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
+import GetStarted from "../components/shared/GetStarted"
 //test
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
       <div className="px-10">
         <Delivery />
       </div>
+      <div className="py-24"><GetStarted/></div>
 
       <div className="py-20">
         <DeliveryBox />

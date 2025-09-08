@@ -4,7 +4,7 @@ import CtaCard from "@/components/shared/CtaCard.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import features from "@/assets/features.png";
-import CtaContact from "@/components/shared/CtaContact.jsx";
+import ContactSlideForm from "@/components/shared/ContactSlideForm.jsx";
 import FeaturesService from "@/components/ui/FeaturesService.jsx";
 import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
@@ -75,7 +75,7 @@ export default function Features() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <CtaContact />
+          <ContactSlideForm />
         </div>
       </section>
 

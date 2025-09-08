@@ -4,7 +4,7 @@ import CtaCard from "@/components/shared/CtaCard.jsx";
 import plane2 from "@/assets/PaymentImg/plane2.png";
 import PhoneIcon from "@/assets/PhoneIcon.png";
 import warehouse from "@/assets/warehouse.png";
-import CtaContact from "@/components/shared/CtaContact.jsx";
+import ContactSlideForm from "@/components/shared/ContactSlideForm.jsx";
 import WarehouseService from "@/components/ui/WarehouseService.jsx";
 import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
@@ -71,7 +71,7 @@ export default function Warehouse() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <CtaContact />
+          <ContactSlideForm />
         </div>
       </section>
 

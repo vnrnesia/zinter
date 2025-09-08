@@ -7,7 +7,7 @@ import PhoneIcon from "@/assets/PhoneIcon.png";
 import containercn from "@/assets/containercn.png";
 import Services from "@/components/ui/Services.jsx";
 import Delivery from "@/components/ui/Delivery.jsx";
-import CtaContact from "@/components/shared/CtaContact.jsx";
+import ContactSlideForm from "@/components/shared/ContactSlideForm.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";
 import ServiceGrid from "@/components/ui/ServiceGrid.jsx";
 import ImportExport from "@/components/ui/ImportExport.jsx";
@@ -95,7 +95,7 @@ export default function ChinaDelivery() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <CtaContact />
+          <ContactSlideForm />
         </div>
       </section>
 

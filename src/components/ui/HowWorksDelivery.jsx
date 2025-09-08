@@ -58,16 +58,19 @@ export default function HowWorks() {
     <section className="max-w-5xl mx-auto px-4 py-20">
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/2 flex flex-col justify-start self-start mt-0">
-          <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
-            шаг за шагом
-          </span>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Как это работает?
-          </h2>
-          <p className="text-gray-600 text-base leading-relaxed">
-            Мы помогаем вам проводить международные платежи безопасно и
-            эффективно, используя наши представительства в СНГ, ЕС и Китае.
-          </p>
+          <div className="sticky top-20">
+            {" "}
+            <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
+              шаг за шагом
+            </span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Как это работает?
+            </h2>
+            <p className="text-gray-600 text-base leading-relaxed">
+              Мы помогаем вам проводить международные платежи безопасно и
+              эффективно, используя наши представительства в СНГ, ЕС и Китае.
+            </p>
+          </div>
         </div>
 
         <div className="md:w-1/2 relative">
