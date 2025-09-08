@@ -20,6 +20,8 @@ import wholeworld from "@/assets/wholeworld.png";
 import AboutUsServiceGrid from "@/components/ui/AboutUsServiceGrid.jsx";
 import CallButton from "@/components/shared/CallButton.jsx";
 import TeamProfiles from "@/components/ui/TeamProfiles.jsx";
+import GetStarted from "../components/shared/GetStarted";
+import Contact from "../components/ui/Contact"
 
 
 export default function AboutUs() {
@@ -60,11 +62,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
-        </div>
-      </section>
+      
 
       <section className="py-12 bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
@@ -72,12 +70,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="pt-16 w-full">
-        <CtaCard
-          title="Кто мы и почему нам доверяют"
-          text="Наша компания — надёжный партнёр в сфере логистики и поставок. Мы объединяем опыт, профессионализм и индивидуальный подход, чтобы помочь вашему бизнесу расти и развиваться. Для нас важен каждый клиент — мы всегда на связи и готовы предложить лучшие решения."
-        />
-      </section>
+     
 
       <section>
         <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
@@ -98,13 +91,9 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="w-full max-w-full  mx-auto">
-          <ContactSlideForm />
-        </div>
-      </section>
+     <GetStarted />
 
-      <section className="pb-16">
+      <section className="pb-16 pt-10">
         <div className="w-full max-w-full  mx-auto">
           <ImportExport />
         </div>
@@ -114,6 +103,7 @@ export default function AboutUs() {
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
           <WhoWeAre />
+          <Contact />
         </div>
       </section>
     </>

@@ -18,6 +18,8 @@ import zintercircle from "@/assets/zintercircle.png";
 import europecircle from "@/assets/europecircle.png";
 import { motion } from "framer-motion";
 import CallButtonDelivery from "@/components/shared/CallButtonDelivery.jsx";
+import GetStarted from "../components/shared/GetStarted";
+import Contact from "../components/ui/Contact"
 
 export default function ChinaDelivery() {
   return (
@@ -68,14 +70,8 @@ export default function ChinaDelivery() {
       <section className=" bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <Services />
+          <ImportExport />
         </div>
-      </section>
-
-      <section className="py-16 w-full">
-        <CtaCard
-          title="Организуем доставку из Европы — быстро и надёжно"
-          text="Мы обеспечиваем полный контроль над логистикой: от оформления документов до своевременной доставки прямо к вам. Надёжно, быстро и без лишних хлопот."
-        />
       </section>
 
       <section className="py-16">
@@ -98,7 +94,7 @@ export default function ChinaDelivery() {
 
       <section className="py-16">
         <div className="w-full max-w-full  mx-auto">
-          <ContactSlideForm />
+          <GetStarted />
         </div>
       </section>
 
@@ -110,8 +106,8 @@ export default function ChinaDelivery() {
 
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
-          <ImportExport />
           <WhoWeAre />
+          <Contact />
         </div>
       </section>
     </>

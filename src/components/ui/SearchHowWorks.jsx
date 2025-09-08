@@ -13,15 +13,13 @@ export default function HowWorks() {
       title: "Инвойс",
       text: [
         " Вы отправляете нам запрос на оплату, указывая детали сделки, реквизиты получателя и сумму платежа.",
-        "Наши специалисты проверяют предоставленные данные, соответствие требованиям международных платежных систем и санкционное регулирование."
+        "Наши специалисты проверяют предоставленные данные, соответствие требованиям международных платежных систем и санкционное регулирование.",
       ],
       img: featureicon1,
     },
     {
       title: "Подбор производителя",
-      text: [
-        "Подбираем производителя. Заказываем образцы.",
-      ],
+      text: ["Подбираем производителя. Заказываем образцы."],
       img: featureicon2,
     },
     {
@@ -31,18 +29,16 @@ export default function HowWorks() {
       ],
       img: featureicon3,
     },
-     {
+    {
       title: "Производство",
       text: [
         "Курируем процесс производства и производим контроль качества продукции.",
       ],
       img: featureicon4,
     },
-     {
+    {
       title: "Доставка",
-      text: [
-        "Производим таможенную очистку и доставляем товар на ваш склад.",
-      ],
+      text: ["Производим таможенную очистку и доставляем товар на ваш склад."],
       img: featureicon5,
     },
   ];
@@ -62,8 +58,8 @@ export default function HowWorks() {
 
   return (
     <section className="max-w-5xl mx-auto px-4 ">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="md:w-1/2 flex flex-col justify-start self-start mt-0">
+      <div className="  flex flex-col md:flex-row gap-6">
+        <div className=" sticky top-36 md:w-1/2 flex flex-col justify-start self-start mt-0">
           <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
             шаг за шагом
           </span>

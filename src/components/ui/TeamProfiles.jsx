@@ -1,5 +1,6 @@
 import ivan from "@/assets/TeamProfilesImg/ivan.webp";
 import sencer from "@/assets/TeamProfilesImg/sencer.webp";
+import kto from "@/assets/TeamProfilesImg/kto.webp";
 
 export default function TeamProfiles() {
   const profiles = [
@@ -13,7 +14,7 @@ export default function TeamProfiles() {
     {
       role: "Директор компании",
       name: "артем",
-      img: "",
+      img: kto,
       borderColor: "#007EFF",
       badgeBg: "#ffc24b",
     },

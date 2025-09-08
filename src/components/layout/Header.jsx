@@ -163,7 +163,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   <Link
                     to={to}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-4 text-gray-800 border-b"
+                    className="block py-4 text-gray-800 bg-gray-200 pl-5 rounded-md mt-4"
                   >
                     {label}
                   </Link>
@@ -171,14 +171,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               ))}
             </motion.ul>
 
-            <div className="w-full flex justify-center items-center py-6">
-              <a
-                href="tel:+79178899457"
-                className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-24 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg text-center"
-              >
-                +7 (917) 889-94-57
-              </a>
-            </div>
+            
           </motion.div>
         )}
       </AnimatePresence>

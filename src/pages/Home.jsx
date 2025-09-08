@@ -40,11 +40,11 @@ export default function Home() {
         <GetStarted />
       </div>
 
-      <div className="py-20">
+      <div className="pb-10">
         <DeliveryBox />
       </div>
 
-      <div className="container pb-20">
+      <div className="container ">
         <WhoWeAre />
       </div>
       <div>

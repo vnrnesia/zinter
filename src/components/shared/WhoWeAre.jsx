@@ -68,7 +68,7 @@ export default function WhoWeAre() {
             {stats.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-gray-100 p-8 rounded-lg shadow-md border border-gray-100 text-center h-full"
+                className="bg-white p-8 rounded-lg shadow-md border border-gray-100 text-center h-full"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}

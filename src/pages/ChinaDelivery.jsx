@@ -17,21 +17,25 @@ import CallButton from "@/components/shared/CallButton.jsx";
 import zintercircle from "@/assets/zintercircle.png";
 import chinacircle from "@/assets/chinacircle.png";
 import CallButtonDelivery from "@/components/shared/CallButtonDelivery.jsx";
+import GetStarted from "../components/shared/GetStarted";
+import Contact from "../components/ui/Contact"
+
 
 export default function ChinaDelivery() {
   return (
     <>
       <section className="pt-24 pb-5 lg:py-44 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <img src={chinacircle} alt="" className="w-20 h-20 absolute top-20 right-0 m-4 z-10" />
+        <img
+          src={chinacircle}
+          alt=""
+          className="w-20 h-20 absolute top-20 right-0 m-4 z-10"
+        />
         <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
             </div>
-            <div className="flex flex-row ">
-            
-           
-            </div>
+            <div className="flex flex-row "></div>
 
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Доставка из <span className="text-[#FFC23E]">Китая</span>
@@ -42,11 +46,9 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-           
-             <div className=" flex justify-center lg:justify-start">
-                           <CallButton />
-                         </div>
-            
+            <div className=" flex justify-center lg:justify-start">
+              <CallButton />
+            </div>
           </div>
 
           <div className="w-full lg:w-1/2">
@@ -60,24 +62,19 @@ export default function ChinaDelivery() {
       </section>
 
       <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-        </div>
+        <div className="w-full max-w-full px-4 mx-auto"></div>
       </section>
 
       <section className="pt-12 bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <Services />
+          <ImportExport />
         </div>
-      </section>
-
-      <section className="py-16 w-full">
-        <CtaCard title="Организуем доставку из Китая — быстро и надёжно" text="Мы берём на себя все этапы логистики — от подбора поставщика до доставки на ваш склад. Гарантируем сроки, прозрачность и полное сопровождение." />
       </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
-        
         </div>
       </section>
 
@@ -95,7 +92,7 @@ export default function ChinaDelivery() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <ContactSlideForm />
+          <GetStarted />
         </div>
       </section>
 
@@ -107,8 +104,8 @@ export default function ChinaDelivery() {
 
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
-          <ImportExport />
           <WhoWeAre />
+          <Contact />
         </div>
       </section>
     </>

@@ -16,7 +16,10 @@ import { Link } from "react-router-dom";
 import bigzworld from "@/assets/bigzworld.png";
 import SearchCards from "@/components/ui/SearchCards.jsx";
 import SearchHowWorks from "@/components/ui/SearchHowWorks.jsx";
-import CallButton from "@/components/shared/CallButton.jsx"
+import CallButton from "@/components/shared/CallButton.jsx";
+import GetStarted from "../components/shared/GetStarted";
+import Contact from "../components/ui/Contact";
+
 
 export default function ChinaDelivery() {
   return (
@@ -65,15 +68,15 @@ export default function ChinaDelivery() {
 
     
 
-      <section className="pt-16">
+      <section className="pt-16 pb-16">
         <div className="container mx-auto px-4 lg:px-8">
           <SearchHowWorks />
         </div>
       </section>
 
-        <section className="pb-16">
+        <section className="pb-16 pt-16">
         <div className="w-full max-w-full  mx-auto">
-          <ContactSlideForm />
+         <GetStarted />
         </div>
       </section>
 
@@ -82,6 +85,8 @@ export default function ChinaDelivery() {
           <WhoWeAre />
         </div>
       </section>
+
+      <Contact />
     </>
   );
 }

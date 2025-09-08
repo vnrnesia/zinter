@@ -78,7 +78,7 @@ const CtaCard = () => {
   return (
     <section
       ref={sectionRef}
-      className="max-w-full mx-auto min-h-[550px] bg-gradient-to-r from-[#006FDC] to-[#11B4EC] my-16 px-4 flex items-center"
+      className="max-w-full mx-auto min-h-[550px] bg-gradient-to-r from-[#006FDC] to-[#11B4EC] px-4 flex items-center"
     >
       <div className="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-4 md:pt-0 gap-8 justify-center items-center ">
         <div

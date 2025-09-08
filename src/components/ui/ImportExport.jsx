@@ -61,7 +61,7 @@ export default function ImportExport() {
           className="text-center lg:text-left w-full lg:w-1/2 space-y-6"
         >
           <span className="border-2 border-[#006FDC] text-[#006FDC] px-4 py-1 rounded-full text-sm font-semibold">
-            Tовары
+            Tовары и бренды
           </span>
           <h2 className="text-4xl sm:text-5xl font-semibold text-[#343434] mt-4">
             Мы импортируем

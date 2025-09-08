@@ -1,34 +1,29 @@
-import React from 'react'
-import ContactSlide from "./ContactSlideForm"
-import Form from "../ui/Form"
+import React from "react";
+import Form from "../ui/Form";
+
 const GetStarted = () => {
   return (
-   <div className="bg-gradient-to-l  from-[#0273DE] to-[#10B0EB] ">
-     <div className="flex flex-col gap-6  justify-center items-center max-w-[90%] mx-auto md:px-0 px-6">
-      <div className=" md:px-0 max-w-sm flex flex-col items-start md:max-w-7xl w-full mb-6">
-       
-       
-      </div>
+    <section className="bg-gradient-to-l from-[#0273DE] to-[#10B0EB]">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-12">
+        <div className="rounded-2xl w-full sm:p-10 md:p-12 flex flex-col md:flex-row items-stretch gap-8">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end order-1 md:order-2">
+            <div className="relative flex items-center justify-center h-[260px] sm:h-[320px] md:h-[400px] w-full">
+              <img
+                src="/world.png"
+                alt="world"
+                className="absolute inset-0 m-auto w-[320px] sm:w-[360px] md:w-[420px] md:pt-[180px] max-w-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
 
-      <div className="rounded-2xl max-w-sm md:max-w-7xl  w-full  sm:p-10 md:p-12 flex flex-col md:flex-row justify-between items-stretch">
-        <div className="flex  md:ml-24 flex-col md:w-1/2 w-full md:pr-8">
-               <Form />
-
-        </div>
-
-        <div className="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
-          <div className=" rounded-md flex items-center justify-center h-[300px] w-[350px] md:w-[500px] to-[#11B4EC] relative">
-            <img
-              src="/world.png"
-              alt="world"
-              className="w-full absolute max-w-[350px] md:max-w-[400px] md:pt-[220px]"
-            />
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <Form />
           </div>
         </div>
       </div>
-    </div>
-   </div>
-  )
-}
+    </section>
+  );
+};
 
-export default GetStarted
+export default GetStarted;
