@@ -22,10 +22,9 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
     <>
       <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="mx-auto md:px-4 flex items-center justify-between w-full">
-          {/* Sol: Hamburger | Sağ: Logo (mobil için) */}
+  
 
-          {/* Telefon numarası (masaüstü) */}
-          <div className="hidden lg:flex items-center gap-4 order-2">
+          <div className="hidden 2xl:flex items-center gap-4 order-2">
             <a
               href="tel:+79178899457"
               className="bg-gradient-to-r from-[#006FDC] to-[#11B4EC] hover:bg-gradient-to-br px-4 py-2 rounded-lg text-white font-medium shadow-md hover:shadow-lg"
@@ -88,7 +87,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <Link
                   to="/search-provider"
-                  className="text-gray-700  px-4 py-2 hover:text-[#006FDC] font-medium"
+                  className="text-gray-700 text-sm 2xl:text-base  2xl:px-4 py-2 hover:text-[#006FDC] font-medium"
                 >
                   Поставщика
                 </Link>
@@ -96,7 +95,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <Link
                   to="/payment"
-                  className="text-gray-700  px-4 py-2 hover:text-[#006FDC] font-medium"
+                  className="text-gray-700 text-sm 2xl:text-base  2xl:px-4 py-2 hover:text-[#006FDC] font-medium"
                 >
                   Оплата
                 </Link>
@@ -105,7 +104,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <Link
                   to="/china-delivery"
-                  className="block px-4 py-2 text-gray-700 hover:text-[#006FDC]"
+                  className="block  2xl:px-4 py-2 text-sm 2xl:text-base text-gray-700 hover:text-[#006FDC]"
                 >
                   Доставка из Китая
                 </Link>
@@ -113,7 +112,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
               <li>
                 <Link
                   to="/europe-delivery"
-                  className="block px-4 py-2 text-gray-700 hover:text-[#006FDC]"
+                  className="block  2xl:px-4 py-2 text-sm 2xl:text-base text-gray-700 hover:text-[#006FDC]"
                 >
                   Доставка из Европы
                 </Link>
@@ -123,7 +122,6 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
         </div>
       </header>
 
-      {/* Mobil Menü Paneli */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -150,8 +148,10 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                 { to: "/search-provider", label: "Поиск Поставщика" },
                 { to: "/china-delivery", label: "Доставка из Китая" },
                 { to: "/europe-delivery", label: "Доставка из Европы" },
-
                 { to: "/about", label: "О Компании" },
+                { to: "/payment", label: "Оплата" },
+                { to: "/warehouse", label: "Cклад" },
+                { to: "/features", label: "Oформление" },
               ].map(({ to, label }) => (
                 <motion.li
                   key={to}

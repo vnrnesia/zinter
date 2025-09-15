@@ -8,6 +8,7 @@ import HowWorks from "@/components/ui/HowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx"
+import Comments from "@/components/ui/Comments.jsx"
 
 export default function Payment() {
   return (
@@ -40,6 +41,10 @@ export default function Payment() {
      <div className="py-16">
        <HowWorks />
      </div>
+    <div className="max-w-7xl mx-auto">
+       
+    </div>
+     <WhoWeAre/>
      
      
       <div>

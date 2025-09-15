@@ -10,12 +10,13 @@ import FeaturesHowWorks from "@/components/ui/FeaturesHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx";
+import GetStarted from "../components/shared/GetStarted";
 
 export default function Features() {
   return (
     <>
       <section className="pt-28 pb-5 lg:pt-32 lg:pb-32 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10 max-w-[90%] 2xl:max-w-7xl">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
@@ -48,11 +49,7 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
-        </div>
-      </section>
+     
 
       <section className="bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
@@ -60,12 +57,7 @@ export default function Features() {
         </div>
       </section>
 
-      <section className="pt-16 w-full">
-        <CtaCard
-          title="Сопровождение на всех этапах — от Китая до Европы без проблем на границе"
-          text="Обеспечиваем полный контроль и поддержку на каждом этапе перевозки — от упаковки и отправки в Китае до таможенного оформления и доставки в Европу. Без задержек и проблем на границе."
-        />
-      </section>
+     
 
       <section className="lg:py-16">
         <div className="w-full max-w-full px-4 mx-auto">
@@ -75,7 +67,7 @@ export default function Features() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <ContactSlideForm />
+          <GetStarted/>
         </div>
       </section>
 

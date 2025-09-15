@@ -13,7 +13,7 @@ export default function TeamProfiles() {
     },
     {
       role: "Директор компании",
-      name: "артем",
+      name: "Aртем Иванович",
       img: kto,
       borderColor: "#007EFF",
       badgeBg: "#ffc24b",
@@ -28,7 +28,7 @@ export default function TeamProfiles() {
   ];
 
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-12  max-w-[90%] 2xl:max-w-7xl mx-auto">
       <div className="text-center mb-12">
       
         <h2 className="text-4xl font-bold mb-4"> ПРЕДСТАВИТЕЛИ КОМПАНИИ</h2>

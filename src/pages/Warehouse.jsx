@@ -10,12 +10,13 @@ import WarehouseHowWorks from "@/components/ui/WarehouseHowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx";
+import GetStarted from "../components/shared/GetStarted";
 
 export default function Warehouse() {
   return (
     <>
       <section className="pt-20 py-5 lg:pt-40 lg:pb-40 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center">
+        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center max-w-[90%] 2xl:max-w-7xl">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
@@ -45,23 +46,14 @@ export default function Warehouse() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="w-full max-w-full px-4 mx-auto">
-          <Brands />
-        </div>
-      </section>
+     
 
       <section className="bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <WarehouseService />
         </div>
       </section>
-      <section className="py-16">
-        <CtaCard
-          title="Надёжный склад для вашего бизнеса"
-          text="Безопасное хранение товаров с удобным доступом и гибкими условиями аренды. Контроль качества и оперативное обслуживание — всё для вашего спокойствия."
-        />
-      </section>
+    
 
       <section className="pt-16">
         <div className="w-full max-w-full px-4 mx-auto">
@@ -71,7 +63,7 @@ export default function Warehouse() {
 
       <section className="py-16">
         <div className="w-full max-w-full mx-auto">
-          <ContactSlideForm />
+          <GetStarted />
         </div>
       </section>
 

@@ -63,7 +63,7 @@ export default function Footer() {
           <img src={zintercircle} alt="" className=" md:hidden w-14 h-14" />
         </div>
 
-        <div className="container mx-auto px-4 py-12">
+        <div className="container  py-12 w-full max-w-[90%] 2xl:max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
             <div className="footer-section flex flex-col items-center md:items-start space-y-4">
               <Link to="/">

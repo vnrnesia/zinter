@@ -51,8 +51,8 @@ export default function ImportExport() {
   );
 
   return (
-    <section>
-      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10">
+    <section className="max-w-[90%] 2xl:max-w-7xl mx-auto">
+      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10 ">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
