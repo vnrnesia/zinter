@@ -143,7 +143,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-10 pt-6 text-center text-sm text-gray-500">
+          <div className="border-t border-gray-200 mt-10 mb-10 pt-6 text-center text-sm text-gray-500">
             © 2025 Zinter Logistics. Все права сохранены.
           </div>
         </div>

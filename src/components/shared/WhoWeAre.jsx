@@ -88,7 +88,7 @@ export default function WhoWeAre() {
               </motion.div>
             ))}
           </div>
-          <div className="w-full">
+          <div className="w-full pt-24 md:pt-0">
           <Comments />
           </div>
          

@@ -59,7 +59,7 @@ export default function HowWorks() {
       <div className="flex flex-col md:flex-row gap-6">
         {/* Soldaki div */}
         <div className="md:w-1/2 relative">
-          <div className="sticky top-[200px]">
+          <div className="md:sticky top-[200px]">
             <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
               шаг за шагом
             </span>

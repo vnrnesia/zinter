@@ -160,7 +160,7 @@ const Comments = () => {
         {/* Testimonial Card */}
         <div
           ref={testimonialRef}
-          className="relative bg-gray-100 rounded-2xl w-full md:w-1/2 mt-10 md:mt-0 min-h-[280px] overflow-hidden"
+          className="relative bg-gray-100 rounded-2xl w-full md:w-1/2 mt-10 md:mt-0 min-h-[330px] md:min-h-[280px] overflow-hidden"
         >
           <AnimatePresence custom={direction} mode="wait">
             <motion.div

@@ -100,7 +100,7 @@ export default function ImportExport() {
                   alt={`brand-${index}`}
                   className={`mx-auto  ${
                     src === intel || src === siemens
-                      ? "w-13 sm:w-24 md:w-28 lg:w-20"
+                      ? "w-[60px] sm:w-24 md:w-28 lg:w-20"
                       : "w-28 sm:w-28 md:w-32 lg:w-36"
                   }`}
                 />

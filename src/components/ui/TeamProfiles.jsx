@@ -34,7 +34,7 @@ export default function TeamProfiles() {
         <h2 className="text-4xl font-bold mb-4"> ПРЕДСТАВИТЕЛИ КОМПАНИИ</h2>
         
       </div>
-      <div className="max-w-[1112px] h-[512px] mx-auto flex items-center justify-center space-x-[100px]">
+      <div className="md:max-w-[1112px] md:h-[512px] mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-[100px]">
         {profiles.map(({ role, name, img, borderColor, badgeBg }, i) => (
           <div key={i} className="flex flex-col items-center">
             <div

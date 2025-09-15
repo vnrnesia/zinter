@@ -36,7 +36,7 @@ const topServices = [
   },
 ];
 
-export default function Services() {
+export default function Services({}) {
   const [openIndex, setOpenIndex] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const toggleIndex = (index) => {
