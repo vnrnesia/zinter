@@ -89,7 +89,7 @@ export default function ImportExport() {
             {imageList.map((src, index) => (
               <motion.li
                 key={index}
-                className="flex items-center justify-center flex-shrink-0 snap-start w-28  sm:w-auto text-center"
+                className="flex items-center justify-center flex-shrink-0 snap-start w-28 pl-2 md:pl-0  sm:w-auto text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
