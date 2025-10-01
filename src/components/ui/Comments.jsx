@@ -15,19 +15,19 @@ const testimonials = [
   {
     text: "С Zinter Logistics управление грузоперевозками стало намного проще и безопаснее. Мы экономим время и уверены в каждой доставке.",
     name: "Артем Волков",
-    position: "финансовый директор, ООО «ТрансСервис»",
+    position: "финансовый директор",
     image: avatar1,
   },
   {
     text: "Международные перевозки через Zinter Logistics — это удобно и надёжно. Рекомендую всем компаниям, которым важна скорость и прозрачность поставок.",
     name: "Алексей Морозов",
-    position: "руководитель отдела закупок, ЗАО «КаргоТрейд»",
+    position: "руководитель отдела закупок",
     image: avatar2,
   },
   {
     text: "Zinter Logistics помогает нам оптимизировать цепочку поставок и наладить расчёты с партнёрами по всему миру. Это действительно надёжный партнёр в сфере логистики.",
     name: "Ольга Смирнова",
-    position: "генеральный директор, ООО «ГлобалТранспорт»",
+    position: "генеральный директор",
     image: avatar3,
   },
 ];
@@ -151,12 +151,8 @@ const Comments = () => {
               <p className="text-gray-800 text-lg mb-6 italic">
                 "{testimonials[index].text}"
               </p>
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonials[index].image}
-                  alt={testimonials[index].name}
-                  className="w-10 h-10 rounded-full object-cover"
-                />
+              <div className="flex flex-col  gap-4">
+               
                 <div>
                   <p className="font-semibold text-gray-900">
                     {testimonials[index].name}
@@ -165,6 +161,11 @@ const Comments = () => {
                     {testimonials[index].position}
                   </p>
                 </div>
+                 <img
+                  src={testimonials[index].image}
+                  alt={testimonials[index].name}
+                  className="w-24 "
+                />
               </div>
             </motion.div>
           </AnimatePresence>
