@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ZinterLogo from "@/assets/ZinterLogo.png";
+import { FaTelegram } from "react-icons/fa";
 
 export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
@@ -22,8 +23,6 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
     <>
       <header className="w-full h-20 flex items-center shadow-sm bg-white fixed top-0 left-0 z-50 border-b-4 border-b-[#FFC23E]">
         <div className="mx-auto md:px-4 flex items-center justify-between w-full">
-  
-
           <div className="hidden 2xl:flex items-center gap-4 order-2">
             <a
               href="tel:+79178899457"
@@ -89,7 +88,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   to="/search-provider"
                   className="text-gray-700 text-sm 2xl:text-base  2xl:px-4 py-2 hover:text-[#006FDC] font-medium"
                 >
-                Поиск Поставщика
+                  Поиск Поставщика
                 </Link>
               </li>
               <li>
@@ -97,7 +96,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   to="/payment"
                   className="text-gray-700 text-sm 2xl:text-base  2xl:px-4 py-2 hover:text-[#006FDC] font-medium"
                 >
-                  Оплата
+                  Оплата товара
                 </Link>
               </li>
 
@@ -130,48 +129,54 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed top-0 left-0 h-full w-full md:w-1/5 bg-white z-40 pt-20 px-4 overflow-y-auto shadow-lg"
+            className="fixed top-0 left-0 h-full w-full md:w-1/5 bg-white z-40 pt-20 px-4 shadow-lg flex flex-col"
           >
-            <motion.ul
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={{
-                visible: { transition: { staggerChildren: 0.05 } },
-                hidden: {
-                  transition: { staggerChildren: 0.03, staggerDirection: -1 },
-                },
-              }}
-              className="space-y-4 text-start"
-            >
-              {[
-                { to: "/search-provider", label: "Поиск Поставщика" },
-                { to: "/china-delivery", label: "Доставка из Китая" },
-                { to: "/europe-delivery", label: "Доставка из Европы" },
-                { to: "/about", label: "О Компании" },
-                { to: "/payment", label: "Оплата" },
-                { to: "/warehouse", label: "Cклад" },
-                { to: "/features", label: "Oформление" },
-              ].map(({ to, label }) => (
-                <motion.li
-                  key={to}
-                  variants={{
-                    hidden: { opacity: 0, x: 20 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
-                >
-                  <Link
-                    to={to}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block py-4 text-gray-800 bg-gray-200 pl-5 rounded-md mt-4"
+            <div className="flex-grow overflow-y-auto">
+              <motion.ul
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={{
+                  visible: { transition: { staggerChildren: 0.05 } },
+                  hidden: {
+                    transition: { staggerChildren: 0.03, staggerDirection: -1 },
+                  },
+                }}
+                className="space-y-4 text-start"
+              >
+                {[
+                  { to: "/search-provider", label: "Поиск Поставщика" },
+                  { to: "/china-delivery", label: "Доставка из Китая" },
+                  { to: "/europe-delivery", label: "Доставка из Европы" },
+                  { to: "/about", label: "О Компании" },
+                  { to: "/payment", label: "Оплата товара" },
+                  { to: "/warehouse", label: "Услуг Склада" },
+                  { to: "/features", label: "Таможенное оформление " },
+                ].map(({ to, label }) => (
+                  <motion.li
+                    key={to}
+                    variants={{
+                      hidden: { opacity: 0, x: 20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
                   >
-                    {label}
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            
+                    <Link
+                      to={to}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-4 text-gray-800 bg-gray-200 pl-5 rounded-md mt-4"
+                    >
+                      {label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+            <div className="flex justify-center items-center py-4">
+              <div className="flex items-center gap-2 text-blue-500">
+                <FaTelegram />
+                <div>t.me/zinterlogistics</div>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
