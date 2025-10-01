@@ -19,7 +19,7 @@ import europecircle from "@/assets/europecircle.png";
 import { motion } from "framer-motion";
 import CallButtonDelivery from "@/components/shared/CallButtonDelivery.jsx";
 import GetStarted from "../components/shared/GetStarted";
-import Contact from "../components/ui/Contact"
+import Contact from "../components/ui/Contact";
 
 export default function ChinaDelivery() {
   return (
@@ -70,13 +70,19 @@ export default function ChinaDelivery() {
       <section className=" bg-white">
         <div className="w-full max-w-full px-4 mx-auto">
           <Services />
-          <ImportExport />
         </div>
       </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
           <HowWorks />
+        </div>
+      </section>
+
+      
+      <section className="py-16">
+        <div className="w-full max-w-full  mx-auto">
+          <GetStarted />
         </div>
       </section>
 
@@ -92,11 +98,6 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="w-full max-w-full  mx-auto">
-          <GetStarted />
-        </div>
-      </section>
 
       <section className="py-16">
         <div className="w-full max-w-full px-4 mx-auto">
@@ -107,6 +108,7 @@ export default function ChinaDelivery() {
       <section className="container mx-auto px-4 lg:px-8">
         <div className="max-w-full px-4 mx-auto">
           <WhoWeAre />
+          <div className="pb-14"><ImportExport /></div>
           <Contact />
         </div>
       </section>

@@ -89,7 +89,7 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
                   to="/search-provider"
                   className="text-gray-700 text-sm 2xl:text-base  2xl:px-4 py-2 hover:text-[#006FDC] font-medium"
                 >
-                  Поставщика
+                Поиск Поставщика
                 </Link>
               </li>
               <li>

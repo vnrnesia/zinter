@@ -1,8 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Form from "@/components/ui/StepSection"
 
-export default function StepsSection() {
+export default function Steps() {
   const steps = [
     {
       title: "Аналих вашей заявки",
@@ -40,16 +39,16 @@ export default function StepsSection() {
   }, [visibleCount, controls]);
 
   return (
-    <section className="py-16 md:pt-24">
-      <div className="container mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-           <span className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
-            шаг за шагом
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+    <section className=" py-16 max-w-[90%] mx-auto md:px-4 ">
+      <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-sm md:max-w-5xl mx-auto text-center mb-12 md:mb-16">
+          <div className="inline-flex px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full mb-4">
+            шаг за шагом{" "}
+          </div>{" "}
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
             Этапы Сотруничества
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-500 mb-16 max-w-2xl mx-auto">
             4 простых шага для одобрения вашей заявки
           </p>
         </div>
@@ -60,9 +59,9 @@ export default function StepsSection() {
               {[...Array(steps.length - 1)].map((_, i) => (
                 <div
                   key={i}
-                  className="flex-1 h-1 bg-gray-200 relative mx-4 overflow-hidden rounded-full"
+                  className="flex-1 h-1 bg-gray-300 relative mx-4 overflow-hidden rounded-full"
                 >
-                  <div className="absolute h-full w-full bg-gradient-to-r from-[#006FDC] to-[#11B4EC]" />
+                  <div className="absolute h-full w-full bg-gradient-to-r from-blue-600 to-cyan-400" />
                 </div>
               ))}
             </div>
@@ -77,7 +76,7 @@ export default function StepsSection() {
               />
             </div>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10 px-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 z-10 ">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -85,23 +84,27 @@ export default function StepsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true, amount: 0.5 }}
-                onViewportEnter={() => setVisibleCount((prev) => Math.max(prev, index))}
+                onViewportEnter={() =>
+                  setVisibleCount((prev) => Math.max(prev, index))
+                }
               >
                 <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-full bg-gradient-to-r from-[#006FDC] to-[#11B4EC] text-white shadow-md text-lg font-semibold">
+                  <div className="w-16 h-10 mb-4 flex items-center justify-center rounded-md bg-gradient-to-r from-blue-600 to-cyan-400 text-white shadow-md text-lg font-semibold">
                     {index + 1}
                   </div>
-                  <div className="bg-white px-6 py-8 rounded-xl shadow-sm text-center max-w-xs mx-auto" style={{ height: 220 }}>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  <div
+                    className="bg-white px-6 py-2 rounded-xl shadow-md text-center mx-auto"
+                    style={{ height: 220 }}
+                  >
+                    <h4 className="text-xl font-semibold text-gray-800 mb-2">
                       {step.title}
-                    </h3>
-                    <p className="text-gray-600">{step.description}</p>
+                    </h4>
+                    <p className="text-gray-600 text-sm">{step.description}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

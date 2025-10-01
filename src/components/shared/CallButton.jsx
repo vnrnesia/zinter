@@ -13,7 +13,7 @@ export default function CallButton() {
           onClick={() => setOpen(true)}
           className="flex mt-1 w-full bg-gray-100 rounded-md overflow-hidden shadow-sm cursor-pointer"
         >
-          <div className="flex-grow px-6 py-2 text-base text-gray-700 bg-gray-100">
+          <div className="flex-grow px-10 py-3 pt- text-base text-gray-700 bg-gray-100">
             Оставьте заявку
           </div>
           <div className="flex items-center justify-center px-4 py-3 bg-gradient-to-l from-[#FFC23E] to-[#c88900] hover:scale-125 transition-transform duration-300">

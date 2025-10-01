@@ -37,7 +37,7 @@ const icons = [
   { src: "/Comment/brand2.png", width: "w-[90%] md:w-[90%]" },
   { src: "/Comment/brand3.png", width: "w-[80%] md:w-[60%]" },
   { src: "/Comment/brand4.png", width: "w-[105%] md:w-[90%]" },
-  { src: "/Comment/brand5.png", width: "w-[75%] md:w-[50%]" },
+  { src: "/Comment/brand5.png", width: "w-[75%] md:w-[85%]" },
   { src: "/Comment/brand6.png", width: "w-[75%] md:w-[50%]" },
 ];
 
@@ -129,32 +129,7 @@ const Comments = () => {
           <h2 className="pt-4 text-3xl md:text-3xl font-semibold text-gray-900 mb-6 leading-tight">
             Опыт клиентов, который говорит сам за себя
           </h2>
-          <div className="pt-4 grid grid-cols-3 divide-x divide-gray-200 text-center">
-            <div>
-              <p className="text-lg md:text-4xl font-semibold text-neutral-900">
-                38+
-              </p>
-              <p className="text-[14px] md:text-base text-gray-500 mt-1">
-                Стран в которые мы <br /> осуществляем переводы
-              </p>
-            </div>
-            <div className="px-4">
-              <p className="text-lg md:text-4xl font-semibold text-neutral-900">
-                95%
-              </p>
-              <p className="text-sm md:text-base text-gray-500 mt-1">
-                Платежей проходят День <br /> в день
-              </p>
-            </div>
-            <div>
-              <p className="text-lg md:text-4xl font-semibold text-neutral-900">
-                500+
-              </p>
-              <p className="text-sm md:text-base text-gray-500 mt-1">
-                Клиенты регулярно платят через <br /> нас
-              </p>
-            </div>
-          </div>
+        <h3 className="text-gray-500"> Благодарные клиенты нашей компании оставили отзывы по нашей работе.</h3>
         </div>
 
         {/* Testimonial Card */}

@@ -20,7 +20,6 @@ import CallButton from "@/components/shared/CallButton.jsx";
 import GetStarted from "../components/shared/GetStarted";
 import Contact from "../components/ui/Contact";
 
-
 export default function ChinaDelivery() {
   return (
     <>
@@ -44,7 +43,7 @@ export default function ChinaDelivery() {
             </p>
 
             <div className="pt-2 flex justify-center lg:justify-start">
-            <CallButton />
+              <CallButton />
             </div>
           </div>
 
@@ -52,21 +51,11 @@ export default function ChinaDelivery() {
             <img
               src={bigzworld}
               alt="Container"
-              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[500px] h-auto object-contain mx-auto"
+              className="w-[325px] sm:w-[300px] md:w-[450px] lg:w-[450px] h-auto object-contain mx-auto"
             />
           </div>
         </div>
       </section>
-
-     
-
-      <section >
-        <div className="w-full max-w-full px-4 mx-auto">
-          <SearchCards />
-        </div>
-      </section>
-
-    
 
       <section className="pt-16 pb-16">
         <div className="container mx-auto px-4 lg:px-8">
@@ -74,9 +63,15 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-        <section className="pb-16 pt-16">
+      <section>
+        <div className="w-full max-w-full px-4 mx-auto">
+          <SearchCards />
+        </div>
+      </section>
+
+      <section className="pb-16 pt-16">
         <div className="w-full max-w-full  mx-auto">
-         <GetStarted />
+          <GetStarted />
         </div>
       </section>
 

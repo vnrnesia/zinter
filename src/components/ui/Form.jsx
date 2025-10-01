@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { FaChevronDown } from "react-icons/fa6";
 import worldicon from "@/assets/worldicon.png";
 
 export default function Form() {
@@ -139,11 +140,11 @@ ${entries.telegram ? "💬 Telegram: " + entries.telegram + "\n" : ""}
         >
           Услуг
         </label>
-        <div className="relative">
+        <div className="relative group mb-3">
           <select
             id="service"
             name="service"
-            className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+            className="appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
             required
           >
             <option value="">Выберите услугу</option>
@@ -154,6 +155,7 @@ ${entries.telegram ? "💬 Telegram: " + entries.telegram + "\n" : ""}
             <option>Таможенное Оформление</option>
             <option>Услуги Склад</option>
           </select>
+          <FaChevronDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none transition-transform duration-300 group-focus-within:rotate-180" />
         </div>
       </div>
 
@@ -163,18 +165,21 @@ ${entries.telegram ? "💬 Telegram: " + entries.telegram + "\n" : ""}
           <label className="block text-sm font-medium text-gray-500 mb-2">
             Каким способом с вами связаться?
           </label>
-          <select
-            name="contactMethod"
-            value={contactMethod}
-            onChange={(e) => setContactMethod(e.target.value)}
-            className="mb-3 appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
-            required
-          >
-            <option value="Telegram">Telegram</option>
-            <option value="Whatsapp">Whatsapp</option>
-            <option value="E-mail">E-mail</option>
-            <option value="телефона">телефона</option>
-          </select>
+          <div className="relative group mb-3">
+            <select
+              name="contactMethod"
+              value={contactMethod}
+              onChange={(e) => setContactMethod(e.target.value)}
+              className="appearance-none w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#11B4EC] focus:border-[#11B4EC] bg-white text-gray-800"
+              required
+            >
+              <option value="Telegram">Telegram</option>
+              <option value="Whatsapp">Whatsapp</option>
+              <option value="E-mail">E-mail</option>
+              <option value="телефона">телефона</option>
+            </select>
+            <FaChevronDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none transition-transform duration-300 group-focus-within:rotate-180" />
+          </div>
         </div>
 
         {["телефона", "Whatsapp"].includes(contactMethod) && (
