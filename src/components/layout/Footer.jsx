@@ -143,8 +143,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-10 mb-10 pt-6 text-center text-sm text-gray-500">
-            © 2025 Zinter Logistics. Все права сохранены.
+          <div className="border-t border-gray-200 mt-10 mb-10 md:mb-0 pt-6 text-center text-sm text-gray-500">
+            © 2025 Bankbooker. Все права сохранены.
           </div>
         </div>
       </footer>

@@ -25,7 +25,7 @@ export default function Home() {
         <ImportExport />
       </div>
 
-      <div className="container">
+      <div className=" bg-gray-100">
         <StepSection />
       </div>
       <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">
