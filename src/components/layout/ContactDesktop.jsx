@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import PhoneIcon from "../../assets/PhoneIcon.png";
 
 export default function ContactButton() {
   const [showScrollText, setShowScrollText] = useState(false);
@@ -70,10 +70,10 @@ export default function ContactButton() {
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.3 }}
-            className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#f5d33bfd] to-[#ffbb00] rounded-full cursor-pointer shadow-lg"
+            className="flex items-center justify-center w-16 h-16 cursor-pointer"
             aria-label="Open contact options"
           >
-            <MessageCircle className="text-white w-7 h-7" />
+            <img src={PhoneIcon} alt="Contact" className="w-14 h-14" />
           </motion.button>
 
           <AnimatePresence>

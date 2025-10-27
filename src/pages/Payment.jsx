@@ -9,6 +9,8 @@ import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
 import CallButton from "@/components/shared/CallButton.jsx"
 import Comments from "@/components/ui/Comments.jsx"
+import wholeworld from "@/assets/wholeworld.png"
+import GetStarted from "../components/shared/GetStarted";
 
 export default function Payment() {
   return (
@@ -41,8 +43,20 @@ export default function Payment() {
      <div className="py-16">
        <HowWorks />
      </div>
+     <GetStarted/>
     <div className="max-w-7xl mx-auto">
-       
+        <section>
+               <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
+                 <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
+                   Найдем лучшее решение
+                 </div>
+                 <h2 className="text-4xl font-bold mb-10">
+                   Найдите места для покупки,
+                   <br /> продажи или аренды контейнеров
+                 </h2>
+                 <img className=" mx-auto w-[80%] h-[80%]" src={wholeworld} alt="" />
+               </div>
+             </section>
     </div>
      <WhoWeAre/>
      

@@ -38,7 +38,7 @@ const icons = [
   { src: "/Comment/brand3.png", width: "w-[80%] md:w-[60%]" },
   { src: "/Comment/brand4.png", width: "w-[105%] md:w-[90%]" },
   { src: "/Comment/brand5.png", width: "w-[75%] md:w-[85%]" },
-  { src: "/Comment/brand6.png", width: "w-[75%] md:w-[50%]" },
+  { src: "/Comment/brand6.png", width: "w-[75%] md:w-[65%]" },
 ];
 
 const Comments = () => {
@@ -120,7 +120,7 @@ const Comments = () => {
 
   return (
     <section className=" md:py-24 pb-16">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between">
+      <div className="max-w-7xl flex flex-col md:flex-row justify-between">
         {/* Left Content */}
         <div className="max-w-lg">
           <div className="inline-flex px-4 py-2 text-[14px] text-[#006FDC] font-medium border border-[#006FDC] rounded-full">

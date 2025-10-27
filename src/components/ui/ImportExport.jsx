@@ -52,7 +52,7 @@ export default function ImportExport() {
 
   return (
     <section className="max-w-[90%] 2xl:max-w-7xl mx-auto pb-10">
-      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10 ">
+      <div className="h-full  pt-10 space-y-10 ">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -77,7 +77,7 @@ export default function ImportExport() {
        
         </motion.div>
       </div>
-      <div className="container h-full px-4 lg:px-8 pt-10 space-y-10">
+      <div className="h-full pt-10 space-y-10">
        
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
             {allCategories.map((label, index) => (
