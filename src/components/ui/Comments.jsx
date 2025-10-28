@@ -146,7 +146,7 @@ const Comments = () => {
               animate="center"
               exit="exit"
               transition={{ duration: 0.6 }}
-              className="absolute top-0 left-0 right-0 bottom-0 p-8 h-[500px]"
+              className="absolute top-0 left-0 right-0 bottom-0 p-6 md:p-8 h-[500px]"
             >
               <p className="text-gray-800 text-lg mb-6 italic">
                 "{testimonials[index].text}"

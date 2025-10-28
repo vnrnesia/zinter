@@ -45,9 +45,9 @@ export default function Delivery() {
   ];
 
   return (
-    <section className="w-full flex flex-col items-center justify-center pt-12 ">
+    <section className="w-full flex flex-col items-center justify-center ">
       <div className="w-full max-w-[90%] 2xl:max-w-7xl mx-auto">
-        <div className="text-center md:text-left mb-12 md:mb-16">
+        <div className="text-center pt-10 md:pt-0 md:text-left mb-12 md:mb-16">
           <span className="inline-block mb-3 border-2 border-[#006FDC] text-[#006FDC] px-4 py-1 rounded-full text-sm font-semibold">
             рассчитать заказ
           </span>

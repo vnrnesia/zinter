@@ -27,8 +27,8 @@ import Contact from "../components/ui/Contact"
 export default function AboutUs() {
   return (
     <>
-      <section className="pt-20 pb-5 lg:py-44 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
-        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center max-w-[90%] 2xl:max-w-7xl ">
+      <section className="pt-20 md:pb-5 lg:py-44 bg-gradient-to-r from-[#006FDC] to-[#11B4EC] border-b-4 border-b-[#676767]">
+        <div className="container pb-5 mx-auto px-4 flex flex-col-reverse lg:flex-row items-center max-w-[90%] 2xl:max-w-7xl ">
           <div className="w-full lg:w-1/2 space-y-6 text-white text-center lg:text-left">
             <div className="text-xl font-inter font-medium leading-tight mx-auto lg:mx-0 uppercase">
               <div className="flex justify-center items-center"></div>
@@ -36,18 +36,18 @@ export default function AboutUs() {
 
             <div className="hidden lg:flex items-center gap-4"></div>
 
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold md:leading-tight">
               Контрактное производство в{" "}
               <span className="text-[#FFC23E]">Китае и ЕС. </span>
             </h1>
 
-            <p className="text-lg md:text-xl opacity-90">
+            <p className="text-md md:text-xl opacity-90">
               Подбираем надежного производителя, сопровождаем контрактное
               производство и оплачиваем поставки. Логистика, складские услуги и
               доставка – все в одном решении.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
+            <div className="md:pt-2 flex justify-center lg:justify-start">
               <CallButton />
             </div>
           </div>

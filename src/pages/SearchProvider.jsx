@@ -36,13 +36,13 @@ export default function ChinaDelivery() {
               ПОИСК <span className="text-[#FFC23E]">ПОСТАВЩИКА</span>
             </h1>
 
-            <p className="text-lg md:text-xl opacity-90">
+            <p className="text-md md:text-xl opacity-90">
               Выбираем оптимального производителя под ваш ТЗ и сопровождаем
               контрактное производство — от заказа на заводе до доставки на ваш
               склад в РФ.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
+            <div className="md:pt-2 flex justify-center lg:justify-start">
               <CallButton />
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="pb-16 pt-16">
+      <section className="md:pb-8 pb-16 pt-16">
         <div className="w-full max-w-full  mx-auto">
           <GetStarted />
         </div>

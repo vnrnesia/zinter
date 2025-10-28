@@ -43,7 +43,7 @@ export default function ChinaDelivery() {
               Доставка из <span className="text-[#FFC23E]">Европы </span>
             </h1>
 
-            <p className="text-lg md:text-xl opacity-90">
+            <p className="text-md md:text-xl opacity-90">
               Надежные мультимодальные перевозки, оптимизация сроков и затрат,
               полный контроль на каждом этапе доставки.
             </p>
@@ -86,7 +86,7 @@ export default function ChinaDelivery() {
         </div>
       </section>
 
-      <section className="pt-16 bg-gray-50">
+      <section className="pt-5 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <ServiceGrid />
         </div>

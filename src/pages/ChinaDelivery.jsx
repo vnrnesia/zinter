@@ -40,7 +40,7 @@ export default function ChinaDelivery() {
               Доставка из <span className="text-[#FFC23E]">Китая</span>
             </h1>
 
-            <p className="text-lg md:text-xl opacity-90">
+            <p className="text-md  md:text-xl opacity-90">
               Надежные мультимодальные перевозки, оптимизация сроков и затрат,
               полный контроль на каждом этапе доставки.
             </p>

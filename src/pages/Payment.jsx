@@ -7,9 +7,9 @@ import CtaCard from "@/components/shared/CtaCard.jsx";
 import HowWorks from "@/components/ui/HowWorks.jsx";
 import Form from "@/components/ui/Form.jsx";
 import { Link } from "react-router-dom";
-import CallButton from "@/components/shared/CallButton.jsx"
-import Comments from "@/components/ui/Comments.jsx"
-import wholeworld from "@/assets/wholeworld.png"
+import CallButton from "@/components/shared/CallButton.jsx";
+import Comments from "@/components/ui/Comments.jsx";
+import wholeworld from "@/assets/wholeworld.png";
 import GetStarted from "../components/shared/GetStarted";
 
 export default function Payment() {
@@ -26,7 +26,7 @@ export default function Payment() {
               <span className="text-[#FFC23E]"> санкционных товаров</span>
             </div>
 
-            <p className="text-lg md:text-xl opacity-90 px-4 lg:px-0">
+            <p className="text-md md:text-xl opacity-90 px-4 lg:px-0">
               Произведем оплату в любую точку мира по вашему поручению.
               Выполняем расширенные функции международного платежного агента.
               Оплачиваем товары клиентов со своих международных представительств
@@ -37,36 +37,35 @@ export default function Payment() {
               <CallButton />
             </div>
           </div>
-          <img className="w-[70%] md:w-auto"src={payment} alt="Payment Image" />
+          <img
+            className="w-[70%] md:w-auto"
+            src={payment}
+            alt="Payment Image"
+          />
         </div>
       </section>
-     <div className="py-16">
-       <HowWorks />
-     </div>
-     <GetStarted/>
-    <div className="max-w-7xl mx-auto">
+      <div className="py-16">
+        <HowWorks />
+      </div>
+      <GetStarted />
+      <div className="max-w-7xl mx-auto">
         <section>
-               <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
-                 <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
-                   Найдем лучшее решение
-                 </div>
-                 <h2 className="text-4xl font-bold mb-10">
-                   Найдите места для покупки,
-                   <br /> продажи или аренды контейнеров
-                 </h2>
-                 <img className=" mx-auto w-[80%] h-[80%]" src={wholeworld} alt="" />
-               </div>
-             </section>
-    </div>
-     <WhoWeAre/>
-     
-     
-      <div>
-       
+          <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
+            <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
+              Найдем лучшее решение
+            </div>
+            <h2 className="text-4xl font-bold mb-10">
+              Найдите места для покупки,
+              <br /> продажи или аренды контейнеров
+            </h2>
+            <img className=" mx-auto w-[80%] h-[80%]" src={wholeworld} alt="" />
+          </div>
+        </section>
       </div>
-      <div className="">
-      
-      </div>
+      <WhoWeAre />
+
+      <div></div>
+      <div className=""></div>
     </>
   );
 }

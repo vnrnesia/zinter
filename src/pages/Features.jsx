@@ -28,13 +28,13 @@ export default function Features() {
               Tаможенное <span className="text-[#FFC23E]">оформление</span>
             </h1>
 
-            <p className="text-lg md:text-xl opacity-90">
+            <p className="text-md md:text-xl opacity-90">
               Полное сопровождение таможенного оформления: декларирование,
               сертификация и юридическая поддержка для беспрепятственного
               импорта и экспорта.
             </p>
 
-            <div className="pt-2 flex justify-center lg:justify-start">
+            <div className="md:pt-2 flex justify-center lg:justify-start">
               <CallButton />
             </div>
           </div>

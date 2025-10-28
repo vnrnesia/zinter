@@ -24,16 +24,10 @@ export default function Home() {
       <div className=" bg-gray-100">
         <StepSection />
       </div>
-      <div className="">
+      <div className="md:pt-10">
         <ImportExport />
       </div>
-      <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">
-        <Form className="w-full max-w-xs mx-auto py-10" />
-      </div>
-      <div className="px-10">
-        <Delivery />
-      </div>
-      <section>
+       <section>
         <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
           <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
             Найдем лучшее решение
@@ -45,6 +39,13 @@ export default function Home() {
           <img className=" mx-auto w-[80%] h-[80%]" src={wholeworld} alt="" />
         </div>
       </section>
+      <div className="py-10 px-10 block lg:hidden bg-gradient-to-r from-[#006FDC] to-[#11B4EC]">
+        <Form className="w-full max-w-xs mx-auto py-10" />
+      </div>
+      <div className="md:pt-10 px-10">
+        <Delivery />
+      </div>
+     
       <div className="py-24">
         <GetStarted />
       </div>

@@ -99,7 +99,7 @@ export default function Main() {
             </div>
           </div>
 
-          <div className="w-[90%] sm:w-[80%] lg:w-auto lg:ml-auto lg:pr-16">
+          <div className="sm:w-[80%] lg:w-auto lg:ml-auto lg:pr-16">
             <Form />
             <div></div>
           </div>
