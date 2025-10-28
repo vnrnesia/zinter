@@ -92,7 +92,7 @@ export default function Steps() {
                   <div className="w-16 h-10 mb-4 flex items-center justify-center rounded-md bg-gradient-to-r from-blue-600 to-cyan-400 text-white shadow-md text-lg font-semibold">
                     {index + 1}
                   </div>
-                  <div className="bg-white px-6 py-4 md:py-0 rounded-xl shadow-md text-center mx-auto sm:h-[180px] md:h-[220px]">
+                  <div className="bg-white px-6 py-4 md:py-3 rounded-xl shadow-md text-center mx-auto sm:h-[180px] md:h-[220px]">
                     <h4 className="text-xl font-semibold text-gray-800 mb-2">
                       {step.title}
                     </h4>

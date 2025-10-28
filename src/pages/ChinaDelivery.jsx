@@ -45,7 +45,7 @@ export default function ChinaDelivery() {
               полный контроль на каждом этапе доставки.
             </p>
 
-            <div className=" flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <CallButton />
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function ChinaDelivery() {
             <img
               src={containercn}
               alt="Container"
-              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[500px] h-auto object-contain mx-auto"
+              className="w-[290px] sm:w-[300px] md:w-[500px] lg:w-[400px] h-auto object-contain mx-auto"
             />
           </div>
         </div>

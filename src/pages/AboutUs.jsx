@@ -73,7 +73,7 @@ export default function AboutUs() {
      
 
       <section>
-        <div className="hidden lg:block min-h-screen  items-center justify-center text-center pt-16 px-4">
+        <div className="hidden lg:block  items-center justify-center text-center pt-16 px-4">
           <div className="w-fit text-blue-600 font-medium border border-blue-600 px-3 py-1 rounded-full text-sm inline-block mb-4">
             Найдем лучшее решение
           </div>

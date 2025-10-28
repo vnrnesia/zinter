@@ -61,7 +61,7 @@ export default function Warehouse() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="pt-16">
         <div className="w-full max-w-full mx-auto">
           <GetStarted />
         </div>

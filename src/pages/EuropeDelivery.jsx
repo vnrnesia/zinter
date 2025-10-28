@@ -57,7 +57,7 @@ export default function ChinaDelivery() {
             <img
               src={containereu}
               alt="Container"
-              className="w-[325px] sm:w-[300px] md:w-[500px] lg:w-[500px] h-auto object-contain mx-auto"
+              className="w-[290px] sm:w-[300px] md:w-[500px] lg:w-[400px] h-auto object-contain mx-auto"
             />
           </div>
         </div>

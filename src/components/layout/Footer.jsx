@@ -58,7 +58,7 @@ export default function Footer() {
   return (
     <>
      
-      <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB] mt-24">
+      <footer className="relative footer bg-gradient-to-r from-[#B4B7BD] to-[#E3E7EB]">
         <div className="w-full flex justify-center -mb-10 z-20 absolute -top-[30px]">
           <img src={zintercircle} alt="" className=" md:hidden w-14 h-14" />
         </div>

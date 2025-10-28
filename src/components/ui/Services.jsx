@@ -107,7 +107,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="flex flex-wrap -mx-2">
+        <div className="flex flex-wrap -mx-2 pb-10 md:pb-0">
           {serviceItems.map((item, index) => {
             const isOpen = openIndex === index;
             const contentRef = useRef(null);
