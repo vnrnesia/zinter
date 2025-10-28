@@ -27,7 +27,7 @@ export default function Home() {
       <div className="pt-10">
         <ImportExport />
       </div>
-      <div className="md:pt-10 px-10">
+      <div className="md:pt-10 md:px-10">
         <Delivery />
       </div>
       <section>
@@ -45,7 +45,7 @@ export default function Home() {
       <div className="pb-10 pt-16">
         <DeliveryBox />
       </div>{" "}
-      <div className="py-24">
+      <div className="py-5 md:py-24">
         <GetStarted />
       </div>
       <div className="container ">
