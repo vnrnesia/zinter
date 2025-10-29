@@ -7,6 +7,7 @@ import icon4 from "@/assets/LeftPanel/icon4.png";
 import { Check } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import payment from "@/assets/PaymentImg/payment.png";
 
 import Socialicon1 from "@/assets/LeftPanel/icon1.png";
 import Socialicon2 from "@/assets/LeftPanel/icon2.png";
@@ -90,7 +91,7 @@ const CtaCard = () => {
             присутствием в РФ, ОАЭ и Китае
           </h1>
           <div className="mx-auto justify-center flex ">
-            <img src="/public/logo.png" alt="Logo" />
+            <img src={payment} alt="logo" className="w-[70%] pt-10 md:w-[50%]" />
           </div>
         </div>
 
