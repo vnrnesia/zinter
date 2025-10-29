@@ -87,11 +87,10 @@ const CtaCard = () => {
       <div className="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-4 md:pt-0 gap-8 justify-center items-center ">
         <div className="mx-auto ">
           <h1 className="text-center justify-center text-white font-bold text-2xl">
-            ZinterLogistics — ваш надёжный партнёр в международной логистике с
-            присутствием в РФ, ОАЭ и Китае
+           Мы соединяем мир: логистика без границ
           </h1>
           <div className="mx-auto justify-center flex ">
-            <img src={payment} alt="logo" className="w-[70%] pt-10 md:w-[50%]" />
+            <img src={payment} alt="logo" className="w-[70%] pt-10 md:w-[70%]" />
           </div>
         </div>
 
@@ -102,7 +101,8 @@ const CtaCard = () => {
         >
           <div>
             <h3 className="text-xl font-semibold text-white leading-snug pb-5">
-              Мы соединяем мир: логистика без границ
+               ZinterLogistics — ваш надёжный партнёр в международной логистике с
+            присутствием в РФ, ОАЭ и Китае
             </h3>
             <ul className="mt-6 space-y-4 text-gray-50">
               {contactBenefits.map(({ icon, text }, idx) => (
