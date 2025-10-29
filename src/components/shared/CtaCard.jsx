@@ -90,7 +90,7 @@ const CtaCard = () => {
             присутствием в РФ, ОАЭ и Китае
           </h1>
           <div className="mx-auto justify-center flex ">
-            <img src="/public/Logo.png" alt="Logo" />
+            <img src="/public/logo.png" alt="Logo" />
           </div>
         </div>
 
