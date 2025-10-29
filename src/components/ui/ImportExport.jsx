@@ -1,114 +1,89 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import cater from "@/assets/ImportExportImg/cater.png";
-import electric from "@/assets/ImportExportImg/electric.png";
-import intel from "@/assets/ImportExportImg/intel.png";
-import mori from "@/assets/ImportExportImg/mori.png";
-import siemens from "@/assets/ImportExportImg/siemens.png";
-
 export default function ImportExport() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-
-  const imageList = isMobile
-    ? [electric, intel, siemens]
-    : [cater, electric, intel, mori, siemens];
-
-  const allCategories = [
-    "Стройматериалы",
-    "Оборудование",
-    "Спецтехника",
-    "Бытовая техника",
-    "Электроника",
-    "Мебель",
-    "Сантехника",
-    "Удобрения",
-    "Текстиль",
-    "Товары для дома",
-    "Химия",
-    "Автозапчасти",
+  const iconItems = [
+    { label: "Стройматериалы", src: "/IconGrid/1.png", size: "w-10 h-10" },
+    { label: "Оборудование", src: "/IconGrid/2.png", size: "w-9 h-9" },
+    { label: "Спецтехника", src: "/IconGrid/3.png", size: "w-9 h-9" },
+    { label: "Бытовая техника", src: "/IconGrid/4.png", size: "w-10 h-10" },
+    { label: "Электроника", src: "/IconGrid/5.png", size: "w-10 h-10" },
+    { label: "Мебель", src: "/IconGrid/6.png", size: "w-10 h-10" },
+    { label: "Сантехника", src: "/IconGrid/7.png", size: "w-10 h-10" },
+    { label: "Удобрения", src: "/IconGrid/8.png", size: "w-9 h-9" },
+    { label: "Текстиль", src: "/IconGrid/9.png", size: "w-9 h-9" },
   ];
 
-  const CategoryBox = ({ label, index }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border-2 border-[#006FDC] h-[50px] font-medium px-2 sm:px-4 flex items-center justify-center rounded-lg bg-white shadow-sm text-center text-sm sm:text-base"
-    >
-      {label}
-    </motion.div>
-  );
-
   return (
-    <section className="max-w-[90%] 2xl:max-w-7xl mx-auto pb-10">
-      <div className="h-full  pt-10 space-y-10 ">
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center lg:text-left w-full lg:w-1/2 space-y-6"
-        >
-          <span className="border-2 border-[#006FDC] text-[#006FDC] px-4 py-1 rounded-full text-sm font-semibold">
-            Tовары и бренды
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-semibold text-[#343434] mt-4">
+    <div className="">
+      {/* Üst başlık */}
+      <div className="mx-auto max-w-[90%] 2xl:max-w-7xl">
+        <span className="inline-block border-2 border-[#006FDC] text-[#006FDC] px-4 py-1 rounded-full text-sm font-semibold">
+          Tовары и бренды
+        </span>
+      </div>
+
+      {/* İçerik alanı */}
+      <div className="w-full max-w-[90%] 2xl:max-w-7xl mx-auto pt-6 pb-12 bg-gray-50 flex flex-col md:flex-row gap-10">
+        {/* Sol taraf */}
+        <div className="flex-1">
+          <h2 className="text-3xl md:pt-10 font-bold mb-6 text-gray-800">
             Мы импортируем
           </h2>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative overflow-hidden"
-        >
-       
-        </motion.div>
-      </div>
-      <div className="h-full pt-10 space-y-10">
-       
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 w-full">
-            {allCategories.map((label, index) => (
-              <CategoryBox key={index} label={label} index={index} />
-            ))}
+          <p className="text-gray-600 md:pt-5 mb-10">
+            Мы занимаемся импортом высококачественных товаров из разных стран
+            мира. Наша компания обеспечивает поставку строительных материалов,
+            электроники, мебели и другой продукции, соответствующей
+            международным стандартам качества. Мы создаём надёжные партнёрские
+            отношения и предлагаем гибкие условия сотрудничества
+          </p>
+
+          {/* Markalar */}
+          <div className="grid grid-cols-3 sm:grid-cols-3 gap-4">
+            <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
+              <img
+                src="/Comment/brand1.png"
+                alt="Logo"
+                className="w-[100%] md:w-[60%]"
+              />
+            </div>
+            <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
+              <img
+                src="/Comment/brand3.png"
+                alt="Logo"
+                className="w-[100%] md:w-[60%]"
+              />
+            </div>
+            <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
+              <img
+                src="/Comment/brand2.png"
+                alt="Logo"
+                className="w-[100%] md:w-[60%]"
+              />
+            </div>
           </div>
-       
-        <ul className="flex pt-10 sm:flex-nowrap  sm:gap-6 sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:items-center justify-between">
-            {imageList.map((src, index) => (
-              <motion.li
-                key={index}
-                className="flex items-center justify-center flex-shrink-0 snap-start w-28 pl-2 md:pl-0  sm:w-auto text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+        </div>
+
+        {/* Sağ taraf — İkon grid */}
+        <div className="flex-1 grid grid-cols-3 gap-6">
+          {iconItems.map((item, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center justify-center md:flex-row md:justify-start p-4 rounded-xl transition"
+            >
+              {/* İkon alanı */}
+              <div className="w-20 h-20 flex items-center justify-center bg-gray-200 rounded-full mr-0 md:mr-3 shrink-0">
                 <img
-                  src={src}
-                  alt={`brand-${index}`}
-                  className={`mx-auto  ${
-                    src === intel || src === siemens
-                      ? "w-[70px] sm:w-24 md:w-28 lg:w-20"
-                      : "w-36 sm:w-28 md:w-32 lg:w-36"
-                  }`}
+                  src={item.src}
+                  alt={item.label}
+                  className={`${item.size} object-contain`}
                 />
-              </motion.li>
-            ))}
-          </ul>
+              </div>
+
+              <span className="text-sm pt-4 md:pt-0 text-gray-800 font-medium leading-tight text-center md:text-left">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    
-    </section>
+    </div>
   );
 }

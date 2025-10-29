@@ -21,6 +21,9 @@ export default function Home() {
       <div className="container">
         <Cards />
       </div>
+      <div>
+        <CtaCard />
+      </div>
       <div className=" bg-gray-100">
         <StepSection />
       </div>

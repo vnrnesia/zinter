@@ -28,11 +28,14 @@ const services = [
 ];
 
 const contactBenefits = [
-  { icon: contactIcon1, text: "Надёжная и безопасная доставка по всему миру" },
-  { icon: contactIcon2, text: "Скорость и своевременность перевозок" },
-  { icon: contactIcon3, text: "Прозрачные тарифы и честные условия" },
-  { icon: contactIcon4, text: "Выгодные маршруты и логистические решения" },
-  { icon: contactIcon5, text: "Простота взаимодействия и удобный сервис" },
+  { icon: contactIcon1, text: "Быстрая и безопасная доставка по всему миру" },
+  { icon: contactIcon2, text: "Прозрачные тарифы без скрытых комиссий" },
+  {
+    icon: contactIcon3,
+    text: "Оптимальные маршруты и выгодные условия сотрудничества",
+  },
+  { icon: contactIcon4, text: "Полный контроль на каждом этапе перевозки" },
+  { icon: contactIcon5, text: " Профессиональная поддержка 24/7" },
 ];
 
 const socialIcons = [Socialicon1, Socialicon2, Socialicon3, Socialicon4];
@@ -78,50 +81,17 @@ const CtaCard = () => {
   return (
     <section
       ref={sectionRef}
-      className="max-w-full mx-auto min-h-[550px] bg-gradient-to-r from-[#006FDC] to-[#11B4EC] px-4 flex items-center"
+      className="pt-6 md:pt-0 max-w-full mx-auto min-h-[550px] bg-gradient-to-r from-[#006FDC] to-[#11B4EC] px-4 flex items-center"
     >
       <div className="max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 pt-4 md:pt-0 gap-8 justify-center items-center ">
-        <div
-          ref={leftCardRef}
-          className="rounded-xl border-4 h-[500px] w-auto 3xl:min-w-[900px] border-gray-400 bg-gray-50 flex flex-col items-center justify-center p-8 text-center lg:rounded-r-none"
-        >
-          <p className="text-gray-700 font-medium text-md text-center mb-2">
-            Международные логистические услуги и перевозки для B2B клиентов
-          </p>
-          <div className="w-[220px] h-[220px] rounded-full overflow-hidden ">
-            <img
-              src={ivan}
-              alt="Profile"
-              className="w-full h-full object-cover  object-center"
-            />
+        <div className="mx-auto ">
+          <h1 className="text-center justify-center text-white font-bold text-2xl">
+            ZinterLogistics — ваш надёжный партнёр в международной логистике с
+            присутствием в РФ, ОАЭ и Китае
+          </h1>
+          <div className="mx-auto justify-center flex ">
+            <img src="/public/Logo.png" alt="Logo" />
           </div>
-
-          <h3 className="text-xl font-semibold">ZinterLogistics</h3>
-          <p className="text-sm text-gray-500 mb-2">Ваш партнёр в логистике</p>
-
-          <div className="flex justify-center gap-3 ">
-            <img src={icon1} alt="X" className="w-4 h-4" />
-            <img src={icon2} alt="LinkedIn" className="w-4 h-4" />
-            <img src={icon3} alt="Facebook" className="w-4 h-4" />
-            <img src={icon4} alt="Instagram" className="w-4 h-4" />
-          </div>
-
-          <a
-            href="https://t.me/zinterlogistics"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-16 text-blue-600 text-sm flex items-center gap-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M9.47 14.81l-.39 4.23c.56 0 .8-.24 1.09-.52l2.62-2.46 5.45 3.98c1 .55 1.72.26 1.97-.92l3.58-16.74h.01c.32-1.49-.54-2.08-1.5-1.76L1.44 9.67c-1.47.54-1.46 1.32-.25 1.67l4.62 1.44 10.73-6.77c.51-.31.98-.14.6.2L9.47 14.81z" />
-            </svg>
-            t.me/zinterlogistics
-          </a>
         </div>
 
         {/* Right Card */}
@@ -130,8 +100,8 @@ const CtaCard = () => {
           className="text-white p-8 flex flex-col justify-between lg:rounded-l-none rounded-xl lg:text-start"
         >
           <div>
-            <h3 className="text-2xl font-extrabold text-white leading-snug pb-10">
-              Эффективные международные перевозки и логистические решения под ключ
+            <h3 className="text-xl font-semibold text-white leading-snug pb-5">
+              Мы соединяем мир: логистика без границ
             </h3>
             <ul className="mt-6 space-y-4 text-gray-50">
               {contactBenefits.map(({ icon, text }, idx) => (
@@ -152,17 +122,6 @@ const CtaCard = () => {
               Подписывайтесь на наш Telegram-канал
             </h3>
             <p className="text-gray-50">t.me/zinterlogistics</p>
-          </div>
-
-          <div className="flex lg:block justify-center lg:items-start ">
-            <button
-              className="bg-white text-black font-medium px-[105px] md:px-6 py-1 rounded-md w-fit whitespace-nowrap"
-              onClick={() => {
-             
-              }}
-            >
-              Связаться с нами
-            </button>
           </div>
         </div>
       </div>
