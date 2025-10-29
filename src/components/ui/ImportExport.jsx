@@ -21,41 +21,46 @@ export default function ImportExport() {
       </div>
 
       {/* İçerik alanı */}
-      <div className="w-full max-w-[90%] 2xl:max-w-7xl mx-auto pt-6 pb-12 bg-gray-50 flex flex-col md:flex-row gap-10">
+      <div className="w-full max-w-[90%] 2xl:max-w-7xl mx-auto pt- pb-12 bg-gray-50 flex flex-col md:flex-row gap-10">
         {/* Sol taraf */}
         <div className="flex-1">
-          <h2 className="text-3xl md:pt-10 font-bold mb-6 text-gray-800">
+          <h2 className="text-3xl pt-6 font-bold mb-6 text-gray-800">
             Мы импортируем
           </h2>
-          <p className="text-gray-600 md:pt-5 mb-10">
+          <p className="hidden md:block text-gray-600 mb-10">
             Мы занимаемся импортом высококачественных товаров из разных стран
             мира. Наша компания обеспечивает поставку строительных материалов,
             электроники, мебели и другой продукции, соответствующей
             международным стандартам качества. Мы создаём надёжные партнёрские
             отношения и предлагаем гибкие условия сотрудничества
           </p>
+          <p className="block md:hidden">
+            Мы поставляем качественные строительные материалы, электронику и
+            мебель из разных стран, предлагая надёжное партнёрство и гибкие
+            условия сотрудничества.
+          </p>
 
           {/* Markalar */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-3">
             <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
               <img
                 src="/Comment/brand1.png"
                 alt="Logo"
-                className="w-[100%] md:w-[60%]"
+                className="w-[70%] md:w-[50%]"
               />
             </div>
             <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
               <img
                 src="/Comment/brand3.png"
                 alt="Logo"
-                className="w-[100%] md:w-[60%]"
+                className="w-[70%] md:w-[50%]"
               />
             </div>
             <div className="w-full h-32 flex items-center justify-center text-gray-500 rounded-lg">
               <img
                 src="/Comment/brand2.png"
                 alt="Logo"
-                className="w-[100%] md:w-[60%]"
+                className="w-[70%] md:w-[50%]"
               />
             </div>
           </div>
