@@ -71,14 +71,11 @@ const CtaCard = () => {
           ref={leftCardRef}
           className="flex flex-col items-center justify-center text-center mx-auto"
         >
-          <h1 className="text-white font-bold text-2xl pt-5 md:text-3xl leading-snug">
-            Мы соединяем мир: логистика без границ
-          </h1>
-
+        
           <img
             src={payment}
             alt="logo"
-            className="w-[85%] md:w-[65%] max-w-[500px] md:mr-16 transition-transform duration-500 hover:scale-105 pt-8"
+            className="w-[85%] md:w-[75%] max-w-[500px] md:mr-16 transition-transform duration-500 hover:scale-105 "
           />
         </div>
 
