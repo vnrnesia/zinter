@@ -1,12 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import featureicon1 from "@/assets/SearchHowWorksImg/icon1.png";
-import featureicon2 from "@/assets/SearchHowWorksImg/icon2.png";
-import featureicon3 from "@/assets/SearchHowWorksImg/icon3.png";
-import featureicon4 from "@/assets/SearchHowWorksImg/icon4.png";
-import featureicon5 from "@/assets/SearchHowWorksImg/icon5.png";
-
 export default function HowWorks() {
   const steps = [
     {
@@ -15,31 +9,26 @@ export default function HowWorks() {
         " Вы отправляете нам запрос на оплату, указывая детали сделки, реквизиты получателя и сумму платежа.",
         "Наши специалисты проверяют предоставленные данные, соответствие требованиям международных платежных систем и санкционное регулирование.",
       ],
-      img: featureicon1,
     },
     {
       title: "Подбор производителя",
       text: ["Подбираем производителя. Заказываем образцы."],
-      img: featureicon2,
     },
     {
       title: "Договор",
       text: [
         "Оплата производится через наши международные представительства, что позволяет избежать задержек и ограничений.",
       ],
-      img: featureicon3,
     },
     {
       title: "Производство",
       text: [
         "Курируем процесс производства и производим контроль качества продукции.",
       ],
-      img: featureicon4,
     },
     {
       title: "Доставка",
       text: ["Производим таможенную очистку и доставляем товар на ваш склад."],
-      img: featureicon5,
     },
   ];
 
@@ -97,11 +86,7 @@ export default function HowWorks() {
               >
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-full bg-white shadow-lg ring-2 ring-white flex items-center justify-center">
-                    <img
-                      src={step.img}
-                      alt={step.title}
-                      className="w-6 h-6 object-contain"
-                    />
+                    <span className="text-xl font-bold text-blue-600">{index + 1}</span>
                   </div>
                 </div>
 

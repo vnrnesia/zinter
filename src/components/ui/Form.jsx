@@ -87,34 +87,35 @@ ${entries.telegram ? "💬 Telegram: " + entries.telegram + "\n" : ""}
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined" && phoneInputRef.current) {
-      const loadIntlTelInput = async () => {
-        const utilsScript = document.createElement("script");
-        utilsScript.src =
-          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js";
-        utilsScript.onload = () => {
-          const iti = window.intlTelInput(phoneInputRef.current, {
-            initialCountry: "auto",
-            geoIpLookup: (cb) => {
-              fetch("https://ipapi.co/json")
-                .then((res) => res.json())
-                .then((data) => {
-                  cb(data.country_code);
-                  setCountryName(data.country_name);
-                })
-                .catch(() => {
-                  cb("RU");
-                  setCountryName("Россия");
-                });
-            },
-            separateDialCode: true,
-            preferredCountries: ["ru", "tr", "de", "cn"],
-          });
-          itiRef.current = iti;
-        };
-        document.body.appendChild(utilsScript);
+    if (
+      typeof window !== "undefined" &&
+      phoneInputRef.current &&
+      ["телефона", "Whatsapp"].includes(contactMethod)
+    ) {
+      const iti = window.intlTelInput(phoneInputRef.current, {
+        initialCountry: "auto",
+        geoIpLookup: (cb) => {
+          fetch("https://ipapi.co/json")
+            .then((res) => res.json())
+            .then((data) => {
+              cb(data.country_code);
+              setCountryName(data.country_name);
+            })
+            .catch(() => {
+              cb("RU");
+              setCountryName("Россия");
+            });
+        },
+        separateDialCode: true,
+        preferredCountries: ["ru", "tr", "de", "cn"],
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+      itiRef.current = iti;
+
+      return () => {
+        iti.destroy();
       };
-      loadIntlTelInput();
     }
   }, [contactMethod]);
 

@@ -1,11 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import icon1 from "@/assets/PaymentImg/icon1.png";
-import icon2 from "@/assets/PaymentImg/icon2.png";
-import icon3 from "@/assets/PaymentImg/icon3.png";
-import icon4 from "@/assets/PaymentImg/icon4.png";
-
 export default function HowWorks() {
   const steps = [
     {
@@ -14,7 +9,6 @@ export default function HowWorks() {
         "Вы отправляете нам запрос на оплату, указывая детали сделки, реквизиты получателя и сумму платежа.",
         "Наши специалисты проверяют предоставленные данные, соответствие требованиям международных платежных систем и санкционное регулирование.",
       ],
-      img: icon1,
     },
     {
       title: "Договор",
@@ -22,14 +16,12 @@ export default function HowWorks() {
         "После успешной проверки данных и согласования условий мы заключаем договор на проведение международного платежа.",
         "Подписание договора обеспечивает прозрачность сделки и защиту ваших интересов, минимизируя риски при международных расчетах.",
       ],
-      img: icon2,
     },
     {
       title: "Оплата",
       text: [
         "Оплата производится через наши международные представительства, что позволяет избежать задержек и ограничений.",
       ],
-      img: icon3,
     },
     {
       title: "Перевод",
@@ -37,7 +29,6 @@ export default function HowWorks() {
         "Средства поступают на счет получателя в кратчайшие сроки.",
         "Мы предоставляем подтверждение платежа и необходимые документы для вашей бухгалтерии.",
       ],
-      img: icon4,
     },
   ];
 
@@ -101,11 +92,7 @@ export default function HowWorks() {
               >
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-full bg-white shadow-lg ring-2 ring-white flex items-center justify-center">
-                    <img
-                      src={step.img}
-                      alt={step.title}
-                      className="w-6 h-6 object-contain"
-                    />
+                    <span className="text-xl font-bold text-blue-600">{index + 1}</span>
                   </div>
                 </div>
 

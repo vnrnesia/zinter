@@ -1,11 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import featureicon1 from "@/assets/FeaturesHowWorksImg/featureicon1.png";
-import featureicon2 from "@/assets/FeaturesHowWorksImg/featureicon2.png";
-import featureicon3 from "@/assets/FeaturesHowWorksImg/featureicon3.png";
 import SlideOverForm from "@/components/ui/SlideOverForm.jsx";
-
 
 export default function HowWorks() {
   const steps = [
@@ -14,21 +10,18 @@ export default function HowWorks() {
       text: [
         " Вы предоставляете параметры Вашего товара и выбираете интересующие услуги.",
       ],
-      img: featureicon1,
     },
     {
       title: "Коммерческое предложение",
       text: [
         "Рассчитываем ваш заказ и предоставляем оптимальное коммерческое предложение.",
       ],
-      img: featureicon2,
     },
     {
       title: "Договор",
       text: [
         "Подписываем договор и принимаем товар на ответственное храниние.",
       ],
-      img: featureicon3,
     },
   ];
 
@@ -88,11 +81,7 @@ export default function HowWorks() {
               >
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-full bg-white shadow-lg ring-2 ring-white flex items-center justify-center">
-                    <img
-                      src={step.img}
-                      alt={step.title}
-                      className="w-6 h-6 object-contain"
-                    />
+                    <span className="text-xl font-bold text-blue-600">{index + 1}</span>
                   </div>
                 </div>
 
