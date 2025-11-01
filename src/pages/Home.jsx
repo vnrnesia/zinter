@@ -6,7 +6,7 @@ import CtaCard from "@/components/shared/CtaCard";
 import StepSection from "@/components/ui/StepSection";
 import Delivery from "@/components/ui/Delivery";
 
-import ImportExport from "@/components/ui/ImportExport";
+import ImportExport from "@/components/ui/ImportExport.jsx";
 import WhoWeAre from "@/components/shared/WhoWeAre";
 import Form from "@/components/ui/Form.jsx";
 import DeliveryBox from "@/components/ui/DeliveryBox.jsx";

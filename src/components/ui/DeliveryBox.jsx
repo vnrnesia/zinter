@@ -42,11 +42,11 @@ export default function Delivery() {
   return (
     <section className="w-full flex flex-col items-center justify-center ">
       <div className="w-full max-w-[90%] 2xl:max-w-7xl mx-auto">
-        <div className="text-center md:text-left mb-12 md:mb-16">
+        <div className="text-center  mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Форматы упаковки
           </h2>
-          <p className="text-[#2F2F2F] md:w-1/3">
+          <p className="text-[#2F2F2F] ">
             Подбор оптимального маршрута и транспортировки для снижения затрат и
             соблюдения сроков
           </p>
